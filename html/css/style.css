@@ -522,3 +522,6 @@ header.mui-bar{
 .indexFooter .mui-bar-tab .mui-tab-item.mui-active{
 	color: rgb(111,207,251);
 }
+.special{
+	margin-bottom: 1.6rem;
+}
