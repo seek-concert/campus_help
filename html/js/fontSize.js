@@ -7,8 +7,8 @@
     var recalCulate = function(){
         var width = docEle.clientWidth;
         var height = docEle.clientHeight;
-        if (width > 750) {//最大宽度640px
-            width =750;
+        if (width > 1024) {//最大宽度640px
+            width =1024;
         }
         docEle.style.fontSize = 75 * (width / 750) + 'px';//以宽为640px为基准，rem为20px
     };
@@ -16,7 +16,7 @@
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvent, recalCulate, false);
     //加载自体图标
-    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_w6uf8sme3v9.css"/>';
+    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_x4c1gw7k6f.css"/>';
     var head = $("head");
     head.append(icon_css);
     /*搜索*/
@@ -29,16 +29,12 @@
 		$(this).css("display","none");
 		$(".search_icon").css("display","flex");
 	});*/
-    //菜单
-    $("#nav").click(function(){
-    	$("#menu").addClass("menu_animation");
-    });
-    $("#menu").click(function(){
+    /*$("#menu").click(function(){
 	    $("#menu").removeClass("menu_animation");
 	});
 	$(".menu_con").click(function(event){
 	    event.stopPropagation();
-	});
+	});*/
 	//购物车
 	$("body,html").click(function(){
 		$(".shopping_con").css("display","none");

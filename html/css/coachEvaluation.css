@@ -129,3 +129,22 @@
 	line-height: 0.666rem!important;
 	color: #FFFFFF!important;
 }
+.submit{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.submit span{
+	display: table;
+	width: auto;
+	height: auto;
+	padding: 0.133rem 0.533rem;
+	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 0.32rem;
+	color: #666666;
+	background: #f5f4f9;
+	border: 1px solid #bbbbbb;
+	margin: 0.266rem 0.32rem;
+}

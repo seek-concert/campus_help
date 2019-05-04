@@ -369,4 +369,23 @@
 			$(".tuijian li").eq(i).children().children().children().children().children(".star_score").children().eq(j).addClass("star_default");
 		}
 	}
+	//菜单
+    $("#nav").click(function(){
+    	$("#menu").addClass("menu_animation");
+    });
+    menu();
+    function menu(){
+    	var starx=0;
+    	var endx=0;
+    	var el=document.getElementById("menu");
+    	el.addEventListener("touchstart",function(e){
+    		starx = e.changedTouches[0].clientX;
+    	});
+    	el.addEventListener("touchend",function(e){
+    		endx = e.changedTouches[0].clientX;
+    		if(starx>endx+10){
+		    	$("#menu").removeClass("menu_animation");
+		    }
+    	});
+    }
 </script>

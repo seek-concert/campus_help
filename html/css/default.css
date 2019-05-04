@@ -14,7 +14,7 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 	font-style: normal;
 }
 .special{
-	max-width: 750px;
+	max-width: 1024px;
 	min-height:100%;
 	background: #FFFFFF;
 	margin: 0 auto;
@@ -283,7 +283,7 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 	margin: 0 0.0533rem;
 	float: left;
 	font-size: 0.4rem!important;
-	color: #000000;
+	color: #c9c9c9;
 }
 .star_default{
 	color: #ff8126!important;
@@ -303,7 +303,6 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 	transform: translateX(-50%);
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
-	z-index: 999;
 }
 .center_footer_nav li{
 	width: 250%;
@@ -319,6 +318,7 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 }
 .center_footer_nav li a i{
 	font-size: 0.666rem!important;
+	margin-bottom:0.133rem;
 }
 .center_footer_nav li a span{
 	display: block;
