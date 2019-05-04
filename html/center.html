@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/center.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	  	<script type="text/javascript" src="js/fontSize.js" ></script>
+	  	<script type="text/javascript" src="js/mui.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+			<!--用户信息-->
+			<div class="personal">
+				<div class="personal_info">
+					<div class="personal_info_left">
+						<img src="img/head_09.png" />
+						<div class="personal_name">
+							<b>爱莫能助</b>
+							<span>18388189688</span>
+						</div>
+					</div>
+					<i class="iconfont iconerweima"></i>
+				</div>
+				<div class="personal_produce">
+					<span>“公主的外表，女王的内心</span>
+					<i class="right iconfont iconicon--"></i>
+				</div>
+			</div>
+			<!--可用余额-->
+			<ul class="money">
+				<li>
+					<i>0.00</i>
+					<span>可用余额</span>
+				</li>
+				<li>
+					<i>0.00</i>
+					<span>消费金额</span>
+				</li>
+				<li>
+					<i>0</i>
+					<span>消费金额</span>
+				</li>
+			</ul>
+			<!--分割线-->
+			<div class="line"></div>
+			<!--我的订单-->
+			<div class="order">
+				<div class="check">
+					<span>我的订单</span>
+					<div class="look_all">
+						查看全部<i class="right iconfont iconicon--"></i>
+					</div>
+				</div>
+				<ul class="order_list">
+					<li>
+						<i class="iconfont iconicon-test"></i>
+						<span>待付款</span>
+					</li>
+					<li>
+						<i class="iconfont iconicon-test1"></i>
+						<span>待发货</span>
+					</li>
+					<li>
+						<i class="iconfont icontubiaolunkuo-"></i>
+						<span>待收货</span>
+					</li>
+					<li>
+						<i class="iconfont icondaipingjia"></i>
+						<span>待评价</span>
+					</li>
+				</ul>
+			</div>
+			<div class="line"></div>
+			<ul class="shopping">
+				<li>
+					<i class="shopping_icon iconfont icongouwuche1"></i>
+					<div class="shopping_info">
+						<span>购物车</span>
+						<i class="right iconfont iconicon--"></i>
+					</div>
+				</li>
+				<li>
+					<i class="shopping_icon iconfont iconfavorite"></i>
+					<div class="shopping_info">
+						<span>我的收藏</span>
+						<i class="right iconfont iconicon--"></i>
+					</div>
+				</li>
+				<li>
+					<i class="shopping_icon iconfont iconwodeshouhuodizhi"></i>
+					<div class="shopping_info">
+						<span>收货地址</span>
+						<i class="right iconfont iconicon--"></i>
+					</div>
+				</li>
+				<li>
+					<i class="shopping_icon iconfont iconwodezuji"></i>
+					<div class="shopping_info">
+						<span>浏览记录</span>
+						<i class="right iconfont iconicon--"></i>
+					</div>
+				</li>
+			</ul>
+			<div class="line"></div>
+			<div class="message">
+				<i class="shopping_icon iconfont iconqunfengxiaoxitongzhi"></i>
+					<div class="shopping_info">
+						<span>消息通知</span>
+						<i class="right iconfont iconicon--"></i>
+					</div>
+			</div>
+			<!--底部导航-->
+			<ul class="center_footer_nav">
+				<li class="color_blue">
+					<i class="iconfont iconqunfengshouye"></i>
+					<span>首页</span>
+				</li>
+				<li>
+					<i class="iconfont iconshangcheng1"></i>
+					<span>商城</span>
+				</li>
+				<li>
+					<i class="iconfont iconqunfengshenghuofuwuchong"></i>
+					<span>更多服务</span>
+				</li>
+				<li>
+					<i class="iconfont iconjishitaolun"></i>
+					<span>论坛</span>
+				</li>
+				<li>
+					<i class="iconfont icongerenzhongxinsel"></i>
+					<span>个人中心</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script>
+	$(".center_footer_nav li").click(function(){
+		$(this).addClass('color_blue').siblings().removeClass('color_blue');
+	});
+</script>

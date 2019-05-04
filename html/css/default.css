@@ -1,0 +1,21 @@
+*{margin: 0;padding: 0;}
+html,body{
+	color: #000000;
+	font-family: "Microsoft YaHei","simsun","Helvetica Neue",Arial,Helvetica,sans-serif;
+	width: 100%;
+	height: 100%;
+	background: #000000!important;
+}
+a,li,h1,h2,h3,h4,h5,h6,p,i{
+	list-style: none;
+	text-decoration: none;
+	padding: 0 0;
+	margin: 0 0;
+	font-style: normal;
+}
+.special{
+	max-width: 1024px;
+	min-height:100%;
+	background: #FFFFFF;
+	margin: 0 auto;
+}

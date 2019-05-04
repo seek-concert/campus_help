@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>教练评价</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/coachEvaluation.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	  	<script type="text/javascript" src="js/mui.js" ></script>
+	  	<script type="text/javascript" src="js/vue.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+			<div class="evaluate_title">
+				<i class="iconfont iconfanhui"></i>
+				<span>教练评价</span>
+			</div>
+			<div class="evaluate_content">
+				<div class="comment_score">
+					<span>教练评分</span>
+					<dl class="star_score">
+						<dt class="iconfont iconstar"></dt>
+						<dt class="iconfont iconstar"></dt>
+						<dt class="iconfont iconstar"></dt>
+						<dt class="iconfont iconstar"></dt>
+						<dt class="iconfont iconstar"></dt>
+					</dl>
+				</div>
+				<div class="comment_detail" id="comment">
+					<textarea v-model="commit_text" @input="num" maxlength="130" placeholder="亲，分享对驾校教练的服务、教学等方面的体验，还可以用评价标签进行评价~"></textarea>
+					<div class="font_num">已写<i>{{font_long}}</i>字，还能写<span>{{len}}</span>字</div>
+				</div>
+				<div class="photo">
+					<i class="iconfont iconzhaoxiang"></i>
+				</div>
+			</div>
+			<div class="coach_key">
+				<span>我要评价</span>
+				<ul class="coach_key_list">
+					<li class="active">热情</li>
+					<li>负责</li>
+					<li>有耐心</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	$(".star_score dt").click(function(){
+		var star_css = $(this).attr("class");
+		var star_arr = star_css.split(" ");
+		var result = star_arr.indexOf("star_default");
+		if(result<0){
+			$(this).addClass("star_default");
+		}else{
+			$(this).removeClass("star_default");
+		}
+	});
+	//统计输入字数
+	var total = new Vue({
+		el:'#comment',
+		data:function(){
+			return{
+				commit_text:'',
+				total_long:130,
+				font_long:0,
+				len:130
+			}
+		},
+		methods:{
+			num:function(){
+				if(this.font_long>this.total_long){
+					this.len=0;
+					return;
+				}
+				this.font_long = this.commit_text.length;
+				this.len = this.total_long - this.font_long;
+			}
+		}
+	});
+	$(".coach_key_list li").click(function(){
+		var att = $(this).attr("class");
+		if(att!=undefined&&att!=''){
+			$(this).removeClass("active");
+		}else{
+			$(this).addClass("active");
+		}
+	});
+</script>
