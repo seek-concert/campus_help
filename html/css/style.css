@@ -13,7 +13,8 @@ header.mui-bar{
 }
 .mui-content{
 	background: rgb(241,241,241);
-	margin-bottom: 1rem;
+	margin-bottom: 1.6rem;
+	margin-top:1.333rem;
 }
 .mui-bar-nav{
 	box-shadow:0 1px 0 rgb(221,215,208);
@@ -211,6 +212,16 @@ header.mui-bar{
 	height: 0.91rem;
 	color: rgb(102,102,102);
 }
+.notice-content li{
+	width:100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #666;
+}
+.notice-content li a{
+	color: #666;
+}
 .classification-box{
 	padding: 0.4rem 0;
 	width: 100%;
@@ -224,9 +235,15 @@ header.mui-bar{
 	text-align: center;
 	
 }
+.classification-img-box .iconfont{
+	font-size: 0.7rem;
+	color: white;
+}
 .classification-img-box{
 	width: 1.17333rem;
 	height: 1.17333rem;
+	line-height: 1.17333rem;
+	text-align: center;
 	display: inline-block;
 	border-radius: 100%;
 	background: rgb(111,207,251);
@@ -234,6 +251,7 @@ header.mui-bar{
 .classification-box p{
 	color: rgb(83,83,83);
 	font-size: 0.347rem;
+	margin-top: 5px;
 }
 
 .commom-panel{

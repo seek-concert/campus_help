@@ -1,64 +1,6 @@
 .special{
 	background: #f1f1f1;
-}
-.nav{
-	width: 100%;
-	height: 1.3466rem;
-	background: #6fcffb;
-	border-bottom: 0.0133rem solid #8eabc8;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 0.32rem;
-	box-sizing: border-box;
-}
-.logo{
-	width: 2rem;
-	height: 0.7733rem;
-}
-.search{
-	width: 4.8rem;
-	height: 0.7733rem;
-	background: #edf7fc;
-	border-radius: 0.0666rem;
-	-webkit-border-radius: 0.0666rem;
-	-moz-border-radius: 0.0666rem;
-	margin: 0 0.48rem 0 0.32rem;
-	overflow: hidden;
-}
-.search_icon {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 0.3733rem;
-	color: #97a1a5;
-}
-.search_icon i{
-	font-size: 0.5333rem;
-	margin-right: 0.3466rem;
-}
-.search_input{
-	width: 100%;
-	height: 0.7733rem;
-	font-size: 0.3733rem!important;
-	color: #97a1a5;
-	display: none;
-	margin-bottom: 0;
-	padding: 0 0.2666rem!important;
-	box-sizing: border-box;
-	border: none;
-	outline: none;
-}
-.right_nav{
-	font-size: 0.6666rem!important;
-	color: #FFFFFF;
-	margin-right: 0.2933rem;
-}
-.more_nav{
-	font-size: 0.6666rem!important;
-	color: #b6e5fc;
+	padding-top: 1.3333rem;
 }
 .photo{
 	width: 100%;
@@ -314,20 +256,6 @@
 .star{
 	float: left;
 	margin: 0 0.16rem;
-}
-.star_score{
-	width: auto;
-	height: 0.44rem;
-	overflow: hidden;
-}
-.star_score dt{
-	margin: 0 0.0533rem;
-	float: left;
-	font-size: 0.4rem!important;
-	color: #000000;
-}
-.star_default{
-	color: #ff8126!important;
 }
 .score{
 	font-size: 0.32rem;

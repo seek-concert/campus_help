@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>个人中心</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	  	<meta name="format-detection" content="telephone=no">
@@ -12,7 +12,6 @@
 	  	<link rel="stylesheet" href="css/center.css" />
 	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
 	  	<script type="text/javascript" src="js/fontSize.js" ></script>
-	  	<script type="text/javascript" src="js/mui.js" ></script>
 	</head>
 	<body>
 		<div class="special">
@@ -118,32 +117,38 @@
 			</div>
 			<!--底部导航-->
 			<ul class="center_footer_nav">
+				<li>
+					<a href="index.html">
+						<i class="iconfont iconshouye-copy"></i>
+					    <span>首页</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconshangcheng2"></i>
+					    <span>商城</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconfuwuzixun"></i>
+					    <span>更多服务</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconluntantubiao"></i>
+					    <span>论坛</span>
+					</a>
+				</li>
 				<li class="color_blue">
-					<i class="iconfont iconqunfengshouye"></i>
-					<span>首页</span>
-				</li>
-				<li>
-					<i class="iconfont iconshangcheng1"></i>
-					<span>商城</span>
-				</li>
-				<li>
-					<i class="iconfont iconqunfengshenghuofuwuchong"></i>
-					<span>更多服务</span>
-				</li>
-				<li>
-					<i class="iconfont iconjishitaolun"></i>
-					<span>论坛</span>
-				</li>
-				<li>
-					<i class="iconfont icongerenzhongxinsel"></i>
-					<span>个人中心</span>
+					<a href="center.html">
+						<i class="iconfont icongerenzhongxin"></i>
+					     <span>个人中心</span>
+					</a>
 				</li>
 			</ul>
+		
 		</div>
 	</body>
 </html>
-<script>
-	$(".center_footer_nav li").click(function(){
-		$(this).addClass('color_blue').siblings().removeClass('color_blue');
-	});
-</script>
