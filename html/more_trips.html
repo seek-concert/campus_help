@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>更多服务</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="layui/css/layui.css" />
+	  	<link rel="stylesheet" href="css/more_trips.css" />
+	  	<script type="text/javascript" src="layui/layui.js" ></script>
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+			<!--菜单-->
+			<div class="menu" id="menu">
+				<div class="menu_con">
+					<!--用户信息-->
+					<div class="personal">
+						<div class="personal_info">
+							<div class="personal_info_left">
+								<img src="img/head_09.png" />
+								<div class="personal_name">
+									<b>爱莫能助</b>
+									<span>18388189688</span>
+								</div>
+							</div>
+							<i class="iconfont iconerweima"></i>
+						</div>
+						<div class="personal_produce">
+							<span>“公主的外表，女王的内心</span>
+							<i class="menu_right iconfont iconicon--"></i>
+						</div>
+					</div>
+					<ul class="about_list">
+						<li>
+							<div class="about_list_left">
+								<i class="about_list_icon iconfont iconluntantubiao"></i>
+							    <span>校内论坛</span>
+							</div>
+							<i class="about_list_next iconfont iconicon--"></i>
+						</li>
+						<li>
+							<div class="about_list_left">
+								<i class="about_list_icon iconfont iconshangcheng2"></i>
+							    <span>热门商城</span>
+							</div>
+							<i class="about_list_next iconfont iconicon--"></i>
+						</li>
+						<li>
+							<div class="about_list_left">
+								<i class="about_list_icon iconfont iconchexing"></i>
+							    <span>报名驾校</span>
+							</div>
+							<i class="about_list_next iconfont iconicon--"></i>
+						</li>
+						<li>
+							<div class="about_list_left">
+								<i class="about_list_icon iconfont iconkuaidi1"></i>
+							    <span>我的快件</span>
+							</div>
+							<i class="about_list_next iconfont iconicon--"></i>
+						</li>
+						<li>
+							<div class="about_list_left">
+								<i class="about_list_icon iconfont iconico_xianxingtubiao_kufangguanli_wupinyouxiaoqiyu"></i>
+							    <span>我的失物</span>
+							</div>
+							<i class="about_list_next iconfont iconicon--"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--导航-->
+			<div class="nav">
+				<img class="logo" src="img/logo_03.png" />
+				<div class="search">
+					<a href="#"><div class="search_icon">
+						<i class="iconfont iconsousuo"></i>搜索
+					</div></a>
+				</div>
+				<div id="code" class="code iconfont iconsaoma1"></div>
+				<div id="nav" class="right_nav iconfont icondaohang"></div>
+			</div>
+			<!--内容-->
+			<div class="more_list">
+				<ul class="more_list_con">
+					<li>
+						<div class="more_icon"><i class="iconfont iconkuaididaishou"></i></div>
+						<span>代收快递</span>
+					</li>
+					<li>
+						<div class="more_icon"><i class="iconfont iconshangdian"></i></div>
+						<span>丢失箱</span>
+					</li>
+					<li>
+						<div class="more_icon"><i class="iconfont iconyuyue"></i></div>
+						<span>线上预约</span>
+					</li>
+					<li>
+						<div class="more_icon"><i class="iconfont iconziyuan"></i></div>
+						<span>驾校报名</span>
+					</li>
+				</ul>
+			</div>
+			<div class="split"></div>
+			<ul class="change_nav">
+				<li>我的快递</li>
+				<li>认领的失物</li>
+				<li class="more_active">练车行程</li>
+			</ul>
+			<div class="change_con">
+				<div class="change_detail">
+					1
+				</div>
+				<div class="change_detail">
+					2
+				</div>
+				<div class="change_detail">
+					<div class="rili">
+						<div id="rili"></div>
+					</div>
+					<ul class="clock">
+						<li>
+							<div class="clock_left">
+								<i class="iconfont iconzhong"></i>
+								<span>上午09:30~10：30</span>
+							</div>
+							<div class="clock_right">
+								<span>已预约</span>
+								<i class="iconfont iconicon--"></i>
+							</div>
+						</li>
+						<li>
+							<div class="clock_left">
+								<i class="iconfont iconzhong"></i>
+								<span>上午13:30~15：30</span>
+							</div>
+							<div class="clock_right">
+								<span>已取消</span>
+								<i class="iconfont iconicon--"></i>
+							</div>
+						</li>
+						<li>
+							<div class="clock_left">
+								<i class="iconfont iconzhong"></i>
+								<span>上午16:00~18：00</span>
+							</div>
+							<div class="clock_right">
+								<span>未预约</span>
+								<i class="iconfont iconicon--"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--底部导航-->
+			<ul class="center_footer_nav">
+				<li>
+					<a href="#">
+						<i class="iconfont iconshouye-copy"></i>
+					    <span>首页</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconshangcheng2"></i>
+					    <span>商城</span>
+					</a>
+				</li>
+				<li class="color_blue">
+					<a href="#">
+						<i class="iconfont iconfuwuzixun"></i>
+					    <span>更多服务</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconluntantubiao"></i>
+					    <span>论坛</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont icongerenzhongxin"></i>
+					     <span>个人中心</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	$(".change_con>div").eq(2).css("display","block").siblings().css("display","none");
+	$(".change_nav li").click(function(){
+		var index = $(this).index();
+		$(this).addClass("more_active").siblings().removeClass("more_active");
+		$(".change_con>div").eq(index).css("display","block").siblings().css("display","none");
+	});
+	layui.use('laydate', function(){
+	  var laydate = layui.laydate;
+	  laydate.render({
+		  elem: '#rili'
+		  ,show:true
+		  ,position: 'static'
+		  ,mark: {
+			    '2019-05-10': '10<br/>预约' //具体日期
+			    ,'2019-05-12': '12<br/>预约' //如果为空字符，则默认显示数字+徽章
+			    ,'2019-5-8': '8<br/>预约'
+			    ,'2019-5-13': '13<br/>预约'
+			    ,'2019-5-15': '15<br/>预约'
+			    ,'2019-6-15': '15<br/>预约'
+			 }
+		  ,done: function(){
+		  	console.log(1);
+		  }
+		});
+	});
+	//菜单
+    $("#nav").click(function(){
+    	$("#menu").addClass("menu_animation");
+    });
+    menu();
+    function menu(){
+    	var starx=0;
+    	var endx=0;
+    	var el=document.getElementById("menu");
+    	el.addEventListener("touchstart",function(e){
+    		starx = e.changedTouches[0].clientX;
+    	});
+    	el.addEventListener("touchend",function(e){
+    		endx = e.changedTouches[0].clientX;
+    		if(starx>endx+10){
+		    	$("#menu").removeClass("menu_animation");
+		    }
+    	});
+    }
+</script>
