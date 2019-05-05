@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索关键词</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/search_key.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+			<div class="search_nav">
+				<i class="iconfont iconfanhui"></i>
+				<div class="search_input">
+					<div class="search_icon iconfont iconsousuo"></div>
+					<input id="search" type="text" placeholder="" />
+					<div class="delete iconfont iconchuyidong"></div>
+				</div>
+				<div class="cancel">取消</div>
+			</div>
+			<ul class="search_key_list">
+				<li>
+					<span>品牌台式主机</span>
+					<i class="iconfont iconicon--"></i>
+				</li>
+				<li>
+					<span>组装台式主机</span>
+					<i class="iconfont iconicon--"></i>
+				</li>
+				<li>
+					<span>显示器</span>
+					<i class="iconfont iconicon--"></i>
+				</li>
+				<li>
+					<span>配件</span>
+					<i class="iconfont iconicon--"></i>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	$("#search").focus();
+	$(".delete").click(function(){
+		$(this).siblings("input").val("");
+		$("#search").focus();
+	});
+</script>

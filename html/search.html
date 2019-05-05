@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/search.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+			<div class="search_nav">
+				<i class="iconfont iconfanhui"></i>
+				<div class="search_input">
+					<div class="search_icon iconfont iconsousuo"></div>
+					<input id="search" type="text" placeholder="请输入搜索关键词" />
+					<div class="delete iconfont iconchuyidong"></div>
+				</div>
+				<div class="cancel">取消</div>
+			</div>
+			<div class="split"></div>
+			<div class="all_treasure">
+				<span>全部宝贝</span>
+				<i class="iconfont iconicon--"></i>
+			</div>
+			<div class="split"></div>
+			<ul class="treasure_list">
+				<li>
+					<div class="treasure_type">
+						<span>电脑设备</span>
+						<i>查看全部</i>
+					</div>
+					<div class="treasure_detail">
+						<span>全部</span>
+						<span>笔记本</span>
+						<span>品牌台式主机</span>
+						<span>组装台式主机</span>
+						<span>显示器</span>
+						<span>配件</span>
+						<span>硬盘</span>
+					</div>
+				</li>
+				<li>
+					<div class="treasure_type">
+						<span>被套</span>
+						<i>查看全部</i>
+					</div>
+					<div class="treasure_detail">
+						<span>全部</span>
+						<span>桑蚕丝被</span>
+						<span>羽绒被</span>
+						<span>羊毛被</span>
+						<span>芯空调被</span>
+						<span>春秋四季被</span>
+						<span>学生被</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	$("#search").focus();
+	$(".delete").click(function(){
+		$(this).siblings("input").val("");
+		$("#search").focus();
+	});
+</script>

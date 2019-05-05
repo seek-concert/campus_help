@@ -1,0 +1,458 @@
+.special{
+	padding-top: 1.3333rem;
+	padding-bottom: 1.6rem;
+}
+.code{
+	font-size: 0.5333rem!important;
+	color: #FFFFFF;
+}
+.slide_banner{width: 100%;height: 4rem;overflow: hidden;}		
+		#slide{width: 100%;height: auto;overflow: hidden;}
+		.slide_con{width: 100%;height: 100%;overflow: hidden;position: relative;}
+		.hd{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+		.hd li{width: 100%;height: 100%;overflow: hidden; float: left;}
+		.hd li img{display: block;width: 100%;height: auto;}
+		.bd{width: 100%;display: flex;justify-content: center;position: absolute;left: 0;bottom: 0.1333rem;}
+		.bd li{width: 0.2rem;height: 0.2rem;border-radius: 100%;-webkit-border-radius: 100%;-moz-border-radius: 100%; background: #cccccc;float: left;margin: 0 0.1333rem; cursor: pointer;}
+		#pre{width: 0.5333rem;height: 100%;position: absolute;left: 0;top: 0;display: flex;justify-content: center;align-items: center; cursor: pointer;}
+		#next{width: 0.5333rem;height: 100%;position: absolute;right: 0;top: 0;display: flex;justify-content: center;align-items: center;cursor: pointer;}
+		.on{background: #6fcffb!important;}
+#slide .slide_con li img{
+	width: 100%;
+	height: 4rem;
+}		
+.gonggao{
+	width: 100%;
+	height: 0.92rem;
+	border-bottom:1px solid #adb0b2;
+	box-sizing: border-box;
+	display: flex;
+}
+.gonggao_left{
+	width: 1.92rem;
+	height: 100%;
+	background: #f8faff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.gonggao_left i{
+	font-size: 0.6666rem!important;
+	color: #6fcffb;
+}
+.gonggao_left span{
+	font-size: 0.3733rem;
+	color: #555555;
+	margin-left: 0.0533rem;
+	font-style: italic;
+}
+.gonggao_right{
+	width: 100%;
+	height: 100%;
+	padding-left: 0.2rem;
+	background: #fcfeff;
+}
+.top{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.head_list{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.head_list li{
+	width: 100%;
+	height: 0.9066rem;
+	font-size:0.32rem;
+	color: #666666;
+	display: flex;
+	align-items: center;
+}
+.service{
+	width: 100%;
+	height: 2.5333rem;
+	background: #FFFFFF;
+	display: flex;
+	align-items: center;
+}
+.service li{
+	width: 25%;
+	height: auto;
+	float: left;
+}
+.service_icon{
+	width: 1.1733rem;
+	height: 1.1733rem;
+	background: #6fcffb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+.service_icon i{
+	font-size: 0.6666rem!important;
+	color: #FFFFFF;
+}
+.service li span{
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.3466rem;
+	color: #535353;
+	margin-top: 0.2rem;
+}
+.split{
+	width: 100%;
+	height: 0.24rem;
+	background: #f1f1f1;
+	border-bottom:1px solid #d7d6d5;
+	border-top:1px solid #d7d6d5;
+}
+.title{
+	width: 100%;
+	height: 1.1866rem;
+	border-bottom:1px solid #eeeeee;
+	display: flex;
+	align-items: center;
+}
+.title i{
+	display: block;
+	width: 0.08rem;
+	height: 0.5066rem;
+	background: #50bff2;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin: 0 0.3333rem 0 0.4266rem;
+}
+.title b{
+	font-size: 0.4rem;
+	color: #000000;
+}
+.school_name{
+	width: 100%;
+	height: auto;
+	padding: 0.3333rem 0 0.8rem 0;
+}
+.slide_banner1{
+	width: 9.1466rem;
+	height:7.6rem;
+	margin: 0 auto;
+}
+.brand{
+	width:9.1466rem;
+	height: auto;
+	padding-bottom: 0.32rem;
+	background: #f7fafb;
+	border-radius: 0.2666rem;
+	-webkit-border-radius: 0.2666rem;
+	-moz-border-radius: 0.2666rem;
+}
+.brand_con{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.2666rem 0.4rem;
+	box-sizing: border-box;
+}
+.brand_left{
+	width: 5.8666rem;
+	height: auto;
+}
+.brand_left b{
+	display: block;
+	width: 100%;
+	font-size:0.4533rem;
+	color: #2d2d2d;
+}
+.star{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	margin: 0.2666rem 0;
+}
+.score{
+	margin-left: 0.2666rem;
+	font-size: 0.32rem;
+	color: #666666;
+}
+.brand_commit{
+	width: 100%;
+	height: 0.6666rem;
+	overflow: hidden;
+}
+.brand_commit span{
+	display: table;
+	padding: 0.04rem 0.1333rem;
+	border:1px solid #e6e4e5;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-right: 0.1066rem;
+	font-size: 0.2933rem;
+	color: #b6b6b6;
+	float: left;
+}
+.brand_right{
+	width: auto;
+	height: auto;
+}
+.price{
+	font-size:0.3466rem;
+	color: #666666;
+	margin-bottom: 0.4rem;
+}
+.price i{
+	font-size: 0.48rem;
+	color: #fe9145;
+}
+.brand_but{
+	width: 2.1066rem;
+	height: 0.7466rem;
+	text-align: center;
+	line-height: 0.7466rem;
+	border-radius: 0.1333rem;
+	-webkit-border-radius: 0.1333rem;
+	-moz-border-radius: 0.1333rem;
+	font-size: 0.3466rem;
+	color: #FFFFFF;
+	background:#6fcffb;
+}
+#slide1 .on{
+	width: 0.4rem;
+	border-radius: 0.6666rem;
+	-webkit-border-radius: 0.6666rem;
+	-moz-border-radius: 0.6666rem;
+}
+.hot_product{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.hot_product li{
+	width: 8.9866rem;
+	height: auto;
+	overflow: hidden;
+	background: #f7fafb;
+	border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
+	-moz-border-radius: 0.4rem;
+	margin-top: 0.4rem;
+	padding: 0 0.4rem 0.2666rem 0.4rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.hot_title{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.4rem;
+}
+.hot_title img{
+	width: 0.48rem;
+	height: 0.4933rem;
+}
+.hot_title b{
+	font-size: 0.4533rem;
+	color: #2e2e2e;
+	margin: 0 0.3733rem;
+}
+.time{
+	width: 100%;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #757575;
+	margin: 0.16rem 0 0.3333rem 0;
+}
+.product_detail{
+	width:100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.product_detail img{
+	width: 4.2666rem;
+	height: 3.1733rem;
+}
+.product_info{
+	width: 3.4933rem;
+	height: auto;
+}
+.info_title{
+	width: 100%;
+	padding: 0.1066rem 0;
+	border-bottom:1px dotted #cccccc;
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.4rem;
+	color: #2e2e2e;
+}
+.info_title i{
+	font-size: 0.24rem;
+}
+.product_info span{
+	display: block;
+	width: 100%;
+	font-size: 0.2933rem;
+	color: #757575;
+	margin: 0.24rem 0;
+}
+.product_info p{
+	display: block;
+	width: 100%;
+	height: auto;
+	font-size: 0.24rem;
+	color: #cccccc;
+}
+.product_price{
+	width: 2.3733rem;
+	height:auto;
+	background: #6fcffb;
+	border-radius: 1.3333rem;
+	-webkit-border-radius: 1.3333rem;
+	-moz-border-radius: 1.3333rem;
+	margin-top:0.2666rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.product_price span{
+	display: table;
+	font-size: 0.2133rem!important;
+	width: auto!important;
+	color: #FFFFFF;
+	margin: 0 0!important;
+}
+.product_price b{
+	display: flex;
+	align-items: flex-end;
+	font-size: 0.3733rem;
+	color: #FFFFFF;
+	margin: 0 0.2rem 0 0.0666rem;
+}
+.product_price b span{
+	margin: 0 0;
+	float: right;
+}
+.product_price i{
+	display: table;
+	height: 0.6666rem!important;
+	font-size: 0.6666rem;
+	color: #FFFFFF;
+}
+.bao{
+	width:1.1733rem;
+	height: 0.6266rem;
+	position: absolute;
+	left: -0.08rem;
+	top: 0.5333rem;
+}
+.list_content{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 0.1333rem 0;
+	box-sizing: border-box;
+	background: #f1f1f1;
+	border-top:1px solid #d7d6d5;
+}
+.list_detail{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.product_water_list{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.product_water_list li{
+	width: 4.9333rem;
+	height: auto;
+	margin-bottom: 0.1333rem;
+	background: #FFFFFF;
+}
+.product_water_img{
+	width: 100%;
+	height: 4.2rem;
+	float: left;
+}
+.product_water_con{
+	width: 100%;
+	height: auto;
+	padding: 0.1333rem 0.2666rem 0.2666rem 0.2666rem;
+	box-sizing: border-box;
+	float: left;
+}
+.water_title{
+	width: 100%;
+	height: 0.9333rem;
+	overflow: hidden;
+	font-size: 0.32rem;
+	color: #000000;
+}
+.water_num{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.1333rem 0;
+}
+.water_num span{
+	font-size: 0.2666rem;
+	color: #cccccc;
+}
+.price{
+	font-size: 0.3733rem;
+	color: #fe9246;
+}
+.price i{
+	font-size: 0.24rem;
+}
+.water_commit{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+.commit_img{
+	display: flex;
+	margin-right: 0.1333rem;
+}
+.commit_img img{
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	margin-left: -0.1066rem;
+}
+.commit_img img:first-child{
+	margin-left: 0;
+}
+.water_commit span{
+	font-size: 0.2933rem;
+	color: #757575;
+}
