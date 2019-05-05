@@ -156,6 +156,45 @@
 	-webkit-border-radius: 0.2666rem;
 	-moz-border-radius: 0.2666rem;
 }
+.brand_img{
+	width: 100%;
+	height: 3.8933rem;
+	position: relative;
+}
+.brand_img img{
+	width: 100%;
+	height: 100%;
+}
+.brand_address{
+	width: 100%;
+	height: 0.9333rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0.4rem;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.brand_address_left{
+	display: flex;
+	align-items: center;
+}
+.brand_address_left i{
+	font-size: 0.6666rem;
+	color: #e9eaeb;
+	margin-right: 0.1333rem;
+}
+.brand_address_left span{
+	font-size: 0.3466rem;
+	color: #ffffff;
+}
+.brand_distance{
+	font-size: 0.2933rem;
+	color: #FFFFFF;
+}
 .brand_con{
 	width: 100%;
 	height: auto;
