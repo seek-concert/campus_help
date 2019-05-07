@@ -16,8 +16,9 @@
 	<body>
 		<div class="special">
 			<div class="evaluate_title">
-				<i class="iconfont iconfanhui"></i>
+				<a href="#"><i class="iconfont iconfanhui"></i></a>
 				<span>教练评价</span>
+				<div class="submit">提交</div>
 			</div>
 			<div class="evaluate_content">
 				<div class="comment_score">
@@ -36,30 +37,93 @@
 				</div>
 				<div class="photo">
 					<i class="iconfont iconzhaoxiang"></i>
+					<input type="file"  />
 				</div>
 			</div>
 			<div class="coach_key">
-				<span>我要评价</span>
+				<div class="key_title">推荐标签</div>
 				<ul class="coach_key_list">
-					<li class="active">热情</li>
-					<li>负责</li>
-					<li>有耐心</li>
+					<li belong="tuijian">热情</li>
+					<li belong="tuijian">负责</li>
+					<li belong="tuijian">有耐心</li>
+					<li belong="tuijian">负责</li>
+					<li belong="tuijian">有耐心</li>
+				</ul>
+				<div class="key_title">我的标签</div>
+				<ul class="own_key">
+					<input type="text" placeholder="请输入..." />
 				</ul>
 			</div>
-			<div class="submit"><span>提交</span></div>
 		</div>
 	</body>
 </html>
 <script type="text/javascript" src="js/fontSize.js" ></script>
 <script>
-	$(".star_score dt").click(function(){
-		var star_css = $(this).attr("class");
-		var star_arr = star_css.split(" ");
-		var result = star_arr.indexOf("star_default");
-		if(result<0){
-			$(this).addClass("star_default");
+	//标签
+	$(".coach_key_list li").click(function(){
+		var thisVal = $(this).text();
+		var att = $(this).attr("class");
+		var index = $(this).index();
+		if(att!=undefined&&att!=''){
+			$(this).removeClass("active");
+			var ownlen=$(".own_key li").length;
+			for(var i=0;i<ownlen;i++){
+				var ownIndex=$(".own_key li").eq(i).attr('index');
+				if(ownIndex==index){
+					$(".own_key li").eq(i).remove();
+				}
+			}
 		}else{
-			$(this).removeClass("star_default");
+			$(this).addClass("active");
+			var tui_html='<li index='+index+'>'+thisVal+'<i onclick="del('+index+')" class="iconfont iconchuyidong"></li>';
+			$(".own_key").prepend(tui_html);
+		}
+	});
+	function del(index){
+		$(".coach_key_list li").eq(index).removeClass("active");
+		var ownlen=$(".own_key li").length;
+		for(var i=0;i<ownlen;i++){
+			var ownIndex=$(".own_key li").eq(i).attr('index');
+			if(ownIndex==index){
+				$(".own_key li").eq(i).remove();
+			}
+		}
+	}
+	var count = 0;
+	$(".own_key input").blur(function(){
+		var inputVal = $(this).val();
+		if(inputVal!=''){
+			var inputValLen = inputVal.length;
+			if(inputValLen>5){
+				inputVal=inputVal.substring(0,5);
+			}
+			if(count<5){
+				var rand =parseInt(Math.random()*1000);
+				var input_html='<li rand='+rand+'>'+inputVal+'<i onclick="RandDel('+rand+')" class="iconfont iconchuyidong"></li>';
+				$(".own_key").prepend(input_html);
+				$(this).val("");
+				count++;
+			}
+		}
+	});
+	function RandDel(rand){
+		var ownlen=$(".own_key li").length;
+		for(var i=0;i<ownlen;i++){
+			var ownRand=$(".own_key li").eq(i).attr('rand');
+			if(ownRand==rand){
+				$(".own_key li").eq(i).remove();
+				count--;
+			}
+		}
+	}
+	//星星
+	$(".star_score dt").click(function(){
+		var len = $(this).index();
+		for(var i=0;i<=len;i++){
+			$(".star_score dt").eq(i).addClass("star_default");
+			for(var j=i;j<5;j++){
+				$(".star_score dt").eq(j+1).removeClass("star_default");
+			}
 		}
 	});
 	//统计输入字数
@@ -82,14 +146,6 @@
 				this.font_long = this.commit_text.length;
 				this.len = this.total_long - this.font_long;
 			}
-		}
-	});
-	$(".coach_key_list li").click(function(){
-		var att = $(this).attr("class");
-		if(att!=undefined&&att!=''){
-			$(this).removeClass("active");
-		}else{
-			$(this).addClass("active");
 		}
 	});
 </script>

@@ -189,16 +189,19 @@
 	height: auto;
     overflow: hidden;
     padding: 0.2666rem 0;
-    display: flex;
+    border-bottom:0.0133rem solid #eeeeee;
+}
+.teacher li a{
+	display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom:0.0133rem solid #eeeeee;
+	
 }
 .teacher li:last-child{
 	border: none;
 }
 .teacher_detail{
-	width:6.5333rem;
+	width:7rem;
 	height: auto;
 	overflow: hidden;
 	display: flex;
@@ -328,7 +331,7 @@
 	justify-content: space-between;
 }
 .user_detail{
-	width:7.333rem;
+	width:6rem;
 	height: auto;
 	display: flex;
 	align-items: center;
@@ -343,7 +346,7 @@
 	float: left;
 }
 .user_info{
-	width: 5.066rem;
+	width: 4.9333rem;
 	height: auto;
 	margin-bottom: 0.1066rem;
 	float: left;
@@ -412,6 +415,38 @@
 	font-size: 0.3466rem;
 	color: #999999;
 }
+.no_commit{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.2133rem;
+	background: #FFFFFF;
+}
+.send_commit{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.send_but{
+	width: 9.2rem;
+	height: 1.066rem;
+	border: 1px solid #c0d0e3;
+	border-radius: 1.333rem;
+	-webkit-border-radius: 1.333rem;
+	-moz-border-radius: 1.333rem;
+	background: #f8faff;
+	font-size: 0.4rem;
+	color: #6fcffb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.533rem 0;
+}
+.send_but i{
+	font-size: 0.666rem;
+}
 .footer_nav{
 	position: fixed;
 	left: 0;
@@ -432,12 +467,21 @@
 	width: auto;
 	text-align: center;
 	font-size: 0.2933rem;
-	color: #666666;
 	float: left;
-	margin: 0 0.4rem;
+	margin: 0 0.3rem;
 }
 .footer_nav_list li i{
 	font-size: 0.5333rem!important;
+	color: #666666;
+}
+.footer_nav_list li p{
+	color: #666666;
+}
+.footer_nav_list_change p{
+	color: #6fcffb!important;
+}
+.footer_nav_list_change i{
+	color: #6fcffb!important;
 }
 .baoming{
 	width: 6rem;

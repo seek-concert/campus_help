@@ -86,7 +86,7 @@
 	height: auto;
 	display: flex;
 	align-items: center;
-	margin: 18px 0 10px 0;
+	margin: 0.24rem 0 0.133rem 0;
 }
 .star_score{
 	margin-right: 0.2666rem;
@@ -102,10 +102,8 @@
 .school_comment span{
 	display: table;
 	width: auto;
-	padding: 0 0.1333rem;
-	height: 0.3733rem;
-	line-height: 0.3466rem;
-	border:0.0133rem solid #e6e4e5;
+	padding: 0.04rem 0.1333rem;
+	border:1px solid #e6e4e5;
 	border-radius: 0.0666rem;
 	-webkit-border-radius: 0.0666rem;
 	-moz-border-radius: 0.0666rem;

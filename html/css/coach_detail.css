@@ -305,6 +305,38 @@
 	font-size: 0.4rem;
 	color: #333333;
 }
+.no_commit{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.2133rem;
+	background: #FFFFFF;
+}
+.send_commit{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.send_but{
+	width: 9.2rem;
+	height: 1.066rem;
+	border: 1px solid #c0d0e3;
+	border-radius: 1.333rem;
+	-webkit-border-radius: 1.333rem;
+	-moz-border-radius: 1.333rem;
+	background: #f8faff;
+	font-size: 0.4rem;
+	color: #6fcffb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.533rem 0;
+}
+.send_but i{
+	font-size: 0.666rem;
+}
 .write{
 	width: 1.8933rem;
 	height: 0.64rem;
@@ -343,7 +375,7 @@
 	justify-content: space-between;
 }
 .user_detail{
-	width:7.333rem;
+	width:6rem;
 	height: auto;
 	display: flex;
 	align-items: center;
@@ -447,12 +479,21 @@
 	width: auto;
 	text-align: center;
 	font-size: 0.2933rem;
-	color: #666666;
 	float: left;
-	margin: 0 0.4rem;
+	margin: 0 0.3rem;
 }
 .footer_nav_list li i{
 	font-size: 0.5333rem!important;
+	color: #666666;
+}
+.footer_nav_list li p{
+	color: #666666;
+}
+.footer_nav_list_change p{
+	color: #6fcffb!important;
+}
+.footer_nav_list_change i{
+	color: #6fcffb!important;
 }
 .baoming{
 	width: 4.4rem;

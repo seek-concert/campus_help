@@ -101,6 +101,10 @@
 	color: #666666;
 	font-weight: bold;
 }
+.treasure_type a{
+	display: flex;
+	align-items: center;
+}
 .treasure_type i{
 	font-size: 0.32rem;
 	color: #bbbbbb;

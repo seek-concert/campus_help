@@ -13,6 +13,7 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 	margin: 0 0;
 	font-style: normal;
 }
+a{color: #666666;}
 .special{
 	max-width: 1024px;
 	min-height:100%;
@@ -91,7 +92,7 @@ a,li,h1,h2,h3,h4,h5,h6,p,i{
 	height: auto;
 	position: absolute;
 	right: 0;
-	top: 0.6rem;
+	top: 0.8rem;
 	background: rgba(0,0,0,0.5);
 	border-radius: 0.0666rem;
 	-webkit-border-radius: 0.0666rem;

@@ -31,53 +31,53 @@
 							</div>
 							<i class="iconfont iconerweima"></i>
 						</div>
-						<div class="personal_produce">
+						<a href="#"><div class="personal_produce">
 							<span>“公主的外表，女王的内心</span>
 							<i class="menu_right iconfont iconicon--"></i>
-						</div>
+						</div></a>
 					</div>
 					<ul class="about_list">
-						<li>
+						<a href="#"><li>
 							<div class="about_list_left">
 								<i class="about_list_icon iconfont iconluntantubiao"></i>
 							    <span>校内论坛</span>
 							</div>
 							<i class="about_list_next iconfont iconicon--"></i>
-						</li>
-						<li>
+						</li></a>
+						<a href="#"><li>
 							<div class="about_list_left">
 								<i class="about_list_icon iconfont iconshangcheng2"></i>
 							    <span>热门商城</span>
 							</div>
 							<i class="about_list_next iconfont iconicon--"></i>
-						</li>
-						<li>
+						</li></a>
+						<a href="#"><li>
 							<div class="about_list_left">
 								<i class="about_list_icon iconfont iconchexing"></i>
 							    <span>报名驾校</span>
 							</div>
 							<i class="about_list_next iconfont iconicon--"></i>
-						</li>
-						<li>
+						</li></a>
+						<a href="#"><li>
 							<div class="about_list_left">
 								<i class="about_list_icon iconfont iconkuaidi1"></i>
 							    <span>我的快件</span>
 							</div>
 							<i class="about_list_next iconfont iconicon--"></i>
-						</li>
-						<li>
+						</li></a>
+						<a href="#"><li>
 							<div class="about_list_left">
 								<i class="about_list_icon iconfont iconico_xianxingtubiao_kufangguanli_wupinyouxiaoqiyu"></i>
 							    <span>我的失物</span>
 							</div>
 							<i class="about_list_next iconfont iconicon--"></i>
-						</li>
+						</li></a>
 					</ul>
 				</div>
 			</div>
 			<!--导航-->
 			<div class="nav">
-				<img class="logo" src="img/logo_03.png" />
+				<a href="index.html"><img class="logo" src="img/logo_03.png" /></a>
 				<div class="search">
 					<a href="#"><div class="search_icon">
 						<i class="iconfont iconsousuo"></i>搜索
@@ -90,20 +90,20 @@
 			<div class="more_list">
 				<ul class="more_list_con">
 					<li>
-						<div class="more_icon"><i class="iconfont iconkuaididaishou"></i></div>
-						<span>代收快递</span>
+						<a href="#"><div class="more_icon"><i class="iconfont iconkuaididaishou"></i></div>
+						<span>代收快递</span></a>
 					</li>
 					<li>
-						<div class="more_icon"><i class="iconfont iconshangdian"></i></div>
-						<span>丢失箱</span>
+						<a href="#"><div class="more_icon"><i class="iconfont iconshangdian"></i></div>
+						<span>丢失箱</span></a>
 					</li>
 					<li>
-						<div class="more_icon"><i class="iconfont iconyuyue"></i></div>
-						<span>线上预约</span>
+						<a href="#"><div class="more_icon"><i class="iconfont iconyuyue"></i></div>
+						<span>线上预约</span></a>
 					</li>
 					<li>
-						<div class="more_icon"><i class="iconfont iconziyuan"></i></div>
-						<span>驾校报名</span>
+						<a href="#"><div class="more_icon"><i class="iconfont iconziyuan"></i></div>
+						<span>驾校报名</span></a>
 					</li>
 				</ul>
 			</div>
@@ -167,7 +167,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="shop_waterfall.html">
+					<a href="shop_list.html">
 						<i class="iconfont iconshangcheng2"></i>
 					    <span>商城</span>
 					</a>
@@ -204,20 +204,23 @@
 	});
 	layui.use('laydate', function(){
 	  var laydate = layui.laydate;
+	  var data = new Date();
+	  var year=data.getFullYear();
+	  var month=data.getMonth()+1;
+	  var day=data.getDate();
+	  var obj={};
+	  for(var i=1;i<=3;i++){
+	  	var time =year+'-'+month+'-'+(day+i);
+	  	var tishi=(day+i)+'<br/>预约';
+	  	obj[time]=tishi;
+	  }
 	  laydate.render({
 		  elem: '#rili'
 		  ,show:true
 		  ,position: 'static'
-		  ,mark: {
-			    '2019-05-10': '10<br/>预约' //具体日期
-			    ,'2019-05-12': '12<br/>预约' //如果为空字符，则默认显示数字+徽章
-			    ,'2019-5-8': '8<br/>预约'
-			    ,'2019-5-13': '13<br/>预约'
-			    ,'2019-5-15': '15<br/>预约'
-			    ,'2019-6-15': '15<br/>预约'
-			 }
+		  ,mark: obj
 		  ,done: function(){
-		  	console.log(1);
+		  	
 		  }
 		});
 	});

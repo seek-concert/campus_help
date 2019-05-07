@@ -16,8 +16,9 @@
 	<body>
 		<div class="special">
 			<div class="evaluate_title">
-				<i class="iconfont iconfanhui"></i>
+				<a href="#"><i class="iconfont iconfanhui"></i></a>
 				<span>驾校评价</span>
+				<div class="submit">提交</div>
 			</div>
 			<div class="evaluate_content">
 				<div class="comment_score">
@@ -36,6 +37,7 @@
 				</div>
 				<div class="photo">
 					<i class="iconfont iconzhaoxiang"></i>
+					<input type="file"  />
 				</div>
 			</div>
 			<div class="anonymous_eval" id="anonymous_eval">
@@ -49,13 +51,12 @@
 <script type="text/javascript" src="js/fontSize.js" ></script>
 <script>
 	$(".star_score dt").click(function(){
-		var star_css = $(this).attr("class");
-		var star_arr = star_css.split(" ");
-		var result = star_arr.indexOf("star_default");
-		if(result<0){
-			$(this).addClass("star_default");
-		}else{
-			$(this).removeClass("star_default");
+		var len = $(this).index();
+		for(var i=0;i<=len;i++){
+			$(".star_score dt").eq(i).addClass("star_default");
+			for(var j=i;j<5;j++){
+				$(".star_score dt").eq(j+1).removeClass("star_default");
+			}
 		}
 	});
 	//统计输入字数
