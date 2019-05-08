@@ -292,9 +292,9 @@
 						<div class="comment_con">
 							深渝通的教练超有耐心，超有责任心~
 							<div class="small_img">
-								<img src="img/small_13.jpg" />
-								<img src="img/small_13.jpg" />
-								<img src="img/small_13.jpg" />
+								<img src="img/car_06.jpg" />
+								<img src="img/car_06.jpg" />
+								<img src="img/car_06.jpg" />
 							</div>
 						</div>
 						<div class="comment_time">2015-9-20</div>
@@ -325,11 +325,67 @@
 				</ul>
 				<div class="baoming">立即报名</div>
 			</div>
+			<div class="picture">
+				<div class="picture_content">
+					<div class="picture_con" id="picture_con">
+						<ul class="picture_list">
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
 <script type="text/javascript" src="js/fontSize.js" ></script>
 <script>
+	var num=1;
+	$(".small_img img").click(function(){
+		$(".picture").css("display","block");
+		var img_len=$(this).parent().children("img").length;
+		var html="";
+		for(var i=0;i<img_len;i++){
+			 html+='<li><img src="'+$(".small_img img").eq(i).attr("src")+'" /></li>';
+		}
+		$(".picture_list").append(html);
+		picture();
+	});
+	$(".picture").click(function(){
+		$(this).css("display","none");
+		$(".picture_list").css("left",0+'px');
+		$(".picture_list").html("");
+		num=1;
+
+	});
+	$(".picture_list").click(function(event){
+		event.stopPropagation();
+	});
+	function picture(){
+		var pictureWidth=$(".picture_con").width();
+		var pictureLen=$(".picture_list li").length;
+		$(".picture_list li").width(pictureWidth+"px");
+		$(".picture_list").width(pictureWidth*pictureLen+"px");
+		var starx=0;
+    	var endx=0;
+    	var el=document.getElementById("picture_con");
+    	el.addEventListener("touchstart",function(e){
+    		starx = e.changedTouches[0].clientX;
+    	});
+    	el.addEventListener("touchend",function(e){
+    		endx = e.changedTouches[0].clientX;
+    		if(starx>endx+10){
+    			if(num<pictureLen){
+    				$(".picture_list").animate({"left":"-="+pictureWidth+"px"},500);
+    				num++;
+    			}
+		    }
+    		if(endx>starx+10){
+    			if(num>1){
+    				$(".picture_list").animate({"left":"+="+pictureWidth+"px"},500);
+    				num--;
+    			}
+    		}
+    	});
+	}
 	var shou = true;
 	$("#shoucang").click(function(){
 		if(shou){
@@ -343,9 +399,23 @@
 		}
 	})
 	//菜单
+	var nav_status=true;
     $("#nav").click(function(){
-    	$("#menu").addClass("menu_animation");
+    	if(nav_status){
+    		$("#menu").addClass("menu_animation");
+    		nav_status=!nav_status;
+    	}else{
+    		$("#menu").removeClass("menu_animation");
+    		nav_status=!nav_status;
+    	}
     });
+    $("#menu").click(function(){
+	    $("#menu").removeClass("menu_animation");
+	    nav_status=!nav_status;
+	});
+	$(".menu_con").click(function(event){
+	    event.stopPropagation();
+	});
     menu();
     function menu(){
     	var starx=0;
@@ -358,6 +428,7 @@
     		endx = e.changedTouches[0].clientX;
     		if(starx>endx+10){
 		    	$("#menu").removeClass("menu_animation");
+		    	nav_status=!nav_status;
 		    }
     	});
     }

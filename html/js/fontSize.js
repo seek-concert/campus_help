@@ -16,7 +16,7 @@
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvent, recalCulate, false);
     //加载自体图标
-    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_x4c1gw7k6f.css"/>';
+    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_te6jcuh1jme.css"/>';
     var head = $("head");
     head.append(icon_css);
     /*搜索*/
@@ -28,12 +28,6 @@
 	$(".search_input").blur(function(){
 		$(this).css("display","none");
 		$(".search_icon").css("display","flex");
-	});*/
-    /*$("#menu").click(function(){
-	    $("#menu").removeClass("menu_animation");
-	});
-	$(".menu_con").click(function(event){
-	    event.stopPropagation();
 	});*/
 	//购物车
 	$("body,html").click(function(){

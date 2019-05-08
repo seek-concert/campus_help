@@ -76,6 +76,12 @@
 	display: flex;
 	justify-content: space-between;
 }
+.product_list li a{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: auto;
+}
 .product_list li img{
 	width: 1.8666rem;
 	height: 1.8666rem;

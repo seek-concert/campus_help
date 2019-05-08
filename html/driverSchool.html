@@ -370,9 +370,23 @@
 		}
 	}
 	//菜单
+    var nav_status=true;
     $("#nav").click(function(){
-    	$("#menu").addClass("menu_animation");
+    	if(nav_status){
+    		$("#menu").addClass("menu_animation");
+    		nav_status=!nav_status;
+    	}else{
+    		$("#menu").removeClass("menu_animation");
+    		nav_status=!nav_status;
+    	}
     });
+    $("#menu").click(function(){
+	    $("#menu").removeClass("menu_animation");
+	    nav_status=!nav_status;
+	});
+	$(".menu_con").click(function(event){
+	    event.stopPropagation();
+	});
     menu();
     function menu(){
     	var starx=0;
@@ -385,6 +399,7 @@
     		endx = e.changedTouches[0].clientX;
     		if(starx>endx+10){
 		    	$("#menu").removeClass("menu_animation");
+		    	nav_status=!nav_status;
 		    }
     	});
     }

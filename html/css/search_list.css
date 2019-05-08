@@ -1,6 +1,5 @@
 .special{
 	padding-top: 1.3333rem;
-	background: #f1f1f1;
 }
 .code{
 	font-size: 0.5333rem!important;
@@ -76,6 +75,12 @@
 	margin-top: 0.32rem;
 	display: flex;
 	justify-content: space-between;
+}
+.product_list li a{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: auto;
 }
 .product_list li img{
 	width: 1.8666rem;
