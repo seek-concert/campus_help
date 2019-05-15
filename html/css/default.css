@@ -291,7 +291,7 @@ a:hover{
 .star_score dt{
 	margin: 0 0.0533rem;
 	float: left;
-	font-size: 0.4rem!important;
+	font-size: 0.4rem;
 	color: #c9c9c9;
 }
 .star_default{
@@ -337,4 +337,40 @@ a:hover{
 }
 .color_blue a{
 	color: #6fcffb!important;
+}
+
+
+.f_12{
+	font-size: 0.16rem !important;
+}
+.color_153{
+	color: rgb(153,153,153);
+}
+/*煎蛋公共头部*/
+.evaluate_title{
+	width: 100%;
+	height: 1.3333rem;
+	padding:0 0.4rem;
+	background: #6fcffb;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.evaluate_title a{
+	display: flex;
+	align-items: center;
+}
+.evaluate_title i{
+	font-size: 0.6666rem!important;
+	color: #FFFFFF;
+}
+.evaluate_title span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 1.3333rem;
+	font-size: 0.48rem;
+	color: #FFFFFF;
 }

@@ -1,0 +1,93 @@
+.special{
+	background: #f1f1f1;
+	padding-top: 1.3333rem;
+	padding-bottom: 1.3333rem;
+}
+.coach_info{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 0.4rem 0.4rem 0.266rem 0.4rem;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #FFFFFF;
+}
+.coach_info img{
+	width: 1.866rem;
+	height: 1.866rem;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+}
+.coach_right{
+	width: 6.933rem;
+	height: auto;
+}
+.coach_title{
+	width: 3.7rem;
+	height: auto;
+	display: flex;
+	align-items: center;
+	padding-right:3px ;
+}
+.coach_title_box{
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+}
+.coach_title b{
+	font-size: 0.4rem;
+	color: #333333;
+	margin-right:0.2rem;
+}
+.coach_title>span{
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: 0.426rem;
+	border: 0.026rem solid #50bff2;
+	border-radius: 0.066rem;
+	-webkit-border-radius: 0.066rem;
+	-moz-border-radius: 0.066rem;
+	padding: 0 0.106rem;
+	font-size: 0.266rem;
+	color: #50bff2;
+}
+.belong{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.186rem 0 0.213rem 0;
+	font-size: 0.32rem;
+	color: #999999;
+}
+.belong_school{
+	font-size: ;
+}
+.coach_score{
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+.coach_score span{
+	margin-right: 0.066rem;
+}
+.coach_address{
+	width: 100%;
+	height: auto;
+	display: flex;
+}
+.coach_address i{
+	font-size: 0.533rem!important;
+	color: #999999;
+	margin-right: 0.133rem;
+}
+.coach_address span{
+	font-size: 0.346rem;
+	color: #999999;
+}

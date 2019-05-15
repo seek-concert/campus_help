@@ -36,7 +36,7 @@
 	color: #333333;
 	margin-right:0.333rem;
 }
-.coach_title span{
+.coach_title>span{
 	display: flex;
 	align-items: center;
 	width: auto;
