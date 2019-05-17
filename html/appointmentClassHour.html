@@ -76,26 +76,172 @@
 		</div>
 		
 			<!-- 课程日期 -->
-			<div class="class_date">
+			<div class="class_date border_bot_226">
 				<div class="class_date_title color_102 f_13 border_bot_226">课时过期</div>
 				<div class="class_date_content bg_white">
-					<div class="date_content_top pad_l_r_30 flex">
-						<div class="top_left">
+					<div class="date_content_top pad_l_r_30 flex border_bot_226">
+						<div class="top_left disTabBg" id="toPre">
 							<span class="iconfont iconxiangzuo"></span>
-							<span>前一天</span>
+							<span class="f_14">前一天</span>
 						</div>
-						<div class="tab_center">
-							2
+						<div class="tab_center f_14">
+							<div class="tab_center_content flex">
+								<span class="iconfont iconrili"></span>
+								<span class="date_data" id="dataCenter">
+									05月07日
+								</span>
+								<span class="show_day">
+									今天
+								</span>
+							</div>
 						</div>
-						<div class="top_right">
-							<span>后一天</span>
+						<div class="top_right" id="toNext">
+							<span class="f_14">后一天</span>
 							<span class="iconfont iconln_jiantouyou"></span>
 						</div>
+					</div>
+					<div class="date_content_bot pad_l_r_30">
+						<ul>
+							<li>
+								<label>
+									<span>上午09:30~10:30</span>
+									<input type="radio" name="checkDate" id="check1" value="" />
+								</label>
+							</li>
+							<li>
+								<label>
+									<span>上午09:30~10:30</span>
+									<input type="radio" name="checkDate" id="check1" value="" />
+								</label>
+							</li>
+							<li>
+								<label>
+									<span>上午09:30~10:30</span>
+									<input type="radio" name="checkDate" id="check1" value="" />
+								</label>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 			
+			<!-- 课程信息 -->
+			<div class="class_date border_bot_226">
+				<div class="class_date_title color_102 f_13 border_bot_226">课程信息</div>
+				<div class="class_date_content bg_white">
+					<div class="class_info pad_l_r_30 flex border_bot_226">
+						<a>
+							<div id="">
+								<span class="color_102">驾校名称</span>
+								<span class="color_51">驾校名称</span>
+							</div>
+						</a>
+					</div>
+					<div class="class_info pad_l_r_30 flex border_bot_226">
+						<a>
+							<div id="">
+								<span class="color_102">驾校名称</span>
+								<span class="">
+									<span class="color_51 widthOver">驾校驾校名称驾校名称驾校名称名称 </span>
+									<i class="iconxiangyou iconfont color_187"></i>
+								</span>
+							</div>
+						</a>
+					</div>
+					<div class="class_info pad_l_r_30 flex">
+						<a>
+							<div id="">
+								<span class="color_102">驾校名称</span>
+								<span class="">
+									<span class="color_153">请选择班型 </span>
+									<i class="iconxiangyou iconfont color_187"></i>
+								</span>
+							</div>
+						</a>
+					</div>
+					
+				</div>
+			</div>
 			
+			<!-- 联系方式 -->
+			<div class="class_date border_bot_226">
+				<div class="class_date_title color_102 f_13 border_bot_226">联系信息</div>
+				<div class="class_date_content bg_white">
+					<div class="class_info pad_l_r_30 flex border_bot_226">
+						<a>
+							<div id="">
+								<span class="color_102">联系人</span>
+								<input type="text" placeholder="请输入您的姓名" />
+							</div>
+						</a>
+					</div>
+					<div class="class_info pad_l_r_30 flex border_bot_226">
+						<a>
+							<div id="">
+								<span class="color_102">联系电话</span>
+								<input type="number" placeholder="请输入您的联系方式" />
+							</div>
+						</a>
+					</div>
+					<div class="class_info pad_l_r_30 flex border_bot_226">
+						<a>
+							<div id="">
+								<span class="color_102">联系教练</span>
+								<input type="number" placeholder="请输入您的联系方式" value="15730528043" />
+							</div>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- 备注信息 -->
+			<div class="class_date border_bot_226">
+				<div class="class_date_title color_102 f_13 border_bot_226">备注信息</div>
+				<div class="beizhuBox bg_white pad_l_r_30">
+					<textarea name="" rows="" cols="" placeholder="请输入您的课时要求和疑问"></textarea>
+					
+				</div>
+			</div>
+			<div class="submitBtn">
+				提交
+			</div>
+		</div>
 	</body>
 </html>
 <script type="text/javascript" src="js/fontSize.js"></script>
+<script type="text/javascript">
+	
+	function GetDateStr(AddDayCount) {
+	    let dd = new Date();
+	    dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+	    let y = dd.getFullYear();
+	    let m = dd.getMonth()+1;//获取当前月份的日期
+	    let d = dd.getDate();
+	    return y+"-"+m+"-"+d;
+	}
+	let dateArrIndex=0;
+	let dateARR = [GetDateStr(0),GetDateStr(1),GetDateStr(3)]
+	$("#toPre").click(()=>{
+		if(dateArrIndex>0){
+			dateArrIndex--;
+			$("#dataCenter").html(dateARR[dateArrIndex])
+		}
+		if(dateArrIndex != dateARR.length-1 && dateArrIndex ==0){
+			 $("#toPre").addClass('disTabBg')
+		}else{
+			 $("#toNext,#toPre").removeClass('disTabBg')
+		}
+	});
+	$("#toNext").click(()=>{
+		if(dateArrIndex<dateARR.length){
+			dateArrIndex++;
+			$("#dataCenter").html(dateARR[dateArrIndex])
+		}
+		if(dateArrIndex == dateARR.length-1 && dateArrIndex !=0){
+			 $("#toNext").addClass('disTabBg')
+		}else{
+			 $("#toNext,#toPre").removeClass('disTabBg')
+		}
+	});
+</script>

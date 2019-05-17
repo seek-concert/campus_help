@@ -1,13 +1,15 @@
-.special{
+.special {
 	background: #f1f1f1;
 	padding-top: 1.3333rem;
-	padding-bottom: 1.3333rem;
+	padding-bottom: 2rem;
 }
-.coach_info_box{
+
+.coach_info_box {
 	padding: 0.4rem 0.4rem 0.266rem 0.4rem;
 	background: #FFFFFF;
 }
-.coach_info{
+
+.coach_info {
 	width: 100%;
 	height: auto;
 	overflow: hidden;
@@ -15,45 +17,53 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.coach_info img{
+
+.coach_info img {
 	width: 1.866rem;
 	height: 1.866rem;
 	border-radius: 100%;
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
 }
-.coach_right{
+
+.coach_right {
 	width: 6.933rem;
 	height: auto;
 }
-.coach_title{
+
+.coach_title {
 	width: 3.7rem;
 	height: auto;
 	display: flex;
 	align-items: center;
-	padding-right:3px ;
+	padding-right: 3px;
 }
-.coach_title_tab{
+
+.coach_title_tab {
 	width: 100%;
 	margin: 0.186rem 0 0.213rem 0;
 }
-.coach_title_tab>span{
-	border: 1px solid rgb(230,228,229);
+
+.coach_title_tab>span {
+	border: 1px solid rgb(230, 228, 229);
 	padding: 0 5px;
 	border-radius: 2px;
 	margin-right: 3px;
 }
-.coach_title_box{
+
+.coach_title_box {
 	display: flex;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 }
-.coach_title b{
+
+.coach_title b {
 	font-size: 0.4rem;
 	color: #333333;
-	margin-right:0.2rem;
+	margin-right: 0.2rem;
 }
-.coach_title>span{
+
+.coach_title>span {
 	display: flex;
 	align-items: center;
 	width: auto;
@@ -66,7 +76,8 @@
 	font-size: 0.266rem;
 	color: #50bff2;
 }
-.belong{
+
+.belong {
 	width: 100%;
 	height: auto;
 	justify-content: space-between;
@@ -75,60 +86,74 @@
 	font-size: 0.32rem;
 	color: #999999;
 }
-.belong_school+.belong_school{
+
+.belong_school+.belong_school {
 	margin-right: 0.06rem;
 }
-.belong_box{
-	align-items:center;
+
+.belong_box {
+	align-items: center;
 }
-.belong_left{
+
+.belong_left {
 	width: 4.2666rem;
 }
-.belong_right{
+
+.belong_right {
 	width: 2.666rem;
 	text-align: right;
 }
-.belong_right>.price{
-	color: rgb(254,145,69);
+
+.belong_right>.price {
+	color: rgb(254, 145, 69);
 }
-.belong_right>span{
+
+.belong_right>span {
 	display: inline-block;
 	line-height: 0.34666rem;
 }
-.coach_score{
+
+.coach_score {
 	width: auto;
 	height: auto;
 	display: flex;
 	align-items: center;
 }
-.coach_score span{
+
+.coach_score span {
 	margin-right: 0.066rem;
 }
-.coach_address{
+
+.coach_address {
 	width: 6.6666rem;
 	height: auto;
 	display: flex;
 }
-.address_box{
+
+.address_box {
 	align-items: center;
 }
-.coach_address i{
+
+.coach_address i {
 	font-size: 0.533rem!important;
 	color: #999999;
 	margin-right: 0.133rem;
 }
-.coach_address span{
+
+.coach_address span {
 	font-size: 0.346rem;
 	color: #999999;
 }
-.coach_address_right{
+
+.coach_address_right {
 	width: 2.666rem;
 }
-.baoming{
+
+.baoming {
 	width: 2rem;
 	height: 0.7466rem;
 	text-align: center;
-	line-height:0.7466rem;
+	line-height: 0.7466rem;
 	background: #6fcffb;
 	border-radius: 1.3333rem;
 	-webkit-border-radius: 1.3333rem;
@@ -136,19 +161,153 @@
 	color: #fff;
 	display: block;
 }
-.baoming:hover{
+
+.baoming:hover {
 	text-decoration: none;
 	color: white;
 }
-.class_date_title{
+
+.class_date_title {
 	padding: 0.53rem 0.2666rem 0.30666rem 0.2666rem;
-	background: rgb(241,241,241);
+	background: rgb(241, 241, 241);
 }
-.date_content_top{
+
+.date_content_top {
 	height: 1.3066rem;
 	align-items: center;
 	justify-content: space-between;
 }
-.class_date .top_left,.class_date .top_right{
-	width: 1.52rem;
+
+.class_date .top_left,
+.class_date .top_right {
+	width: 1.8rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.disTabBg span {
+	color: rgba(111, 207, 251, 0.27) !important;
+}
+
+.date_content_top span {
+	color: rgba(111, 207, 251);
+}
+
+.tab_center .tab_center_content {
+	width: 3.5733rem;
+	border: 0.0266rem solid rgb(111, 207, 251);
+	height: 0.8266rem;
+	border-radius: 0.1066rem;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0.2666rem;
+}
+
+.date_content_bot li label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 1.29333rem;
+	font-size: 0.4266rem;
+	color: rgb(102, 102, 102);
+	border-bottom: 1px solid rgb(187, 187, 187);
+	padding: 0 5px;
+}
+
+.date_content_bot li:last-of-type label{
+	border: none !important;
+}
+
+
+.date_content_bot li input[type="radio" i] {
+	/*background-color: red;
+    cursor: default;
+    margin: 3px 0.5ex;
+    padding: initial;
+    border: initial;*/
+}
+
+.date_content_bot li input[type="radio"] {
+	content: '';
+	background: #f4f4f4;
+	border-radius: 100%;
+	border: 1px solid #b4b4b4;
+	display: inline-block;
+	width: 0.5066rem;
+	height: 0.5066rem;
+	position: relative;
+	top: -0.2em;
+	margin-right: 1em;
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all 250ms ease;
+	transition: all 250ms ease;
+}
+
+.date_content_bot input[type="radio"]:checked {
+	background-color: red;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.date_content_bot input[type="radio"]:focus {
+	outline: none;
+	border-color: #3197EE;
+}
+
+.date_content_bot input[type="radio"]:disabled {
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+	border-color: #b4b4b4;
+	background: #b4b4b4;
+}
+
+.date_content_bot input[type="radio"] {
+	margin-right: 0;
+}
+.class_info>a{
+	display: block;
+	height: 1.17333rem;
+	width: 100%;;
+}
+.class_info>a:hover{
+	text-decoration: none;
+}
+.class_info>a>div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	font-size: 0.42666rem;
+}
+.widthOver{
+	display: inline-block;
+	width: 3.4666rem;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.class_info>a input[type='text'],.class_info>a input[type='number']{
+	width: 4.5rem;
+	text-align: right;
+	color: rgb(51,51,51);
+}
+.beizhuBox textarea{
+	width: 100%;
+	color: rgb(187,187,187);
+	font-size: 0.42666rem;
+	min-height: 2.37333rem;
+}
+.submitBtn{
+	width: 100%;
+	height: 1.25333rem;
+	line-height: 1.25333rem;
+	display: flex;
+	justify-content: center;
+	color: white;
+	background: rgb(111,207,251);
+	font-size: 0.48rem;
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
 }
