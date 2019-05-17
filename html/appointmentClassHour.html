@@ -5,17 +5,15 @@
 		<title>预约课时</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	  	<meta name="format-detection" content="telephone=no">
-	  	<meta name="renderer" content="webkit">
-	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
-	  	<link rel="stylesheet" href="css/default.css" />
-	  	<!--<link rel="stylesheet" href="css/coachEvaluation.css" />-->
-	  	<!--<link rel="stylesheet" href="css/coach_detail.css" />-->
-	  	<link rel="stylesheet" href="css/appointmentClassHour.css" />
-	  	<link rel="stylesheet" href="layui/css/layui.css" />
-	  	<script type="text/javascript" src="layui/layui.js" ></script>
-	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
-	  	<script type="text/javascript" src="js/vue.js" ></script>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="stylesheet" href="css/default.css" />
+		<link rel="stylesheet" href="css/appointmentClassHour.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
 	</head>
 	<body>
 		<div class="special">
@@ -26,40 +24,78 @@
 			</div>
 			
 			<!--教练信息-->
-			<div class="coach_info">
-				<img src="img/head_09.png" />
-				<div class="coach_right">
-					<div class="coach_title_box">
+			<div class="coach_info_box border_bot_192">
+				<div class="coach_info flex">
+					<img src="img/head_09.png" />
+					<div class="coach_right">
 						<div class="coach_title">
 							<b>周小若</b>
-							<span>31年教龄</span>
+							<span>3年教龄</span>
 						</div>
-						<div class="coach_score">
-							<span class="f_12 color_153">教学指数</span>
-							<input type="hidden" id="coach_score" value="3" />
-							<dl class="star_score">
-								<dt class="iconfont iconstar f_12"></dt>
-								<dt class="iconfont iconstar f_12"></dt>
-								<dt class="iconfont iconstar f_12"></dt>
-								<dt class="iconfont iconstar f_12"></dt>
-								<dt class="iconfont iconstar f_12"></dt>
-							</dl>
+						<div class="coach_title_tab flex color_187 f_11">
+							<span>新车</span>
+							<span>场地大</span>
+							<span>服务周到</span>
+						</div>
+						<div class="belong_box flex">
+							<div class="belong_left">
+								<div class="belong belong">
+									<div class="coach_score">
+										<span>教学指数</span>
+										<input type="hidden" id="coach_score" value="3" />
+										<dl class="star_score">
+											<dt class="iconfont iconstar"></dt>
+											<dt class="iconfont iconstar"></dt>
+											<dt class="iconfont iconstar"></dt>
+											<dt class="iconfont iconstar"></dt>
+											<dt class="iconfont iconstar"></dt>
+										</dl>
+									</div>
+								</div>
+								<div class="belong flex">
+									<span class="belong_school">深渝通驾校</span>
+									<span class="belong_school">8.9km</span>
+								</div>
+							</div>
+							<div class="belong_right">
+								<span class="price f_18">200</span><span class="f_13 color_102">元/小时</span>
+							</div>
 						</div>
 					</div>
-					<div class="belong">
-						<span class="belong_school">深渝通驾校</span>
-						
-					</div>
+				</div>
+				<div class="address_box flex">
 					<div class="coach_address">
 						<i class="iconfont icondizhi"></i>
 						<span>重庆市沙坪坝区井口镇老街#8号（井口小学前行200米）</span>
+					</div>
+					<div class="coach_address_right">
+						<a class="baoming fr f_13">报名预约</a>
+					</div>
+				</div>
+			</div
+		</div>
+		
+			<!-- 课程日期 -->
+			<div class="class_date">
+				<div class="class_date_title color_102 f_13 border_bot_226">课时过期</div>
+				<div class="class_date_content bg_white">
+					<div class="date_content_top pad_l_r_30 flex">
+						<div class="top_left">
+							<span class="iconfont iconxiangzuo"></span>
+							<span>前一天</span>
+						</div>
+						<div class="tab_center">
+							2
+						</div>
+						<div class="top_right">
+							<span>后一天</span>
+							<span class="iconfont iconln_jiantouyou"></span>
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			
-		</div>
-		
 	</body>
 </html>
-<script type="text/javascript" src="js/fontSize.js" ></script>
+<script type="text/javascript" src="js/fontSize.js"></script>

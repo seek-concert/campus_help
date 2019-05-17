@@ -3,16 +3,17 @@
 	padding-top: 1.3333rem;
 	padding-bottom: 1.3333rem;
 }
+.coach_info_box{
+	padding: 0.4rem 0.4rem 0.266rem 0.4rem;
+	background: #FFFFFF;
+}
 .coach_info{
 	width: 100%;
 	height: auto;
 	overflow: hidden;
-	padding: 0.4rem 0.4rem 0.266rem 0.4rem;
 	box-sizing: border-box;
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: #FFFFFF;
 }
 .coach_info img{
 	width: 1.866rem;
@@ -31,6 +32,16 @@
 	display: flex;
 	align-items: center;
 	padding-right:3px ;
+}
+.coach_title_tab{
+	width: 100%;
+	margin: 0.186rem 0 0.213rem 0;
+}
+.coach_title_tab>span{
+	border: 1px solid rgb(230,228,229);
+	padding: 0 5px;
+	border-radius: 2px;
+	margin-right: 3px;
 }
 .coach_title_box{
 	display: flex;
@@ -58,15 +69,31 @@
 .belong{
 	width: 100%;
 	height: auto;
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0.186rem 0 0.213rem 0;
 	font-size: 0.32rem;
 	color: #999999;
 }
-.belong_school{
-	font-size: ;
+.belong_school+.belong_school{
+	margin-right: 0.06rem;
+}
+.belong_box{
+	align-items:center;
+}
+.belong_left{
+	width: 4.2666rem;
+}
+.belong_right{
+	width: 2.666rem;
+	text-align: right;
+}
+.belong_right>.price{
+	color: rgb(254,145,69);
+}
+.belong_right>span{
+	display: inline-block;
+	line-height: 0.34666rem;
 }
 .coach_score{
 	width: auto;
@@ -78,9 +105,12 @@
 	margin-right: 0.066rem;
 }
 .coach_address{
-	width: 100%;
+	width: 6.6666rem;
 	height: auto;
 	display: flex;
+}
+.address_box{
+	align-items: center;
 }
 .coach_address i{
 	font-size: 0.533rem!important;
@@ -90,4 +120,35 @@
 .coach_address span{
 	font-size: 0.346rem;
 	color: #999999;
+}
+.coach_address_right{
+	width: 2.666rem;
+}
+.baoming{
+	width: 2rem;
+	height: 0.7466rem;
+	text-align: center;
+	line-height:0.7466rem;
+	background: #6fcffb;
+	border-radius: 1.3333rem;
+	-webkit-border-radius: 1.3333rem;
+	-moz-border-radius: 1.3333rem;
+	color: #fff;
+	display: block;
+}
+.baoming:hover{
+	text-decoration: none;
+	color: white;
+}
+.class_date_title{
+	padding: 0.53rem 0.2666rem 0.30666rem 0.2666rem;
+	background: rgb(241,241,241);
+}
+.date_content_top{
+	height: 1.3066rem;
+	align-items: center;
+	justify-content: space-between;
+}
+.class_date .top_left,.class_date .top_right{
+	width: 1.52rem;
 }
