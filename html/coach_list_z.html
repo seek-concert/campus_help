@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教练列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/coach_list.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+</head>
+<body>
+<div class="special">
+    <!--菜单-->
+    <div class="menu" id="menu">
+        <div class="menu_con">
+            <!--用户信息-->
+            <a href="#"><div class="personal">
+                <div class="personal_info">
+                    <div class="personal_info_left">
+                        <img src="img/head_09.png" />
+                        <div class="personal_name">
+                            <b>爱莫能助</b>
+                            <span>18388189688</span>
+                        </div>
+                    </div>
+                    <i class="iconfont iconerweima"></i>
+                </div>
+                <div class="personal_produce">
+                    <span>“公主的外表，女王的内心</span>
+                    <i class="menu_right iconfont iconicon--"></i>
+                </div>
+            </div></a>
+            <ul class="about_list">
+                <a href="#"><li>
+                    <div class="about_list_left">
+                        <i class="about_list_icon iconfont iconhuaban3"></i>
+                        <span>校内论坛</span>
+                    </div>
+                    <i class="about_list_next iconfont iconicon--"></i>
+                </li></a>
+                <a href="#"><li>
+                    <div class="about_list_left">
+                        <i class="about_list_icon iconfont iconhuaban1"></i>
+                        <span>热门商城</span>
+                    </div>
+                    <i class="about_list_next iconfont iconicon--"></i>
+                </li></a>
+                <a href="#"><li>
+                    <div class="about_list_left">
+                        <i class="about_list_icon iconfont iconchexing"></i>
+                        <span>报名驾校</span>
+                    </div>
+                    <i class="about_list_next iconfont iconicon--"></i>
+                </li></a>
+                <a href="#"><li>
+                    <div class="about_list_left">
+                        <i class="about_list_icon iconfont iconkuaidi1"></i>
+                        <span>我的快件</span>
+                    </div>
+                    <i class="about_list_next iconfont iconicon--"></i>
+                </li></a>
+                <a href="#"><li>
+                    <div class="about_list_left">
+                        <i class="about_list_icon iconfont iconico_xianxingtubiao_kufangguanli_wupinyouxiaoqiyu"></i>
+                        <span>我的失物</span>
+                    </div>
+                    <i class="about_list_next iconfont iconicon--"></i>
+                </li></a>
+            </ul>
+        </div>
+    </div>
+    <!--导航-->
+    <div class="nav">
+        <a href="index.html"><img class="logo" src="img/logo_03.png" /></a>
+        <div class="search">
+            <a href="#"><div class="search_icon">
+                <i class="iconfont iconsousuo"></i>搜索
+            </div></a>
+        </div>
+        <div id="nav" class="right_nav iconfont icondaohang"></div>
+    </div>
+    <!--驾校老师list-->
+    <div class="choose_class">
+        <div class="title">驾校老师</div>
+        <div class="class_con teacher_con">
+            <ul class="teacher">
+                <li>
+                    <a href="#"><div class="teacher_detail">
+                        <img class="head_img" src="img/head_09.png" />
+                        <div class="teacher_info">
+                            <div class="name">
+                                <i>周小若</i>
+                                <span>3年教龄</span>
+                            </div>
+                            <div class="mark">
+                                <span>教学指数</span>
+                                <div class="star">
+                                    <dl class="star_score">
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                    </dl>
+                                </div>
+                                <div class="score">
+                                    <i>3.0</i>分
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="next iconfont iconicon--"></div></a>
+                </li>
+                <li>
+                    <a href="#"><div class="teacher_detail">
+                        <img class="head_img" src="img/head_09.png" />
+                        <div class="teacher_info">
+                            <div class="name">
+                                <i>周小若</i>
+                                <span>3年教龄</span>
+                            </div>
+                            <div class="mark">
+                                <span>教学指数</span>
+                                <div class="star">
+                                    <dl class="star_score">
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                        <dt class="iconfont iconstar"></dt>
+                                    </dl>
+                                </div>
+                                <div class="score">
+                                    <i>2.0</i>分
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="next iconfont iconicon--"></div></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+    //菜单
+    var nav_status=true;
+    $("#nav").click(function(){
+        if(nav_status){
+            $("#menu").addClass("menu_animation");
+            nav_status=!nav_status;
+        }else{
+            $("#menu").removeClass("menu_animation");
+            nav_status=!nav_status;
+        }
+    });
+    $("#menu").click(function(){
+        $("#menu").removeClass("menu_animation");
+        nav_status=!nav_status;
+    });
+    $(".menu_con").click(function(event){
+        event.stopPropagation();
+    });
+    menu();
+    function menu(){
+        var starx=0;
+        var endx=0;
+        var el=document.getElementById("menu");
+        el.addEventListener("touchstart",function(e){
+            starx = e.changedTouches[0].clientX;
+        });
+        el.addEventListener("touchend",function(e){
+            endx = e.changedTouches[0].clientX;
+            if(starx>endx+10){
+                $("#menu").removeClass("menu_animation");
+                nav_status=!nav_status;
+            }
+        });
+    }
+    /*控制驾校老师评分*/
+    var len=$(".teacher li").length;
+    for (var i=0;i<len;i++) {
+        var score = parseInt($(".teacher li").eq(i).children().children().children().children().children().children('i').text());
+        for(var j=0;j<score;j++){
+            $(".teacher li").eq(i).children().children().children().children().children().children(".star_score").children().eq(j).addClass("star_default");
+        }
+    }
+
+</script>
+</body>
+</html>
