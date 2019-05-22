@@ -1,6 +1,6 @@
 .special {
 	background: #f1f1f1;
-	padding-top: 1.3333rem;
+	/*padding-top: 1.3333rem;*/
 	padding-bottom: 2rem;
 }
 
@@ -154,23 +154,7 @@
 	flex-grow: 1;
 }
 
-.baoming {
-	width: 2rem;
-	height: 0.7466rem;
-	text-align: center;
-	line-height: 0.7466rem;
-	background: #6fcffb;
-	border-radius: 1.3333rem;
-	-webkit-border-radius: 1.3333rem;
-	-moz-border-radius: 1.3333rem;
-	color: #fff;
-	display: block;
-}
 
-.baoming:hover {
-	text-decoration: none;
-	color: white;
-}
 
 .class_date_title {
 	padding: 0.53rem 0.2666rem 0.30666rem 0.2666rem;

@@ -1,7 +1,7 @@
 .special{
 	padding-top: 1.3333rem;
 	padding-bottom: 1.6rem;
-	background: #f8faff;
+	background: #fff;
 }
 .code{
 	font-size: 0.5333rem!important;
@@ -51,11 +51,34 @@
 	color: #a5a5a5;
 }
 .list_content{
-	width: 100%;
-	height: auto;
+	padding-top:0.3066rem;
+	padding-bottom: 0.29333rem;
+}
+.myExpressBox .list_content>img{
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.2rem;
+}
+.myExpressBox .list_content .list_content_right{
+	width: 6.77333rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap:nowrap;
+	align-content: space-between;
+}
+.myExpressBox .list_content .list_content_right>div{
 	overflow: hidden;
-	padding: 0.1333rem 0 0.2666rem 0.4rem;
-	box-sizing: border-box;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	min-height: 35%;
+}
+
+.myExpressBox .list_content .list_content_right>div p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
 }
 .list_detail{
 	width: 100%;
@@ -295,3 +318,13 @@
 .clock li:nth-child(3) .clock_right span{
 	background: #bbbbbb;
 }
+.mt_20{
+	margin-top:0.2933rem;
+}
+.justify-content-between{
+	justify-content:space-between;
+}
+.w_150{
+	width: 2rem;
+}
+

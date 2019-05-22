@@ -75,7 +75,7 @@
 						<a class="baoming fr f_13">报名预约</a>
 					</div>
 				</div>
-			</div> </div>
+			</div>
 
 			<!-- 课程日期 -->
 			<div class="class_date border_bot_226">
@@ -92,7 +92,7 @@
 								<span class="date_data" id="dataCenter">
 									05月07日
 								</span>
-								<span class="show_day">
+								<span class="show_day" id="show_day">
 									今天
 								</span>
 							</div>
@@ -232,11 +232,16 @@
 		return y + "-" + m + "-" + d;
 	}
 	let dateArrIndex = 0;
-	let dateARR = [GetDateStr(0), GetDateStr(1), GetDateStr(3)]
+	let dateARR = [GetDateStr(0), GetDateStr(1), GetDateStr(2)];
+	let show_dayArr =['今天','明天','后天'];
+	$("#dataCenter").html(dateARR[0]);
+	$("#show_day").html(show_dayArr[0]);
+	
 	$("#toPre").click(() => {
 		if(dateArrIndex > 0) {
 			dateArrIndex--;
 			$("#dataCenter").html(dateARR[dateArrIndex])
+			$("#show_day").html(show_dayArr[dateArrIndex]);
 		}
 		if(dateArrIndex != dateARR.length - 1 && dateArrIndex == 0) {
 			$("#toPre").addClass('disTabBg')
@@ -245,14 +250,15 @@
 		}
 	});
 	$("#toNext").click(() => {
-		if(dateArrIndex < dateARR.length) {
+		if(dateArrIndex < dateARR.length-1) {
 			dateArrIndex++;
-			$("#dataCenter").html(dateARR[dateArrIndex])
+			$("#dataCenter").html(dateARR[dateArrIndex]);
+			$("#show_day").html(show_dayArr[dateArrIndex]);
 		}
 		if(dateArrIndex == dateARR.length - 1 && dateArrIndex != 0) {
-			$("#toNext").addClass('disTabBg')
+			$("#toNext").addClass('disTabBg');
 		} else {
-			$("#toNext,#toPre").removeClass('disTabBg')
+			$("#toNext,#toPre").removeClass('disTabBg');
 		}
 	});
 </script>

@@ -363,6 +363,24 @@ a:active{
 .f_14{
 	font-size: 0.373333rem;
 }
+.f_30{
+	font-size: 0.4rem;
+}
+.f_24{
+	font-size: 0.32rem;
+}
+.f_27{
+	font-size: 0.36rem;
+}
+.f_28{
+	font-size: 0.37333rem;
+}
+.f_60{
+	font-size: 0.8rem;
+}
+.f_w_b{
+	font-weight: bold;
+}
 .color_153{
 	color: rgb(153,153,153);
 }
@@ -374,6 +392,12 @@ a:active{
 }
 .color_51{
 	color: rgb(51,51,51);
+}
+.color_huang{
+	color: rgb(254,146,70);
+}
+.color_lan{
+	color: rgb(111,207,251);
 }
 .fl{
 	float: left;
@@ -394,12 +418,41 @@ a:active{
 .border_bot_187{
 	border-bottom: 1px solid rgb(187,187,187);
 }
+.border_bot_230{
+	border-bottom: 1px solid rgb(230,230,230);
+}
+.border_bot_238{
+	border-bottom: 1px solid rgb(238,238,238);
+}
+.border_top_230{
+	border-top: 1px solid rgb(230,230,230);
+}
 .pad_l_r_30{
 	padding-left: 0.4rem;
 	padding-right: 0.4rem;
 }
+.mar_l_r_30{
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+}
+.mar_l_30{
+	margin-left: 0.4rem;
+}
+.mar_r_30{
+	margin-right: 0.4rem;
+}
+.mar_r_15{
+	margin-right: 0.2rem;
+}
 .bg_white{
 	background: white;
+}
+.height-92-title{
+	height: 1.2266rem;
+	align-items: center;
+}
+.w_100{
+	width: 100%;;
 }
 /*煎蛋公共头部*/
 .evaluate_title{
@@ -431,4 +484,31 @@ a:active{
 }
 .flex{
 	display: flex;
+}
+.flex_itemAlign_center{
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	align-items: center;
+}
+.flex-grow-1{
+	flex-grow: 1;
+}
+.baoming {
+	width: 2rem;
+	height: 0.7466rem;
+	text-align: center;
+	line-height: 0.7466rem;
+	background: #6fcffb;
+	border-radius: 0.13333rem;
+	-webkit-border-radius: 0.13333rem;
+	-moz-border-radius: 0.1.3333rem;
+	color: #fff;
+	display: block;
+	font-size: 0.34666rem;
+}
+
+.baoming:hover {
+	text-decoration: none;
+	color: white;
 }

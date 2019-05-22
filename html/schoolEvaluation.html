@@ -35,9 +35,11 @@
 					<textarea v-model="commit_text" @input="num" maxlength="130" placeholder="亲，分享对驾校环境、服务、教学等方面的体验，还可以用评价标签进行评价~"></textarea>
 					<div class="font_num">已写<i>{{font_long}}</i>字，还能写<span>{{len}}</span>字</div>
 				</div>
-				<div class="photo">
-					<i class="iconfont iconzhaoxiang"></i>
-					<input type="file"  />
+				<div class="photo_img_box flex">
+					<div class="photo">
+						<i class="iconfont iconzhaoxiang"></i>
+						<input type="file" id="fileInput" />
+					</div>
 				</div>
 			</div>
 			<div class="anonymous_eval" id="anonymous_eval">
@@ -59,6 +61,26 @@
 			}
 		}
 	});
+	$("#fileInput").change(function(e){
+        let file =  e.target.files[0];
+        console.log(file);//这里是undefined
+        return
+        for(i = 0; i< file.length; i ++) {//这里报错：Cannot read property 'length' of undefined
+            var reader = new FileReader();
+            var src = reader.readAsDataURL(file[i]);
+            reader.onload=function(e){
+                //多图预览
+                var imgStr = '<dl class="picBox"><dt>' +
+                        '<img src="' + src +'"/><img onclick="delImgbox(this)" class="close" src="/depend/duilv2.0/images/icon_close.png"/></dt>'+
+                        '<dd><input name="' + src+'" type="hidden" value="'+src+'"/>' +
+                        '<input class="picTxt" maxlength="10" placeholder="图片介绍..."/></dd>';
+                $(".uploadBox").before(imgStr);
+            }
+
+        }
+  });
+	
+	
 	//统计输入字数
 	var total = new Vue({
 		el:'#comment',
