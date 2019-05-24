@@ -60,7 +60,7 @@
 	color: #999999;
 }
 .belong_school{
-	font-size: ;
+	/*font-size: ;*/
 }
 .coach_score{
 	width: auto;
@@ -506,7 +506,6 @@
 	border-radius: 1.3333rem;
 	-webkit-border-radius: 1.3333rem;
 	-moz-border-radius: 1.3333rem;
-	background: #6fcffb;
 	font-size: 0.3733rem;
 	color: #FFFFFF;
 	margin: 0 0.4rem;
@@ -550,4 +549,34 @@
 .picture_list li img{
 	width: 100%;
 	height: 100%;
+}
+.fg{
+	border-right: 0.0133rem solid #eeeeee;
+}
+.bt_foot{
+	float: right;
+	height: auto;
+	margin-right: -0.4rem;
+	margin-left: 0.05rem;
+}
+.yuyue{
+	width: 2.2rem;
+	line-height: 1.32rem;
+	background: #86ceef;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 0.2933rem;
+	float: left;
+	padding: 0 0.8rem 0 0.8rem;
+	margin-right: 0.023rem;
+}
+.yuyue1{
+	width: 2.2rem;
+	line-height: 1.32rem;
+	background: #6fcffb;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 0.2933rem;
+	float: left;
+	padding: 0 0.8rem 0 0.8rem;
 }
