@@ -233,7 +233,9 @@
 
 .date_content_bot li input[type="radio"] {
 	position: absolute;
-    clip: rect(0, 0, 0, 0);
+    width: 0.50666rem;
+    height: 0.50666rem;
+    opacity: 0;
 }
 .class_info>a{
 	display: block;
