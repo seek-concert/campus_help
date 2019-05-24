@@ -130,20 +130,20 @@
 				</div>
 			</div>
 			<!--得分-->
-			<ul class="sign_up">
-				<li>
-					<i>3</i>
-					<span>平均得分</span>
-				</li>
-				<li>
-					<i>0</i>
-					<span>累计收藏</span>
-				</li>
-				<li>
-					<i>0</i>
-					<span>报名人数</span>
-				</li>
-			</ul>
+			<!--<ul class="sign_up">-->
+				<!--<li>-->
+					<!--<i>3</i>-->
+					<!--<span>平均得分</span>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<i>0</i>-->
+					<!--<span>累计收藏</span>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<i>0</i>-->
+					<!--<span>报名人数</span>-->
+				<!--</li>-->
+			<!--</ul>-->
 			<!--可选班型-->
 			<div class="choose_class">
 				<div class="title">可选班型</div>
@@ -273,14 +273,17 @@
 					</li>
 					<li>
 						<a href="#"><i class="iconfont iconphone-"></i>
-						<p>客服</p></a>
+						<p>电话</p></a>
 					</li>
-					<li id="shoucang">
-						<a href="#"><i class="iconfont iconshoucang"></i>
-						<p>收藏</p></a>
-					</li>
+					<!--<li id="shoucang">-->
+						<!--<a href="#"><i class="iconfont iconshoucang"></i>-->
+						<!--<p>收藏</p></a>-->
+					<!--</li>-->
 				</ul>
-				<div class="baoming">报名预约</div>
+				<div class="bt_foot">
+					<a href="#"><li class="yuyue">预约练车</li></a>
+					<a href="#"><li class="yuyue1">预约考试</li></a>
+				</div>
 			</div>
 			<div class="picture">
 				<div class="picture_content">
@@ -344,18 +347,18 @@
     	});
 	}
 
-	var shou = true;
-	$("#shoucang").click(function(){
-		if(shou){
-			$(this).addClass("footer_nav_list_change");
-			$(this).children().children("p").text('已收藏');
-			shou=!shou;
-		}else{
-			$(this).removeClass("footer_nav_list_change");
-			$(this).children().children("p").text('收藏');
-			shou=!shou;
-		}
-	})
+	// var shou = true;
+	// $("#shoucang").click(function(){
+	// 	if(shou){
+	// 		$(this).addClass("footer_nav_list_change");
+	// 		$(this).children().children("p").text('已收藏');
+	// 		shou=!shou;
+	// 	}else{
+	// 		$(this).removeClass("footer_nav_list_change");
+	// 		$(this).children().children("p").text('收藏');
+	// 		shou=!shou;
+	// 	}
+	// })
 	/*控制驾校老师评分*/
 	var coach_score = $("#coach_score").val();
 	for(var i=0;i<coach_score;i++){
