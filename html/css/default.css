@@ -366,6 +366,9 @@ a:active{
 .f_30{
 	font-size: 0.4rem;
 }
+.f_32{
+	font-size: 0.4266rem;
+}
 .f_24{
 	font-size: 0.32rem;
 }
@@ -435,6 +438,16 @@ a:active{
 	margin-left: 0.4rem;
 	margin-right: 0.4rem;
 }
+.m-l-5{
+	margin-left: 0.06666rem;
+}
+
+.m-l-10{
+	margin-left: 0.13rem;
+}
+.m-l-20{
+	margin-left: 0.26rem;
+}
 .mar_l_30{
 	margin-left: 0.4rem;
 }
@@ -453,6 +466,9 @@ a:active{
 }
 .w_100{
 	width: 100%;;
+}
+.posi_re{
+	position: relative;
 }
 /*煎蛋公共头部*/
 .evaluate_title{
@@ -484,6 +500,8 @@ a:active{
 }
 .flex{
 	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 }
 .flex_itemAlign_center{
 	display: flex;
