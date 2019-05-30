@@ -31,7 +31,8 @@
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
-    padding-right: 0.25rem;
+    margin-right: 0.6933rem;
+    border: 0.02666rem solid rgb(236, 234, 231)
 }
 .coach_right {
     width: 6.933rem;
@@ -45,6 +46,10 @@
     align-items: center;
     padding-right: 3px;
 	font-weight: 700;
+}
+.coach_title .iconfont{
+    font-size: 0.48rem;
+
 }
 .coach_score {
     width: auto;
@@ -65,9 +70,9 @@
 	width: 5.333rem;
 }
 .msgtag{
-	color: white;
 	position: absolute;
-	right: -0.4rem;
+    right:0;
+    top: 0.4rem;
 	width: 2.5066rem;
 	height: 0.81333rem;
 	line-height: 0.81333rem;
@@ -75,4 +80,170 @@
 	border-radius: 0.81333rem 0 0 0.81333rem;
 	box-sizing: border-box;
 	padding-left:0.32rem;
+}
+.msgtag a{
+	width: 2.5066rem;
+	height: 0.81333rem;
+}
+.msgtag a span{
+	color: white;
+}
+.msgtag .iconxiaoxi{
+    font-size: 0.46rem;
+}
+.msgtag .icondian{
+    position: absolute;
+    right:-0.22rem;
+    top:-0.2rem;
+    color: red;
+    font-size: 0.32rem;
+}
+.update-box{
+    width: 3.2266rem;
+    height:0.6533rem;
+    line-height: 0.6533rem;
+    text-align: center;
+    color: rgb(51,51,51);
+    font-size:0.32rem;
+    border: 1px solid rgb(214,239,252);
+    border-radius: 0.6533rem;
+    background: white;
+    margin: auto;
+    margin-top: 0.8rem;
+}
+.update-box span{
+    font-size: 0.36rem;
+    margin-right: 0.2rem;
+    color: rgb(127,208,245)
+}
+.basic-info{
+    background: url(../img/lang_bg.png) no-repeat 0 0;
+    background-size: cover;
+    box-sizing: border-box;
+    background-color: white;
+    padding-bottom: 1rem;
+}
+.coach_info_top{
+    margin-top: 0.85333rem;
+}
+.basic-info .coach_info {
+    padding-left: 0.26rem;
+}
+.tabNav{
+    width: 9.133rem;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 0.16rem;
+    padding: 0.02666rem;
+    margin: auto;
+    position: relative;
+    top: -0.5rem;
+    box-shadow: 0 0 0 0.02rem rgba(0,0,0,0.1)
+}
+.tabNav>div{
+    width: 33.333%;
+    text-align: center;
+    line-height: 1.09333rem;
+    height: 1.09333rem;
+    color: rgb(102,102,102);
+    font-size: 0.3733rem;
+}
+.tabNav>div.on{
+    background: rgb(214,239,252);
+    color: rgb(51,51,51) !important;
+}
+.tabNav>div:nth-of-type(1){
+    border-radius: 0.16rem 0 0 0.16rem;
+}
+
+.tabNav>div:nth-of-type(3){
+    border-radius: 0 0.16rem 0.16rem 0;
+}
+
+
+.list-content-box{
+    background: white;
+    margin-bottom: 0.2rem;
+	border-top: 1px solid rgb(227,227,227);
+	border-bottom: 1px solid rgb(223, 223, 223)
+}
+.list-head{
+    height: 1.16rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+	border-bottom: 1px solid rgb(223, 223, 223)
+}
+.list-head span:nth-of-type(1){
+	font-size: 0.5rem;
+    color: rgb(254,152,79);
+    margin-right: 0.2666rem;
+}
+.list-head span:nth-of-type(2){
+	font-size: 0.4rem;
+    color: rgb(102,102,102);
+    flex-grow: 1;
+}
+.list-head span:nth-of-type(3){
+	font-size: 0.4rem;
+    color: rgb(154,154,154);
+}
+.list-content{
+    padding:  0.4rem;
+	border-bottom: 1px solid rgb(223, 223, 223)
+}
+.list-content img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    padding-right: 0.36rem;
+}
+.list-content .right-top{
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.list-content .right-top .lf span{
+    font-size: 0.4266rem;
+    color: rgb(51,51,51)
+}
+.cancelOrder{
+    width: 2.08rem;
+    height: 0.7368rem;
+    line-height: 0.7368rem;
+    border-radius: 0.133rem;
+    background: rgb(111,207,251);
+    color: white;
+    font-size: 0.34666rem;
+    text-align: center
+}
+.completeOrder{
+    width: 2.08rem;
+    height: 0.7368rem;
+    line-height: 0.7368rem;
+    border-radius: 0.133rem;
+    color: rgb(254,146,70);
+    border: 0.02666rem solid rgb(254,146,70);
+    font-size: 0.34666rem;
+    text-align: center
+}
+.right-content{
+    flex-grow: 1;
+}
+.yuyueList{
+    font-size: 0.32rem;
+    color: rgb(153,153,153);
+    justify-content: space-between;
+    line-height: 0.53333rem;
+}
+.shuanjiantou,.shuanjiantou span{
+    color: rgb(111,207,251) !important;
+    font-size: 0.34666rem !important;
+    margin-right: 0 !important;
+}
+.shuanjiantou1{
+    color: rgb(111,207,251) !important;
+    font-size: 0.3766rem !important;
+}
+.shuanjiantou2{
+    color: rgb(254,146,70) !important;
+    font-size: 0.3766rem !important;
 }

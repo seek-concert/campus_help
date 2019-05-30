@@ -1,0 +1,76 @@
+.special{
+    background: #f1f1f1;
+}
+.myMsgNav{
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+.myMsgNav>div{
+    color: rgb(153,153,153);
+    font-size: 0.3733rem;
+    box-sizing: border-box;
+    height: 1.066rem;
+    line-height: 1.066rem;
+    text-align: center;
+    width: 25%;
+}
+.myMsgNav>div.on{
+    border-bottom: 0.0666rem solid rgb(111,207,251);
+    color: rgb(51,51,51);
+}
+.msg-list-head{
+    padding-top: 0.2666rem;
+    padding-bottom: 0.2666rem;
+    padding-left: 0.266rem;
+}
+.msg-list-head .yuan{
+    width: 0.64rem;
+    height: 0.64rem;
+    display: inline-block;
+    border-radius: 100%;
+    color: white;
+    font-size: 0.38rem;
+    text-align: center;
+    line-height:  0.64rem;
+}
+
+.newmsg{
+    background: rgb(80,191,242);
+}
+.yueke{
+    background: rgb(254,146,70);
+}
+.msg-list-con{
+    box-sizing: border-box;
+    padding: 0.4933rem 0.32em 0.2rem;
+    border: 1px solid rgb(219,219,219);
+    border-radius: 0.13333rem;
+    background: white;
+}
+.msg-list-con p{
+    text-indent: 0.133rem;
+    color: rgb(51,51,51);
+    font-size: 0.3733rem;
+    padding-bottom: 0.4933rem;
+    border-bottom: 1px solid rgb(224,224,224);
+}
+.msg-list-con .flex{
+    align-items: center;
+    justify-content: space-between;
+    height: 0.666rem;
+}
+.msg-list-con .flex span{
+    font-size: 0.34666rem;
+    color: rgb(102,102,102);
+}
+.msg-list-con .flex a,.msg-list-con .flex a i{
+    font-size: 0.32rem;
+    color: rgb(51,51,51);
+}
+.msg-list-con .flex a i{
+    margin-left: 0.2rem;
+}
+.msg-list{
+    margin-top: 0.2rem;
+}

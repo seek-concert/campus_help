@@ -1,0 +1,36 @@
+.special{
+    background: #f1f1f1;
+}
+.class_date_title {
+    padding: 0.53rem 0.2666rem 0.30666rem 0.2666rem;
+    background: rgb(241, 241, 241);
+}
+.class_info{
+    margin-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+.class_info>a {
+    display: block;
+    height: 1.17333rem;
+    width: 100%;
+}
+.class_info>a>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 0.42666rem;
+}
+.mar-bot{
+    margin-bottom: 0.2rem;
+}
+.signOut{
+    background: white !important;
+    color: rgb(80,191,242) !important;
+}
+.headerimg img{
+    width: 1.28rem;
+    height: 1.28rem;
+    border-radius: 100%;
+
+}

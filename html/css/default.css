@@ -346,7 +346,12 @@ a:active{
 .color_blue a{
 	color: #6fcffb!important;
 }
-
+.color_red a{
+	color: red;
+}
+.color_ju{
+	color: rgb(254,146,70);
+}
 
 .f_12{
 	font-size: 0.16rem !important;
@@ -412,6 +417,9 @@ a:active{
 	padding-left: 0.2666rem;
 	padding-right: 0.2666rem;
 }
+.pad0_4rem{
+	padding: 0.4rem 0.4rem 0.266rem 0.4rem;
+}
 .border_bot_192{
 	border-bottom: 1px solid rgb(192,192,192);
 }
@@ -463,6 +471,9 @@ a:active{
 .height-92-title{
 	height: 1.2266rem;
 	align-items: center;
+}
+.lineheght_40{
+	line-height: 0.5333rem;
 }
 .w_100{
 	width: 100%;;
@@ -529,4 +540,81 @@ a:active{
 .baoming:hover {
 	text-decoration: none;
 	color: white;
+}
+.align-items-center{
+	align-items: center;
+}
+
+.cancelOrder{
+    width: 2.08rem;
+    height: 0.7368rem;
+    line-height: 0.7368rem;
+    border-radius: 0.133rem;
+    background: rgb(111,207,251);
+    color: white;
+    font-size: 0.34666rem;
+    text-align: center
+}
+.completeOrder{
+    width: 2.08rem;
+    height: 0.7368rem;
+    line-height: 0.7368rem;
+    border-radius: 0.133rem;
+    color: rgb(254,146,70);
+    border: 0.02666rem solid rgb(254,146,70);
+    font-size: 0.34666rem;
+    text-align: center
+}
+
+
+.switch-slide-label {
+	display: block;
+	width: 34px;
+	height: 18px;
+	background: #ccc;
+	border-radius: 30px;
+	cursor: pointer;
+	position: relative;
+	-webkit-transition: 0.3s ease;
+	transition: 0.3s ease;
+}
+/* 华东选中 */
+.switch-slide-label:after {
+	content: '';
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-transition:0.3s ease;
+	transition:0.3s ease;
+}
+
+.switch-slide input:checked+label {
+	background: #34bf49;
+	transition: 0.3s ease;
+}
+.switch-slide input:checked+label:after {
+	left: 17px;
+}
+
+
+.submitBtn{
+	width: 100%;
+	height: 1.25333rem;
+	line-height: 1.25333rem;
+	display: flex;
+	justify-content: center;
+	color: white;
+	background: rgb(111,207,251);
+	font-size: 0.48rem;
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
 }
