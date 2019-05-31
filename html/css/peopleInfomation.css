@@ -21,6 +21,9 @@
     height: 100%;
     font-size: 0.42666rem;
 }
+.class_info>a>div label input{
+    font-size: 0.42666rem;
+}
 .mar-bot{
     margin-bottom: 0.2rem;
 }
