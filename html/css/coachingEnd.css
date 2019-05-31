@@ -109,7 +109,7 @@
     border-radius: 0.6533rem;
     background: white;
     margin: auto;
-    margin-top: 0.8rem;
+    margin-top: 0.3rem;
 }
 .update-box span{
     font-size: 0.36rem;
@@ -201,6 +201,12 @@
     flex-grow: 1;
     justify-content: space-between;
 }
+.list-content .right-top .lf{
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+}
 .list-content .right-top .lf span{
     font-size: 0.4266rem;
     color: rgb(51,51,51)
@@ -246,4 +252,21 @@
 .shuanjiantou2{
     color: rgb(254,146,70) !important;
     font-size: 0.3766rem !important;
+}
+.fixedTop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.coach_right .belong .myFlag{
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 1.6rem;
 }
