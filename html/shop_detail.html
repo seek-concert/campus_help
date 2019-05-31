@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>商城详情</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/shop_detail.css" />
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_697643_ncw7c7yd8c.css">
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<!-- 头部 -->
+		<div class="app-header">
+			<div class="app-header-box">
+				<nav class="box-bg" style="background-image: url('./img/7c3d9372ea17f6a93aa8d99c4ee59png.webp')">
+					<a href="./shop_detail.html"></a>
+				</nav>
+			</div>
+			<div class="box-cont">
+				<div class="box-cont-img">
+					<span class="tips">品牌</span>
+					<img class="img"
+						src="//fuss10.elemecdn.com/5/c9/75599bbc11f6f9e73e82297a3676ajpeg.jpeg?imageMogr/format/webp/thumbnail/150x/">
+				</div>
+				<div class="box-cont-title">
+					<h2>
+						<span>汉拿山（深圳福田市民中心店）</span>
+						<i></i>
+					</h2>
+					<div class="info">
+						<span>评价4.3</span>
+						<span>月售205单</span>
+						<span>蜂鸟专送 约40分钟</span>
+					</div>
+				</div>
+				<div class="box-cont-vonc">
+					<div class="items">
+						<p class="item-flex">
+							<span class="money"><small>￥</small>8</span>
+							<span><i class="iconfont icon-huangguan"></i>无门槛</span>
+						</p>
+						<p class="take">领取</p>
+					</div>
+				</div>
+				<div class="box-cont-pref">
+					<div class="left">
+						<div class="left-box">
+							<span class="tag">满减</span>
+							<span>满35减15，满45减23，满65减35</span>
+						</div>
+					</div>
+					<div class="right">2个优惠</div>
+				</div>
+				<p class="box-cont-gg">公告：我司外卖产品使用自加热餐盒，保证产品温度、质量，使每位顾客吃到健康美食。</p>
+			</div>
+		</div>
+
+		<!-- tabs -->
+		<div style="position: sticky; top: 0px; z-index: 3;">
+			<div class="shop-tab">
+				<div class="shop-tab-item" v-for="(item, index) in shopTabs" :key="index"
+					:class="shoptabIndex == item.index ? 'shop-tab-active' : ''" @click="changeShoptab(item.index)">
+					<p class="shop-tab-p">{{item.name}}<span class="shop-tab-span"></span></p>
+				</div>
+			</div>
+		</div>
+		<!-- 点餐 -->
+		<div class="shop-order" v-show="shoptabIndex == 1">
+			<div class="shop-order-box">
+				<div class="menuview">
+					<div class="menuview-main">
+						<main>
+							<!-- left bar -->
+							<div class="category">
+								<ul>
+									<li :class="index == 0 ? 'active' : ''" v-for="(item, index) in leftBar" :key="index">
+										<img :src="item.img" v-if="item.img">
+										<span>{{item.title}}</span>
+									</li>
+								</ul>
+							</div>
+							<!-- shop list -->
+							<section class="comtainer">
+								<div class="scroller" v-for="(items, index) in shopList" :key="index">
+									<dl>
+										<dt>
+											<div class="category-title">
+												<strong class="category-name">{{items.bar.title}}</strong>
+												<span class="category-desc">{{items.bar.desc}}</span>
+											</div>
+										</dt>
+										<dd v-for="(item, _index) in items.list" :key="_index">
+											<div class="fooddetail">
+												<span class="fooddetail-logo"><img :src="item.img"alt=""></span>
+												<section class="fooddetail-info">
+													<p class="name"><span class="text">{{item.title}}</span></p>
+													<p class="sales">
+														<span>月售{{item.sales}}份</span>
+														<span>好评率{{item.parise}}</span>
+													</p>
+													<div class="tag"><span>{{item.discount}}</span></div>
+													<span class="price">
+														<span>￥{{item.price}}</span>
+														<del>￥{{item.delPrice}}</del>
+													</span>
+													<div class="btn">
+														<span>
+															<span class="entity" v-if="item.num>0">
+																<a href="javascript:;" @click="delCart(item,index,_index)"><i class="iconfont icon-jian"></i></a>
+																<span>{{item.num}}</span>
+																<a href="javascript:;" @click="addCart(item,index,_index)"><i class="iconfont icon-jia"></i></a>
+															</span>
+															<span class="entity" v-else>
+																<a href="javascript:;" @click="addCart(item,index,_index)"><i class="iconfont icon-jia"></i></a>
+															</span>
+														</span>
+													</div>
+												</section>
+											</div>
+										</dd>
+
+									</dl>
+								</div>
+							</section>
+						</main>
+						<!-- footer -->
+						<div style="z-index: 10">
+							<footer class="cartview">
+								<div class="cartview-mask" :style="{ display: showCartList ? 'block': 'none' }"></div>
+								<!-- 已选商品  .cartview-body-open -->
+								<div class="cartview-body" :class="showCartList? 'cartview-body-open' : ''">
+									<section><span>满35减15元，满45减23元，满65减35元</span></section>
+									<div v-show="showCartList">
+										<div class="cartview-body-header">
+											<div class="text">
+												<span>已选商品</span>
+											</div>
+											<a href="javascript:;" @click="clearCarts()">
+												<i class="iconfont icon-icon9"></i> <span>清空</span>
+											</a>
+										</div>
+										<div class="cartview-body-scroller">
+											<ul>
+												<li v-for="(item, index) in carts.cartList" :key="index">
+													<span class="name">
+														<em>{{item.title}}</em>
+													</span>
+													<span class="total"> <small>￥</small> {{item.price * item.num }}</span>
+													<span class="entity">
+														<a href="javascript:;"><i class="iconfont icon-jian" @click="cartListDel(item,index)"></i></a>
+														<span>{{ item.num }}</span>
+														<a href="javascript:;"><i class="iconfont icon-jia" @click="cartListAdd(item,index)"></i></a>
+													</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- footer -->
+								<div class="cartview-footer" :class="carts.num>0 ? 'active' :''" @click="showCartListView">
+									<span class="carticon">
+										<span>{{carts.num}}</span>
+									</span>
+									<div class="cartinfo">
+										<p class="total" v-if="carts.num>0">
+											<span>￥{{ carts.totals }}</span>
+											<del>￥{{ carts.delTotals }}</del>
+										</p>
+										<p class="total" v-else>
+											<span style="color: #999">为选购商品</span>
+										</p>
+										<p class="det">另需配送费</p>
+									</div>
+									<a href="javascript:;" class="submitbtn" :class="carts.isPay ? '' : 'disabled'" @click="gotoCheckout()">
+										<span>{{ carts.isPay ? '去结算' : '￥20起送'}}</span>
+									</a>
+								</div>
+							</footer>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 评价 -->
+		<div class="shop-comment" v-show="shoptabIndex == 2">
+			<section class="score-box">
+				<div class="left">
+					<div class="num">
+						<p>4.5</p>
+					</div>
+					<div class="info">
+						<span>商家评分</span>
+						<div class="rating">
+							<div><img
+									src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTU0LjAxNyA4LjA3MmwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNTMuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0tNDggMEwzLjQ2NSA5LjYzM2MtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0w1LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBMNy41NSAzLjM1MmwyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNkw4LjQ5NyA2LjI2OWwuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0xMiAwbC0yLjU1MiAxLjU2MWMtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0wxNy42My41ODljLjIxMy0uNTE1LjU1Ny0uNTIzLjc3NCAwbDEuMTQ2IDIuNzYzIDIuOTgyLjIzN2MuNTU2LjA0NC42Ny4zNjguMjQuNzM2bC0yLjI3NCAxLjk0NC42OTYgMi45MWMuMTMuNTQyLS4xNDMuNzUtLjYyNi40NTRsLTIuNTUxLTEuNTZ6bTEyIDBsLTIuNTUyIDEuNTYxYy0uNDc2LjI5MS0uNzU4LjA5Ni0uNjI2LS40NTVsLjY5Ni0yLjkwOS0yLjI3My0xLjk0NGMtLjQyNC0uMzYyLS4zMjUtLjY5MS4yMzktLjczNmwyLjk4Mi0uMjM3TDI5LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBsMS4xNDYgMi43NjMgMi45ODIuMjM3Yy41NTYuMDQ0LjY3LjM2OC4yNC43MzZsLTIuMjc0IDEuOTQ0LjY5NiAyLjkxYy4xMy41NDItLjE0My43NS0uNjI2LjQ1NGwtMi41NTEtMS41NnptMTIgMGwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNDEuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2eiIgZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+"
+									alt=""></div>
+							<div class="actived" style="width: 90%"><img
+									src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwJSIgeTE9IjUwJSIgeDI9IjEwMCUiIHkyPSI1MCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZERTAwIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGQjAwMCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTU0LjAxNyA4LjA3MmwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNTMuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0tNDggMEwzLjQ2NSA5LjYzM2MtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0w1LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBMNy41NSAzLjM1MmwyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNkw4LjQ5NyA2LjI2OWwuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0xMiAwbC0yLjU1MiAxLjU2MWMtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0wxNy42My41ODljLjIxMy0uNTE1LjU1Ny0uNTIzLjc3NCAwbDEuMTQ2IDIuNzYzIDIuOTgyLjIzN2MuNTU2LjA0NC42Ny4zNjguMjQuNzM2bC0yLjI3NCAxLjk0NC42OTYgMi45MWMuMTMuNTQyLS4xNDMuNzUtLjYyNi40NTRsLTIuNTUxLTEuNTZ6bTEyIDBsLTIuNTUyIDEuNTYxYy0uNDc2LjI5MS0uNzU4LjA5Ni0uNjI2LS40NTVsLjY5Ni0yLjkwOS0yLjI3My0xLjk0NGMtLjQyNC0uMzYyLS4zMjUtLjY5MS4yMzktLjczNmwyLjk4Mi0uMjM3TDI5LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBsMS4xNDYgMi43NjMgMi45ODIuMjM3Yy41NTYuMDQ0LjY3LjM2OC4yNC43MzZsLTIuMjc0IDEuOTQ0LjY5NiAyLjkxYy4xMy41NDItLjE0My43NS0uNjI2LjQ1NGwtMi41NTEtMS41NnptMTIgMGwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNDEuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2eiIgZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+"
+									alt=""></div>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="right-box right-box1">
+						<div><span>味道</span>
+							<p>4.6</p>
+						</div>
+						<div><span>包装</span>
+							<p>4.6</p>
+						</div>
+					</div>
+					<div class="right-box right-box2">
+						<div><span>配送</span>
+							<p>4.8</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="comment-list">
+				<ul class="comment-list-tabs">
+					<li class="tags active">全部 162</li>
+					<li class="tags">最新</li>
+					<li class="tags">好评 162</li>
+					<li class="tags fail">差评 162</li>
+					<li class="tags">有图 162</li>
+				</ul>
+
+				<ul class="comment-list-items">
+					<li>
+						<div class="comment-block">
+							<div class="comment-block-left"><span></span></div>
+							<div class="comment-block-right">
+								<div class="block-one">
+									<h3>158*******123</h3>
+									<small>2019-05-28</small>
+								</div>
+								<div class="block-two">
+									<div class="rating">
+										<div><img
+												src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTU0LjAxNyA4LjA3MmwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNTMuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0tNDggMEwzLjQ2NSA5LjYzM2MtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0w1LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBMNy41NSAzLjM1MmwyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNkw4LjQ5NyA2LjI2OWwuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0xMiAwbC0yLjU1MiAxLjU2MWMtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0wxNy42My41ODljLjIxMy0uNTE1LjU1Ny0uNTIzLjc3NCAwbDEuMTQ2IDIuNzYzIDIuOTgyLjIzN2MuNTU2LjA0NC42Ny4zNjguMjQuNzM2bC0yLjI3NCAxLjk0NC42OTYgMi45MWMuMTMuNTQyLS4xNDMuNzUtLjYyNi40NTRsLTIuNTUxLTEuNTZ6bTEyIDBsLTIuNTUyIDEuNTYxYy0uNDc2LjI5MS0uNzU4LjA5Ni0uNjI2LS40NTVsLjY5Ni0yLjkwOS0yLjI3My0xLjk0NGMtLjQyNC0uMzYyLS4zMjUtLjY5MS4yMzktLjczNmwyLjk4Mi0uMjM3TDI5LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBsMS4xNDYgMi43NjMgMi45ODIuMjM3Yy41NTYuMDQ0LjY3LjM2OC4yNC43MzZsLTIuMjc0IDEuOTQ0LjY5NiAyLjkxYy4xMy41NDItLjE0My43NS0uNjI2LjQ1NGwtMi41NTEtMS41NnptMTIgMGwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNDEuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2eiIgZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+"
+												alt=""></div>
+										<div class="actived" style="width: 90%"><img
+												src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwJSIgeTE9IjUwJSIgeDI9IjEwMCUiIHkyPSI1MCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZERTAwIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGQjAwMCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTU0LjAxNyA4LjA3MmwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNTMuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0tNDggMEwzLjQ2NSA5LjYzM2MtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0w1LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBMNy41NSAzLjM1MmwyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNkw4LjQ5NyA2LjI2OWwuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2em0xMiAwbC0yLjU1MiAxLjU2MWMtLjQ3Ni4yOTEtLjc1OC4wOTYtLjYyNi0uNDU1bC42OTYtMi45MDktMi4yNzMtMS45NDRjLS40MjQtLjM2Mi0uMzI1LS42OTEuMjM5LS43MzZsMi45ODItLjIzN0wxNy42My41ODljLjIxMy0uNTE1LjU1Ny0uNTIzLjc3NCAwbDEuMTQ2IDIuNzYzIDIuOTgyLjIzN2MuNTU2LjA0NC42Ny4zNjguMjQuNzM2bC0yLjI3NCAxLjk0NC42OTYgMi45MWMuMTMuNTQyLS4xNDMuNzUtLjYyNi40NTRsLTIuNTUxLTEuNTZ6bTEyIDBsLTIuNTUyIDEuNTYxYy0uNDc2LjI5MS0uNzU4LjA5Ni0uNjI2LS40NTVsLjY5Ni0yLjkwOS0yLjI3My0xLjk0NGMtLjQyNC0uMzYyLS4zMjUtLjY5MS4yMzktLjczNmwyLjk4Mi0uMjM3TDI5LjYzLjU4OWMuMjEzLS41MTUuNTU3LS41MjMuNzc0IDBsMS4xNDYgMi43NjMgMi45ODIuMjM3Yy41NTYuMDQ0LjY3LjM2OC4yNC43MzZsLTIuMjc0IDEuOTQ0LjY5NiAyLjkxYy4xMy41NDItLjE0My43NS0uNjI2LjQ1NGwtMi41NTEtMS41NnptMTIgMGwtMi41NTIgMS41NjFjLS40NzYuMjkxLS43NTguMDk2LS42MjYtLjQ1NWwuNjk2LTIuOTA5LTIuMjczLTEuOTQ0Yy0uNDI0LS4zNjItLjMyNS0uNjkxLjIzOS0uNzM2bDIuOTgyLS4yMzdMNDEuNjMuNTg5Yy4yMTMtLjUxNS41NTctLjUyMy43NzQgMGwxLjE0NiAyLjc2MyAyLjk4Mi4yMzdjLjU1Ni4wNDQuNjcuMzY4LjI0LjczNmwtMi4yNzQgMS45NDQuNjk2IDIuOTFjLjEzLjU0Mi0uMTQzLjc1LS42MjYuNDU0bC0yLjU1MS0xLjU2eiIgZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+"
+												alt=""></div>
+									</div>
+								</div>
+								<div class="block-three">商家回复：亲爱的顾客，感谢您选择品尝本店的美食，谢谢您认可我们的口味和服务，我们会继续努力，为您提供更好的服务。祝您生活愉快！</div>
+								<ul class="block-four">
+									<li><img
+											src="//fuss10.elemecdn.com/c/2f/5dfa68abc09bf2d845834807695d3jpeg.jpeg?imageMogr/format/webp/thumbnail/300x/">
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 商家 -->
+		<div class="shop-info" v-show="shoptabIndex == 3">
+			<section class="section">
+				<h3 class="section-title">配送信息</h3>
+				<div class="delivery">
+					<div>
+						<span class="tags">蜂鸟专送</span>
+						<span>约62分钟送达，距离1.9km</span>
+					</div>
+					<div>配送费￥4</div>
+				</div>
+			</section>
+			<section class="section">
+				<h3 class="section-title">商家服务</h3>
+				<div class="delivery">
+					<div>该商家支持开发票，请在下单时填写好发票抬头</div>
+				</div>
+			</section>
+			<section class="section">
+				<h3 class="section-title">商家实景</h3>
+				<div class="album">
+					<a href="javascript:;"><img src="//fuss10.elemecdn.com/6/78/7bba98ae9892c5d23494370d48986jpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/" data-spm-anchor-id="a2ogi.12117545.0.i24"></a>
+					<a href="javascript:;"><img src="//fuss10.elemecdn.com/6/78/7bba98ae9892c5d23494370d48986jpeg.jpeg?imageMogr/format/webp/thumbnail/!200x200r/gravity/Center/crop/200x200/" data-spm-anchor-id="a2ogi.12117545.0.i24"></a>
+				</div>
+				<p style="clear:both"></p>
+			</section>
+			<div>
+				<section class="section">
+						<h3 class="section-title">商家信息</h3>
+						<ul class="detail">
+								<li>汉拿山餐饮管理有限公司成立于2001年，是多品牌、跨区域、多城市经营的大型餐饮企业，总部设在首都北京。至今已在80多个城市签约开设直营连锁分店超过300家，北到呼和浩特、南至海南岛、东起沿海城市、西达乌鲁木齐，餐厅遍及整个中国，深受各地广大消费者喜爱。</li>
+								<li><span>品类</span><span>盖浇饭, 其他西餐</span></li>
+								<li><span>商家电话</span><span><span>17310313570</span><span class="icon-right"></span></span></li>
+								<li><span>地址</span><span>深圳市福田区福华一路新怡景商业中心G层FG011号铺</span></li>
+								<li><span>营业时间</span><span>10:00-21:00</span></li>
+						</ul>
+				</section>
+				<section class="section" style="display: flex; align-items: center; justify-content: space-between;">
+					<a href="javascript:;" class="section-title">营业资质</a>
+					<span class="icon-right"></span>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/adaptive.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+	const shopTabs = [
+		{name: '点餐',index: 1},
+		{name: '评价',index: 2},
+		{name: '商家',index: 3}
+	];
+
+	const leftBar = [
+		{ title: '热销', img: '//fuss10.elemecdn.com/0/6a/05b267f338acfeb8bd682d16e836dpng.png?imageMogr/format/webp/thumbnail/26x/'},
+		{ title: '优惠', img: '//fuss10.elemecdn.com/f/8d/dec5b7355581faa2bf4e24942dcc2png.png?imageMogr/format/webp/thumbnail/26x/'},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+		{ title: '分类一', img: ''},
+	]
+
+	const shopList = [
+		{
+			bar: {
+				title: '热销',
+				desc: '大家喜欢吃，才叫真好吃。'
+			},
+			list: [
+				{id: 1, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 2, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 3, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 4, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 5, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 6, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 7, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 8, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 13, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 14, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+			]
+		}
+	]
+	
+	var vm = new Vue({
+		// 选项
+		el: "#app",
+		data: function () {
+			return {
+				shoptabIndex: 1,
+				shopTabs: shopTabs,
+				leftBar: leftBar,
+				shopList: shopList,
+				showCartList: false,
+				carts: {
+					totals: 0,
+					delTotals: 0,
+					cartList: [],
+					num: 0,
+					isPay: false
+				}
+			}
+		},
+		methods: {
+			// 切换tab
+			changeShoptab(index) {
+				vm.shoptabIndex = index
+			},
+			// 显示选购商品
+			showCartListView () {
+				if(vm.carts.num > 0){
+					vm.showCartList = !vm.showCartList
+				}
+			},
+			// 购物车添加
+			addCart(shopItem,index,_index){
+				// 存入原数组父级索引
+				vm.shopList[index].list[_index].pIndex = index
+				vm.shopList[index].list[_index].num++
+				vm.carts.num++
+				if(vm.shopList[index].list[_index].flag){
+					vm.carts.cartList.map(function (value,i) {
+						if(value.id == shopItem.id){
+							vm.carts.cartList[i] = vm.shopList[index].list[_index]
+						}
+					})
+				}else{
+					vm.carts.cartList.push(vm.shopList[index].list[_index])
+				}
+				vm.shopList[index].list[_index].flag = true
+				vm.calculatePrice('add')
+			},
+			// 购物车减少
+			delCart(shopItem,index,_index){
+				if(shopItem.num > 1){
+					vm.shopList[index].list[_index].num--
+					vm.carts.num--
+					vm.carts.cartList.map(function (value,i) {
+						if(value.id == shopItem.id){
+							vm.carts.cartList[i].num = vm.shopList[index].list[_index].num
+							vm.calculatePrice('del')
+						}
+					})
+				}else{
+					vm.shopList[index].list[_index].num--
+					vm.carts.num--
+					vm.shopList[index].list[_index].flag = false
+					vm.carts.cartList.map(function (value,i) { 
+						if(value.id == shopItem.id){
+							vm.calculatePrice('del')
+							vm.carts.cartList.splice(i,1)
+						}
+					})
+				}
+			},
+			// 计算价格
+			calculatePrice (type) {
+				vm.carts.cartList.map(function(value){
+					type == 'add' ? vm.carts.totals += value.price : vm.carts.totals -= value.price
+					type == 'add' ? vm.carts.delTotals += value.delPrice :vm.carts.delTotals -= value.delPrice
+				})
+				// 显示可以支付
+				if(vm.carts.totals > 20){
+					vm.carts.isPay = true
+				} else {
+					vm.carts.isPay = false
+				}
+			},
+			// 购物车列表减少
+			cartListDel (shopItem,index) {
+				if(shopItem.num > 1){
+					vm.carts.num--
+					vm.shopList[shopItem.pIndex].list.map(function (item,i) {
+						if(item.id == shopItem.id){
+							item.num--
+							vm.carts.cartList[index].num = item.num
+							vm.calculatePrice('del')
+						}
+					})
+				} else {
+					vm.carts.num--
+					vm.shopList[shopItem.pIndex].list.map(function (item,i) {
+						if(item.id == shopItem.id){
+							item.num--
+							vm.carts.cartList[index].num = item.num
+							item.flag = false
+							vm.calculatePrice('del')
+							vm.carts.cartList.splice(index,1)
+						}
+					})
+				}
+			},
+			// 购物车列表添加
+			cartListAdd (shopItem,index) {
+				vm.carts.num++
+				vm.shopList[shopItem.pIndex].list.map(function (item,i) {
+					if(item.id == shopItem.id){
+						item.num++
+						vm.carts.cartList[index].num = item.num
+						vm.calculatePrice('add')
+					}
+				})
+			},
+			// 清空购物车
+			clearCarts () {
+				vm.carts.cartList = []
+				vm.carts.num = 0
+				vm.carts.totals = 0
+				vm.carts.delTotals = 0
+				vm.carts.isPay = false
+				vm.showCartList = false
+				vm.shopList.map(function (items) {
+					items.list.map(function (item) {
+						item.num = 0
+						item.flag = false
+					})
+				})
+
+			},
+
+			gotoCheckout () {
+				if(vm.carts.isPay){
+					sessionStorage.setItem("carts",JSON.stringify(vm.carts))
+					window.location.href = "./shop_checkout.html"
+				}
+			}
+		}
+	})
+
+
+	
+</script>

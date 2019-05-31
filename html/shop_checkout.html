@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>确定订单</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/shop_checkout.css" />
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_697643_qp8ihn5bx8b.css">
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<header class="header">
+			<div class="header-wrap">
+				<div class="header-left">
+					<img
+						src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIzMiI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE2LjU1MiA1LjYzM0wxNC41MDggMy41OSAyLjI0MyAxNS44NTMgMTQuNTA4IDI4LjQxbDIuMDQ0LTIuMDQzLTEwLjIyLTEwLjUxM3oiLz48L3N2Zz4=">
+				</div>
+				<h1 class="header-center">确认订单</h1>
+			</div>
+		</header>
+		<div class="checkout viewbody">
+			<div class="main">
+				<section class="cart-address">
+					<div class="address-item">
+						<p class="title">
+							<span>订单配送至</span>
+							<span class="address-tag">公司</span>
+						</p>
+						<p class="address-detail">
+							<span>深圳国际创新中心A座18楼</span><i class="iconfont icon-youjiantou"></i>
+						</p>
+						<h2 class="address-name">
+							<span>易大师</span>
+							<span class="phone">15826341973</span>
+						</h2>
+					</div>
+				</section>
+
+				<div class="checkout-section key-card">
+					<section>
+						<div class="delivery">
+							<div class="delivery-left">
+								<div class="item-title">
+									<span>送达时间</span>
+								</div>
+								<div class="extra">
+									<span class="fengniao">蜂鸟专送</span>
+								</div>
+
+							</div>
+							<div class="delivery-right">
+								尽快送达(12:34送达) <i class="iconfont icon-youjiantou"></i>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="card-item">
+							<div class="card-item__title">
+								<span>支付方式</span>
+							</div>
+							<div>
+								<span class="pay-text">在线支付</span>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<section class="checkout-section cart-group">
+					<h3 class="cart-group-h3">
+						<span>汉拿山</span>
+						<span>（深圳怡景中心城店）</span>
+					</h3>
+					<!-- 选餐列表 -->
+					<ul class="cart-group-list">
+						<li v-for="(item, index) in carts.cartList" :key="index">
+							<img
+								src="https://fuss10.elemecdn.com/4/94/a8b5eef9b723cd0434eda8684f5c2jpeg.jpeg?imageMogr/format/webp/thumbnail/!72x72r/gravity/Center/crop/72x72/"
+								alt="">
+							<span class="name">
+								<p>{{item.title}}</p>
+							</span>
+							<span class="num">x{{item.num}}</span>
+							<span class="kong"></span>
+							<span class="price"><span>￥</span>{{item.num * item.delPrice}}</span>
+						</li>
+					</ul>
+					<!-- 优惠 -->
+					<ul class="cart-group-item">
+						<li>
+							<div><span class="mini-tag bg-hui">包装</span><span class="tov">餐盒</span></div>
+							<div><span class="f20">￥</span>{{carts.cartList.length * 2}}</div>
+						</li>
+						<li>
+							<div><span class="mini-tag bg-lan">蜂鸟</span><span class="tov">配送费</span></div>
+							<div><span class="f20">￥</span>4</div>
+						</li>
+						<li>
+							<div><span class="mini-tag bg-red">满减</span><span class="tov">店铺满减优惠</span></div>
+							<div class="cr-red"><span class="f20">-￥</span>{{ carts.delTotals - carts.totals }}</div>
+						</li>
+					</ul>
+					<div class="card-item">
+						<div>红包</div>
+						<div><span class="hongbao" conent="0个可用">0个可用</span><i class="iconfont icon-youjiantou"></i></div>
+					</div>
+					<div class="card-item">
+						<div>优惠说明</div>
+						<div><span class="f20">小计￥</span>{{carts.totals + 4 + carts.cartList.length * 2}}</div>
+					</div>
+				</section>
+
+				<section class="checkout-section">
+					<div class="tableware">
+						<div class="card-item">
+							<div>餐具份数</div>
+							<div class="cr-999"><span>未选择</span><i class="iconfont icon-youjiantou"></i></div>
+						</div>
+						<div class="card-item">
+							<div>订单备注</div>
+							<div class="cr-999"><span>口味、偏好</span><i class="iconfont icon-youjiantou"></i></div>
+						</div>
+						<div class="card-item">
+							<div>发票信息</div>
+							<div class="cr-999"><span> 不需要开发票 </span><i class="iconfont icon-youjiantou"></i></div>
+						</div>
+						<div class="card-item">
+							<div>
+								餐具份数
+								<p class="tips">号码保护中，将对商家、骑手隐藏您的真实手机号</p>
+							</div>
+							<div class="cr-999"><span>未选择</span><i class="iconfont icon-youjiantou"></i></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="action-bar">
+				<span>￥{{carts.totals + 4 + carts.cartList.length * 2}}</span>
+				<small>｜已优惠¥{{carts.delTotals - carts.totals}} </small>
+				<button class="submitbtn">去支付</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/adaptive.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script>
+	const carts = JSON.parse(sessionStorage.getItem("carts")) || {}
+
+	var vm = new Vue({
+		// 选项
+		el: "#app",
+		data: function () {
+			return {
+				carts: carts
+			}
+		},
+		methods: {
+
+		}
+	})
+</script>
