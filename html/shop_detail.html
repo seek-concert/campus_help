@@ -78,15 +78,15 @@
 		<div class="shop-order" v-show="shoptabIndex == 1">
 			<div class="shop-order-box">
 				<div class="menuview">
-					<div class="menuview-main" :style="{height: screenHeight+'px'}">
+					<div class="menuview-main" :style="{height: screenHeight+'px'}" >
 						<main>
 							<!-- left bar -->
 							<div class="category">
 								<ul>
 									<li 
-										:class="item.bar.id == menuIndex ? 'active' : ''" 
+										:class="{'active': index == menuIndex}"
+										@click="scrollFood(index)" 
 										v-for="(item, index) in shopList" 
-										@click="changeMenu(item.bar.id)"
 										:key="index">
 										<img :src="item.bar.img" v-if="item.bar.img">
 										<span>{{item.bar.title}}</span>
@@ -95,9 +95,9 @@
 							</div>
 							<!-- shop list -->
 							<section class="comtainer">
-								<div class="scroller">
-									<dl v-for="(items, index) in shopList" :key="index">
-										<dt :data-id="items.bar.id">
+								<div class="scroller" @scroll="currentItem">
+									<dl v-for="(items, index) in shopList" :key="index" class="food-list">
+										<dt>
 											<div class="category-title">
 												<strong class="category-name">{{items.bar.title}}</strong>
 												<span class="category-desc">{{items.bar.desc}}</span>
@@ -376,6 +376,12 @@
 			},
 			list: [
 				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 9, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 			]
 		},
 		{
@@ -386,6 +392,12 @@
 				img: ''
 			},
 			list: [
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 				{id: 10, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 			]
 		},
@@ -398,6 +410,10 @@
 			},
 			list: [
 				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 11, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 			]
 		},
 		{
@@ -408,6 +424,12 @@
 				img: ''
 			},
 			list: [
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
+				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 				{id: 12, title: '荞麦冷面外卖', price: 23, delPrice: 30, discount: '7.7折', sales: '77', parise: '90%', num: 0, img: '//fuss10.elemecdn.com/4/e5/889658693a0585dbca89b8f46ff3djpeg.jpeg?imageMogr/format/webp/thumbnail/!140x140r/gravity/Center/crop/140x140/'},
 			]
 		}
@@ -420,7 +442,8 @@
 			return {
 				screenHeight: screenHeight,
 				shoptabIndex: 1,
-				menuIndex: 1,
+				menuIndex: 0,
+				foodListTop: [],
 				shopTabs: shopTabs,
 				shopList: shopList,
 				showCartList: false,
@@ -556,26 +579,43 @@
 					window.location.href = "./shop_checkout.html"
 				}
 			},
-
-			// 切换左边导航
-			changeMenu (id) {
-				var target = parseInt($('.scroller dl dt[data-id='+ id +']').position().top)
-				$('.scroller').animate({scrollTop: target }, 1000)
-			}
-		}
-	})
-
-	$(function () {
-		$('.scroller').scroll(function () {
-			var scrollTop = $('.scroller').scrollTop();
-			$('.scroller dl dt').each(function () {
-				var target = parseInt($(this).position().top)
-				if(target <= 0){
-					vm.menuIndex = $(this).data('id');
+			
+			currentItem: function () {
+				var foodList = document.getElementsByClassName("food-list");
+				var foodsWraper = document.getElementsByClassName("scroller")[0];
+				for (var i = 0; i < foodList.length; i++) {
+					var currentList = foodList[i].offsetTop - foodsWraper.scrollTop -10;
+					if (currentList <= 0) {
+						this.menuIndex = i
+					}
 				}
-			})
+			},
+			
+			scrollFood: function (index) {
+				this.menuIndex = index;
+				console.log(this.menuIndex)
+				this.foodListTop=[];
+				var foodList = document.getElementsByClassName("food-list");
+				for (var i = 0; i < foodList.length; i++) {
+					this.foodListTop.push(foodList[i].offsetTop);
+				};
+				var foodsWraper = document.getElementsByClassName("scroller")[0];
+				var foodListTop = this.foodListTop[index];
+				var scrollTop = foodsWraper.scrollTop;
+				var length = foodListTop - scrollTop;	// 滚动距离
+				function scroll() {
+					scrollTop += length*0.02;
+					foodsWraper.scrollTop = scrollTop;
+				};
+				for (var i = 0; i < 50; i++) {	// 经典的for+setTimeout实现过渡效果
+					setTimeout(function () {
+						scroll();
+					}, 2*i)
+				};
+			},
 
-		})
+
+		}
 	})
 	
 </script>
