@@ -26,8 +26,8 @@
                                 <div>
                                     <span class="color_102">头像</span>
                                     <span class="headerimg flex">
-                                        <img src="../html/img/head_09.png">
-                                        <i class="iconxiangyou iconfont color_187"></i>
+                                        <img src="../html/img/head_09.png" id="headerimg">
+                                        <input type="file" onchange="showHeaderImg(this)">
                                     </span>
                                 </div>
                             </a>
@@ -41,7 +41,7 @@
                             <a>
                                 <div>
                                     <span class="color_102">姓名</span>
-                                   <label>
+                                   <label class="info-label">
                                         <input type="text" placeholder="请输入" value="刘大力">
                                    </label>
                                 </div>
@@ -51,12 +51,12 @@
                         <a>
                             <div>
                                 <span class="color_102">性别</span>
-                                <span class="">
-                                        <select name="" id="">
-                                            <option value="1">女</option>
-                                            <option value="2">男</option>
-                                        </select>
-                                    </span>
+                                <label class="info-label">
+                                    <select name="" id="">
+                                        <option value="1">女</option>
+                                        <option value="2">男</option>
+                                    </select>
+                                </label>
                             </div>
                         </a>
                     </div>
@@ -64,10 +64,9 @@
                         <a>
                             <div>
                                 <span class="color_102">生日</span>
-                                <span class="">
-                                        <span class="color_153">1999-9-9 </span>
-                                    <i class="iconxiangyou iconfont color_187"></i>
-                                    </span>
+                                <label class="info-label">
+                                        <input type="date" placeholder="请输入">
+                                </label>
                             </div>
                         </a>
                     </div>
@@ -79,10 +78,9 @@
                             <a>
                                 <div>
                                     <span class="color_102">身份证号</span>
-                                    <span class="">
-                                            <span class="color_153">20000000000000 </span>
-                                        <i class="iconxiangyou iconfont color_187"></i>
-                                        </span>
+                                    <label class="info-label">
+                                        <input type="text" placeholder="请输入" onkeyup="this.value=this.value.replace(/[^a-zA-Z\u4e00-\u9fa5]/g,'')">
+                                   </label>
                                 </div>
                             </a>
                         </div>
@@ -90,10 +88,9 @@
                         <a>
                             <div>
                                 <span class="color_102">电话号码</span>
-                                <span class="">
-                                        <span class="color_153">15777777777</span>
-                                    <i class="iconxiangyou iconfont color_187"></i>
-                                    </span>
+                                <label class="info-label">
+                                    <input type="text" placeholder="电话号码">
+                               </label>
                             </div>
                         </a>
                     </div>
@@ -140,9 +137,21 @@
                     </div>
                 </div>
 
-                <div class="submitBtn signOut">推出账号</div>
+                <div class="submitBtn signOut">退出账号</div>
 		</div>
 	</body>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
 	<script type="text/javascript" src="js/fontSize.js" ></script>
 </html>
+<script type="text/javascript">
+    function showHeaderImg(file){
+        var reader = new FileReader();	// 实例化一个FileReader对象，用于读取文件
+        var img = document.getElementById('headerimg'); 	// 获取要显示图片的标签
+        
+        //读取File对象的数据
+        reader.onload = function(evt){
+            img.src = evt.target.result;
+        }
+        reader.readAsDataURL(file.files[0]);
+    }
+</script>
