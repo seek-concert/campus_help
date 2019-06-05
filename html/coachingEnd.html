@@ -1,124 +1,133 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>教练端</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="renderer" content="webkit">
-		<meta http-equiv="Cache-Control" content="no-siteapp"/>
-		<link rel="stylesheet" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/coachingEnd.css"/>
-	</head>
-	</head>
-	<body>
-		<div class="special">
-			<!-- <div class="evaluate_title">
+
+<head>
+	<meta charset="utf-8">
+	<title>教练端</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/coachingEnd.css" />
+	<link rel="stylesheet" href="mescroll/mescroll.min.css">
+</head>
+</head>
+
+<body>
+	<div class="special">
+		<!-- <div class="evaluate_title">
 				<a href="#"><i class="iconfont iconfanhui"></i></a>
 				<span>预约课时</span>
 			</div> -->
-			
-			<!-- 教练基础信息 -->
-			<div class="fixedTop">
-				<div class="basic-info   coach_info_box posi_re ">
-						<div class="msgtag">
-							<a class="flex align-items-center">
-								<span class="iconfont iconxiaoxi"></span>
-								<span class="f_24 posi_re">我的消息<i class="iconfont icondian color_red"></i> </span>
-							</a>
+
+		<!-- 教练基础信息 -->
+		<div class="fixedTop">
+			<div class="basic-info   coach_info_box posi_re ">
+				<div class="msgtag">
+					<a class="flex align-items-center">
+						<span class="iconfont iconxiaoxi"></span>
+						<span class="f_24 posi_re">我的消息<i class="iconfont icondian color_red"></i> </span>
+					</a>
+				</div>
+				<div class="flex coach_info coach_info_top">
+					<img src="img/head_09.png">
+					<div class="coach_right posi_re">
+						<!-- iconnvxingbiaoqian 女生  iconnanxing 男生-->
+						<div class="coach_title color_51 f_32 posi_re">刘大力 <span
+								class="iconfont iconnanxing color_lan m-l-10"></span></div>
+						<div class="belong lineheght_40">
+							<div class="coach_score">
+								<span>驾龄8年</span> <span class="m-l-20">2566人在学习</span>
+							</div>
+							<div class="f_14 color_102 lineheght_40 myFlag">真实是人生的命脉，是一切价值的根基。真实是人生的命脉，是一切价值的根基。</div>
 						</div>
-					<div class="flex coach_info coach_info_top" >
-						<img src="img/head_09.png" >
-						<div class="coach_right posi_re">
-							<!-- iconnvxingbiaoqian 女生  iconnanxing 男生-->
-							<div class="coach_title color_51 f_32 posi_re">刘大力 <span class="iconfont iconnanxing color_lan m-l-10"></span></div>
-							<div class="belong lineheght_40">
-								<div class="coach_score">
-									<span>驾龄8年</span> <span class="m-l-20">2566人在学习</span>
+					</div>
+				</div>
+				<div class="update-box">
+					<a>
+						<span class="iconfont iconbianji"></span> 设置个人信息
+					</a>
+				</div>
+			</div>
+			<!-- tabNav -->
+			<div class="tabNav flex align-items-center" id="tabNav">
+				<div class="on">当前预约</div>
+				<div>练车记录</div>
+				<div>考试记录</div>
+			</div>
+		</div>
+		<div style='padding-top:7.2rem;width:100%;'></div>
+
+		<!-- tab切换类容 -->
+		<!-- 当前预约 -->
+		<div id="wrapper" class="wrapperBox">
+			<div class="list-common-sty">
+				<div class="list-content-box">
+					<div class="list-head flex align-items-center">
+						<span class="iconfont iconrili"></span>
+						<span>预约时间:2019-05-23</span>
+						<span class="iconfont iconxiangyou"></span>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
 								</div>
-								<div class="f_14 color_102 lineheght_40 myFlag">真实是人生的命脉，是一切价值的根基。真实是人生的命脉，是一切价值的根基。</div>
+								<span class="cancelOrder">取消订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
 							</div>
 						</div>
 					</div>
-					<div class="update-box">
-						<a>
-							<span class="iconfont iconbianji"></span>	设置个人信息
-						</a>
-					</div>
-				</div>
-				<!-- tabNav -->
-				<div class="tabNav flex align-items-center" id="tabNav">
-					<div class="on">当前预约</div>
-					<div>练车记录</div>
-					<div>考试记录</div>
 				</div>
 			</div>
-			<div style='padding-top:7.2rem;width:100%;'></div>
-			<!-- 当前预约 -->
-			<div class="list-common-sty" style="display: none;">
-				<div class="list-content-box">
-						<div class="list-head flex align-items-center">
-							<span class="iconfont iconrili"></span>
-							<span>预约时间:2019-05-23</span>
-							<span class="iconfont iconxiangyou"></span>
-						</div>
-						<div class="list-content flex align-items-center">
-							<img src="./img/head_09.png" alt="">
-							<div class="right-content">
-								<div class="flex  align-items-center right-top">
-									<div class="lf">
-										<span>周晓若</span>
-										<span>15755555555</span>
-									</div>
-									<span class="cancelOrder">取消订单</span>
-								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>订单类型：考试</span>
-									<span>班型：普通班/C1手动挡</span>
-								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>预约科目：科目二</span>
-								</div>
-							</div>
-						</div>
-				</div>
-				
-			</div>
-
-			<!-- 练车记录 -->
-			<div class="list-common-sty" style="display: none;">
-				<div class="list-content-box">
-						<div class="list-content flex align-items-center">
-							<img src="./img/head_09.png" alt="">
-							<div class="right-content">
-								<div class="flex  align-items-center right-top">
-									<div class="lf">
-										<span>周晓若</span>
-										<span>15755555555</span>
-									</div>
-									<span class="completeOrder">已完成订单</span>
-								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>订单类型：考试</span>
-								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>预约科目：科目二</span>
-									<span>预约时段：90:10-12:20</span>
-								</div>
-							</div>
-						</div>
-						<div class="list-head flex align-items-center">
-							<span></span>
-							<span>练车时间:2019-05-23</span>
-							<span class="shuanjiantou">查看详情 <span class="iconfont iconxiangyou"></span></span>
-						</div>
-				</div>
-				
-			</div>
-
-			<!-- 考试记录 -->
+		</div>
+		<!-- 练车记录 -->
+		<div class="wrapperBox" style="display: none;">
 			<div class="list-common-sty" >
+				<div class="list-content-box">
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
+								</div>
+								<span class="completeOrder">已完成订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+								<span>预约时段：90:10-12:20</span>
+							</div>
+						</div>
+					</div>
+					<div class="list-head flex align-items-center">
+						<span></span>
+						<span>练车时间:2019-05-23</span>
+						<span class="shuanjiantou">查看详情 <span class="iconfont iconxiangyou"></span></span>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+		<!-- 考试记录 -->
+		<div class="wrapperBox"  style="display: none;">
+			<div class="list-common-sty">
 				<div class="list-content-box">
 					<div class="list-head flex align-items-center">
 						<span class="iconfont iconrili"></span>
@@ -152,50 +161,102 @@
 					</div>
 				</div>
 				<div class="list-content-box">
-						<div class="list-head flex align-items-center">
-							<span class="iconfont iconrili"></span>
-							<span>预约时间:2019-05-23</span>
-							<span class="iconfont iconxiangyou"></span>
-						</div>
-						<div class="list-content flex align-items-center">
-							<img src="./img/head_09.png" alt="">
-							<div class="right-content">
-								<div class="flex  align-items-center right-top">
-									<div class="lf">
-										<span>周晓若</span>
-										<span>15755555555</span>
-									</div>
-									<!-- <span class="cancelOrder">取消订单</span> -->
+					<div class="list-head flex align-items-center">
+						<span class="iconfont iconrili"></span>
+						<span>预约时间:2019-05-23</span>
+						<span class="iconfont iconxiangyou"></span>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
 								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>订单类型：考试</span>
-									<span>班型：普通班/C1手动挡</span>
-								</div>
-								<div class="yuyueList flex align-items-center">
-									<span>预约科目：科目二</span>
-									<span>预约时段：123</span>
-								</div>
+								<!-- <span class="cancelOrder">取消订单</span> -->
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+								<span>预约时段：123</span>
 							</div>
 						</div>
-						<div class="list-head flex align-items-center">
-							<span></span>
-							<span>预约时间:2019-05-23</span>
-							<span class="shuanjiantou2">未通过</span>
-						</div>
 					</div>
-					
+					<div class="list-head flex align-items-center">
+						<span></span>
+						<span>预约时间:2019-05-23</span>
+						<span class="shuanjiantou2">未通过</span>
+					</div>
 				</div>
+	
 			</div>
 		</div>
-	</body>
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
-	<script type="text/javascript" src="js/fontSize.js" ></script>
+
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/fontSize.js"></script>
+<script src="mescroll/mescroll.min.js"></script>
+
 </html>
 
 <script>
-	$("#tabNav>div").click(function(){
+	$("#tabNav>div").click(function () {
 		let index = $(this).index();
 		$("#tabNav>div").eq(index).addClass('on').siblings().removeClass('on');
-		$(".list-common-sty").eq(index).css('display','block').siblings('.list-common-sty').css('display','none')
-	})
+		$(".list-common-sty").eq(index).css('display', 'block').siblings('.list-common-sty').css('display', 'none')
+	});
+
+	var pageNum = 1; //页码
+    var size = 10;  //每页数据固定条数
+    //创建MeScroll对象
+    var mescroll = new MeScroll("wrapper", {
+        down: {
+           callback: downCallback //下拉刷新的回调,别写成downCallback(),多了括号就自动执行方法了
+        },
+        up: {
+            callback: upCallback, //上拉加载的回调
+            empty: {
+                //列表第一页无任何数据时,显示的空提示布局; 需配置warpId或clearEmptyId才生效;
+                warpId:'mescroll', //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
+                icon: null, //图标,默认null
+                tip: "暂无相关数据~", //提示
+                btntext: "", //按钮,默认""
+                btnClick: null, //点击按钮的回调,默认null
+            },
+        }
+    });
+
+    //下拉刷新的回调
+    function downCallback() {
+		console.log('downCallback')
+
+    }
+    //上拉加载的回调 page = {num:1, size:10}; num:当前页 默认从1开始, size:每页数据条数,默认10
+    function upCallback(page) {
+        // $.ajax({
+        //     url: '/screen/pickUpPoint/findPickUpPointList?current='+pageNum+'&pageSize='+size,
+        //     dataType:'json',
+        //     type:'GET',
+        //     success: function(json) {
+        //         console.log(json)
+        //         var data = json.data;
+        //         var _html = $('#addressListTmpl').render(data);
+        //         $('#addressList').append(_html);
+        //         mescroll.endByPage(data.records.length, data.totalPage);
+        //         pageNum++
+        //     },
+        //     error: function(e) {
+        //         //联网失败的回调,隐藏下拉刷新和上拉加载的状态
+        //         mescroll.endErr();
+        //     }
+        // });
+    }
+
+
+
 </script>

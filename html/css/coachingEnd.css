@@ -2,6 +2,7 @@
     background: #f1f1f1;
     /* padding-top: 1.3333rem; */
     padding-bottom: 2rem;
+    position: relative;
 }
 .evaluate_title {
     width: 100%;
@@ -272,4 +273,12 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
     height: 1.6rem;
+}
+
+.wrapperBox{
+    width: 100%;
+    position: fixed;
+    top: 7.2rem;
+    bottom: 0;
+    height: auto;
 }
