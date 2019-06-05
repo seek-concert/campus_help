@@ -208,7 +208,7 @@
 	$("#tabNav>div").click(function () {
 		let index = $(this).index();
 		$("#tabNav>div").eq(index).addClass('on').siblings().removeClass('on');
-		$(".list-common-sty").eq(index).css('display', 'block').siblings('.list-common-sty').css('display', 'none')
+		$(".wrapperBox").eq(index).css('display', 'block').siblings('.wrapperBox').css('display', 'none')
 	});
 
 	var pageNum = 1; //页码
