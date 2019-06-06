@@ -64,12 +64,89 @@
 		<!-- tab切换类容 -->
 		<!-- 当前预约 -->
 		<div id="wrapper" class="wrapperBox">
-			<div class="list-common-sty">
-				<div class="list-content-box">
+			<!-- <div class="list-common-sty"> -->
+			<div id="minirefresh" class="minirefresh-wrap">
+				<div id="list" class="list-content-box minirefresh-scroll">
 					<div class="list-head flex align-items-center">
 						<span class="iconfont iconrili"></span>
 						<span>预约时间:2019-05-23</span>
 						<span class="iconfont iconxiangyou"></span>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
+								</div>
+								<span class="cancelOrder">取消订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+							</div>
+						</div>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
+								</div>
+								<span class="cancelOrder">取消订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+							</div>
+						</div>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
+								</div>
+								<span class="cancelOrder">取消订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+							</div>
+						</div>
+					</div>
+					<div class="list-content flex align-items-center">
+						<img src="./img/head_09.png" alt="">
+						<div class="right-content">
+							<div class="flex  align-items-center right-top">
+								<div class="lf">
+									<span>周晓若</span>
+									<span>15755555555</span>
+								</div>
+								<span class="cancelOrder">取消订单</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>订单类型：考试</span>
+								<span>班型：普通班/C1手动挡</span>
+							</div>
+							<div class="yuyueList flex align-items-center">
+								<span>预约科目：科目二</span>
+							</div>
+						</div>
 					</div>
 					<div class="list-content flex align-items-center">
 						<img src="./img/head_09.png" alt="">
@@ -95,7 +172,7 @@
 		</div>
 		<!-- 练车记录 -->
 		<div class="wrapperBox" style="display: none;">
-			<div class="list-common-sty" >
+			<div class="list-common-sty">
 				<div class="list-content-box">
 					<div class="list-content flex align-items-center">
 						<img src="./img/head_09.png" alt="">
@@ -122,11 +199,11 @@
 						<span class="shuanjiantou">查看详情 <span class="iconfont iconxiangyou"></span></span>
 					</div>
 				</div>
-	
+
 			</div>
 		</div>
 		<!-- 考试记录 -->
-		<div class="wrapperBox"  style="display: none;">
+		<div class="wrapperBox" style="display: none;">
 			<div class="list-common-sty">
 				<div class="list-content-box">
 					<div class="list-head flex align-items-center">
@@ -192,7 +269,7 @@
 						<span class="shuanjiantou2">未通过</span>
 					</div>
 				</div>
-	
+
 			</div>
 		</div>
 
@@ -200,7 +277,9 @@
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/fontSize.js"></script>
-<script src="mescroll/mescroll.min.js"></script>
+<script src="js/minirefresh.min.js"></script>
+
+<link rel="stylesheet" href="./css/minirefresh.min.css" />
 
 </html>
 
@@ -212,51 +291,26 @@
 	});
 
 	var pageNum = 1; //页码
-    var size = 10;  //每页数据固定条数
-    //创建MeScroll对象
-    var mescroll = new MeScroll("wrapper", {
-        down: {
-           callback: downCallback //下拉刷新的回调,别写成downCallback(),多了括号就自动执行方法了
-        },
-        up: {
-            callback: upCallback, //上拉加载的回调
-            empty: {
-                //列表第一页无任何数据时,显示的空提示布局; 需配置warpId或clearEmptyId才生效;
-                warpId:'mescroll', //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
-                icon: null, //图标,默认null
-                tip: "暂无相关数据~", //提示
-                btntext: "", //按钮,默认""
-                btnClick: null, //点击按钮的回调,默认null
-            },
-        }
-    });
-
-    //下拉刷新的回调
-    function downCallback() {
-		console.log('downCallback')
-
-    }
-    //上拉加载的回调 page = {num:1, size:10}; num:当前页 默认从1开始, size:每页数据条数,默认10
-    function upCallback(page) {
-        // $.ajax({
-        //     url: '/screen/pickUpPoint/findPickUpPointList?current='+pageNum+'&pageSize='+size,
-        //     dataType:'json',
-        //     type:'GET',
-        //     success: function(json) {
-        //         console.log(json)
-        //         var data = json.data;
-        //         var _html = $('#addressListTmpl').render(data);
-        //         $('#addressList').append(_html);
-        //         mescroll.endByPage(data.records.length, data.totalPage);
-        //         pageNum++
-        //     },
-        //     error: function(e) {
-        //         //联网失败的回调,隐藏下拉刷新和上拉加载的状态
-        //         mescroll.endErr();
-        //     }
-        // });
-    }
-
-
+	var size = 10;  //每页数据固定条数
+	// http://www.minirefresh.com/minirefresh-doc/api/api_globalvar.html 文档
+	var listDom = document.querySelector('#list')
+	var maxDataSize  = 20 
+	var miniRefresh = new MiniRefresh({
+		container: '#wrapper',
+		down: {
+			isWrapCssTranslate: true,
+			callback: function () {
+				console.log('down',)
+				miniRefresh.endDownLoading(true);
+			}
+		},
+		up: {
+			isAuto: true,
+			callback: function () {
+				console.log('up')
+				miniRefresh.endUpLoading(listDom.length >= maxDataSize);
+			}
+		}
+	})
 
 </script>
