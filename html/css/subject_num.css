@@ -1,0 +1,81 @@
+.special{
+    background: #f1f1f1;
+}
+.class_date_title {
+    padding: 0.53rem 0.2666rem 0.30666rem 0.2666rem;
+    background: rgb(241, 241, 241);
+}
+.class_info{
+    margin-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+.class_info>a {
+    display: block;
+    height: 1.17333rem;
+    width: 100%;
+}
+.class_info>a>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 0.42666rem;
+}
+.class_info>a>div label input{
+    font-size: 0.42666rem;
+}
+.mar-bot{
+    margin-bottom: 0.2rem;
+}
+.signOut{
+    background: white !important;
+    color: rgb(80,191,242) !important;
+}
+
+.headerimg{
+    align-items: center;
+    position: relative;
+}
+.headerimg img{
+    width: 1.28rem;
+    height: 1.28rem;
+    border-radius: 100%;
+    margin-right: 0.2rem;
+}
+.headerimg input[type='file']{
+    width: 1.28rem;
+    height: 1.28rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0.2rem;
+    z-index: 99;
+    opacity: 0;
+}
+.info-label{
+    width: 50%;
+    text-align: right;
+}
+.info-label input{
+    width: 100%;
+    text-align: right;
+    color: rgb(153,153,153);
+}
+.info-label select{
+    border: none;
+    outline: none;
+}
+.submitBtn{
+    width: 100%;
+    height: 1.25333rem;
+    line-height: 1.25333rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: rgb(111,207,251);
+    font-size: 0.48rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>完善学员信息</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/subject_num.css" />
+    <link rel="stylesheet" href="layui/css/layui.css" />
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+<div class="special">
+    <!--头部  -->
+    <div class="evaluate_title">
+        <a href="#"><i class="iconfont iconfanhui"></i></a>
+        <span>完善学员信息</span>
+    </div>
+    <!-- 信息 -->
+    <div class="class_date border_bot_226 mar-bot">
+        <div class="class_date_content bg_white">
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">报名驾校</span>
+                        <label class="info-label">
+                            <span>XX驾校</span>
+                        </label>
+                    </div>
+                </a>
+            </div>
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">班次档位</span>
+                        <label class="info-label">
+                            <select name="grade" id="grade">
+                                <option value="">请选择</option>
+                            </select>
+                        </label>
+                    </div>
+                </a>
+            </div>
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">学车进度</span>
+                        <label class="info-label">
+                            <select name="grade">
+                                <option value="">请选择</option>
+                            </select>
+                        </label>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="class_date border_bot_226 mar-bot">
+        <div class="class_date_content bg_white">
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">真实姓名</span>
+                        <label class="info-label">
+                            <input type="text" placeholder="请输入" value="刘大力">
+                        </label>
+                    </div>
+                </a>
+            </div>
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">手机号</span>
+                        <label class="info-label">
+                            <input type="text" placeholder="请输入" value="13012341234">
+                        </label>
+                    </div>
+                </a>
+            </div>
+            <div class="class_info  flex border_bot_226">
+                <a>
+                    <div>
+                        <span class="color_102">身份证号</span>
+                        <label class="info-label">
+                            <input type="text" placeholder="请输入" onkeyup="this.value=this.value.replace(/[^a-zA-Z\u4e00-\u9fa5]/g,'')">
+                        </label>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="submitBtn">立即提交</div>
+</div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/fontSize.js"></script>
+<script type="text/javascript">
+
+</script>
