@@ -11,7 +11,7 @@
 		.slide_con{width: 100%;height: 100%;overflow: hidden;position: relative;}
 		.hd{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
 		.hd li{width: 100%;height: 100%;overflow: hidden; float: left;}
-		.hd li img{display: block;width: 100%;height: auto;}
+		.hd li img{display: block;width: 9.14666rem;height: 3.89333rem;}
 		.bd{width: 100%;display: flex;justify-content: center;position: absolute;left: 0;bottom: 0.1333rem;}
 		.bd li{width: 0.2rem;height: 0.2rem;border-radius: 100%;-webkit-border-radius: 100%;-moz-border-radius: 100%; background: #cccccc;float: left;margin: 0 0.1333rem; cursor: pointer;}
 		#pre{width: 0.5333rem;height: 100%;position: absolute;left: 0;top: 0;display: flex;justify-content: center;align-items: center; cursor: pointer;}

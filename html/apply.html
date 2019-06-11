@@ -8,12 +8,9 @@
 	  	<meta name="format-detection" content="telephone=no">
 	  	<meta name="renderer" content="webkit">
 	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
-	  	<link rel="stylesheet" href="css/default.css" />
+		  <link rel="stylesheet" href="css/datePicker.css">
+		  <link rel="stylesheet" href="css/default.css" />
 	  	<link rel="stylesheet" href="css/coachEvaluation.css" />
-	  	<link rel="stylesheet" href="layui/css/layui.css" />
-	  	<script type="text/javascript" src="layui/layui.js" ></script>
-	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
-	  	<script type="text/javascript" src="js/vue.js" ></script>
 	</head>
 	<body>
 		<div class="special">
@@ -21,7 +18,7 @@
 				<a href="#"><i class="iconfont iconfanhui"></i></a>
 				<span>申请</span>
 			</div>
-			<div class="evaluate_content border_bot_226">
+			<div class="evaluate_content border_bot_226 mar-bot">
 				<div class="comment_detail" id="comment">
 					<textarea v-model="commit_text" @input="num" maxlength="130" placeholder="请输入~" class="color_102"></textarea>
 					<div class="font_num">已写<i>{{font_long}}</i>字，还能写<span>{{len}}</span>字</div>
@@ -36,104 +33,94 @@
 					</div>
 				</div>
 			</div>
-			<!--快递邮费-->
-			<div class="border_bot_226 bg_white">
-				
+			<!-- 信息 -->
+			<div class="class_date border_bot_226 mar-bot apply">
+				<div class="class_date_content bg_white">
+					<div class="class_info  flex border_bot_226">
+						<a>
+							<div>
+								<span class="color_102">快递邮费</span>
+							   <label class="info-label">
+									<input type="text" placeholder="请输入" value="刘大力" />
+							   </label>
+							</div>
+						</a>
+					</div>
+				<div class="class_info  flex border_bot_226">
+					<a>
+						<div>
+							<span class="color_102">报酬金额</span>
+							<label class="info-label">
+								<span class="renminbi">￥</span> <input type="text" placeholder="请输入" value="￥20" />
+							</label>
+						</div>
+					</a>
+				</div>
+				<div class="class_info  flex border_bot_226">
+						<a>
+							<div>
+								<span class="color_102">报酬支付</span>
+								<label class="info-label">
+									<select name="" id="">
+										<option value="1">现金</option>
+										<option value="2">微信</option>
+										<option value="3">支付宝</option>
+									</select>
+								</label>
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
+			<!-- 信息 -->
+			<div class="class_date border_bot_226 mar-bot apply">
+					<div class="class_date_content bg_white">
+						<div class="class_info  flex border_bot_226">
+							<a>
+								<div>
+									<span class="color_102">联系电话</span>
+								   <label class="info-label">
+										<input type="text" placeholder="请输入" value="1579858757" />
+								   </label>
+								</div>
+							</a>
+						</div>
+						<div class="class_info flex border_bot_226">
+								<a>
+									<div>
+										<span class="color_102">限定时间</span>
+										<label class="info-label">
+												<div class="iDate full">
+													<input type="text">
+													<button type="button" class="addOn"></button>
+												</div>
+										</label>
+									</div>
+								</a>
+							</div>
+						<div class="class_info  flex border_bot_226">
+							<a>
+								<div>
+									<span class="color_102">送达地点</span>
+									<label class="info-label">
+										<input type="text" placeholder="请输入" value="A小区" />
+									</label>
+								</div>
+							</a>
+						</div>
+					
+					</div>
+				</div>
+				<div class="submitBtn signOut">发起申请</div>
 		</div>
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript" src="js/vue.js" ></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript" src="js/fontSize.js" ></script>
 <script>
-	layui.use('layer', function(){
-	  layer = layui.layer;
-	});
-	//标签
-	$(".coach_key_list li").click(function(){
-		var thisVal = $(this).text();
-		var att = $(this).attr("class");
-		var index = $(this).index();
-		if(att!=undefined&&att!=''){
-			$(this).removeClass("active");
-			var ownlen=$(".own_key li").length;
-			for(var i=0;i<ownlen;i++){
-				var ownIndex=$(".own_key li").eq(i).attr('index');
-				if(ownIndex==index){
-					$(".own_key li").eq(i).remove();
-				}
-			}
-		}else{
-			$(this).addClass("active");
-			var tui_html='<li index='+index+'>'+thisVal+'<i onclick="del('+index+')" class="iconfont iconchuyidong"></li>';
-			$(".own_key").prepend(tui_html);
-		}
-	});
-	function del(index){
-		$(".coach_key_list li").eq(index).removeClass("active");
-		var ownlen=$(".own_key li").length;
-		for(var i=0;i<ownlen;i++){
-			var ownIndex=$(".own_key li").eq(i).attr('index');
-			if(ownIndex==index){
-				$(".own_key li").eq(i).remove();
-			}
-		}
-	}
-	var count = 0;
-	$(".own_key input").blur(function(){
-		var input_html="";
-		var inputVal =$(this).val().replace(/\s+/g,"");;
-		if(inputVal!=''){
-			var ownlen=$(".own_key li").length;
-			for(var i=0;i<ownlen;i++){
-				var ownVal=$(".own_key li").eq(i).text();
-				if(inputVal==ownVal){
-					layer.msg('该标签已存在');
-					return;
-				}
-			}
-			var inputValLen = inputVal.length;
-			if(inputValLen>5){
-				inputVal=inputVal.substring(0,5);
-			}
-			if(count<5){
-				var coachownlen=$(".coach_key_list li").length;
-				for(var i=0;i<coachownlen;i++){
-					var coachownVal=$(".coach_key_list li").eq(i).text();
-					if(inputVal==coachownVal){
-						$(".coach_key_list li").eq(i).addClass("active");
-						input_html='<li index='+i+'>'+inputVal+'<i onclick="del('+i+')" class="iconfont iconchuyidong"></li>';
-					}
-				}
-				if(input_html==""){
-					var rand =parseInt(Math.random()*1000);
-				    input_html='<li rand='+rand+'>'+inputVal+'<i onclick="RandDel('+rand+')" class="iconfont iconchuyidong"></li>';
-				}
-				$(".own_key").prepend(input_html);
-				$(this).val("");
-				count++;
-			}
-		}
-	});
-	function RandDel(rand){
-		var ownlen=$(".own_key li").length;
-		for(var i=0;i<ownlen;i++){
-			var ownRand=$(".own_key li").eq(i).attr('rand');
-			if(ownRand==rand){
-				$(".own_key li").eq(i).remove();
-				count--;
-			}
-		}
-	}
-	//星星
-	$(".star_score dt").click(function(){
-		var len = $(this).index();
-		for(var i=0;i<=len;i++){
-			$(".star_score dt").eq(i).addClass("star_default");
-			for(var j=i;j<5;j++){
-				$(".star_score dt").eq(j+1).removeClass("star_default");
-			}
-		}
-	});
 	//统计输入字数
 	var total = new Vue({
 		el:'#comment',
@@ -156,4 +143,22 @@
 			}
 		}
 	});
+	
+	$(document).ready(function(){
+    // date time picker
+    if($(".iDate.full").length>0){
+        $(".iDate.full").datetimepicker({
+            locale: "zh-cn",
+            format: "YYYY-MM-DD a hh:mm",
+            dayViewHeaderFormat: "YYYY年 MMMM"
+        });
+    }
+    if($(".iDate.date").length>0){
+        $(".iDate.date").datetimepicker({
+            locale:"zh-cn",
+            format:"YYYY-MM-DD",
+            dayViewHeaderFormat:"YYYY年 MMMM"
+        });
+    }
+})
 </script>

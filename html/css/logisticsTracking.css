@@ -1,0 +1,57 @@
+.special {
+    background: #f1f1f1;
+    /* padding-top: 1.3333rem; */
+    padding-bottom: 2rem;
+}
+.coach_info_box {
+    padding: 0.4rem 0.4rem 0.266rem 0.4rem;
+    background: #FFFFFF;
+}
+.coach_info img {
+    width: 2.08rem;
+    height: 2.08rem;
+    padding-right: 0.2933rem;
+}
+.coach_right{
+    width: 6.77rem;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.coach_title {
+    flex-grow: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-right: 3px;
+}
+.coach_title b{
+    font-size: 0.48rem;
+}
+.belong_school{
+    width: 2.08rem;
+    height: 0.74666rem;
+    line-height: 0.74666rem;
+    background: rgb(111,207,251);
+    color: white;
+    font-size: 0.3466rem;
+    text-align: center;
+    border-radius: 0.1333rem;
+
+}
+.coach_address{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.kuaidi_name{
+    font-size: 0.4rem;
+    color: rgb(51,51,51);
+}
+.kuaidi_number{
+    font-size: 0.4rem;
+    color: rgb(102,102,102);
+}
+.mat-top-20{
+    margin-top: 0.2666rem;
+}

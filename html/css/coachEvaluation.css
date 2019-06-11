@@ -205,3 +205,69 @@
 .own_key input::-webkit-input-placeholder{
 	color: #999999;
 }
+
+
+/* 申请页面样式 */
+.apply .class_info {
+    margin-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+.class_info>a {
+    display: block;
+    height: 1.17333rem;
+    width: 100%;
+}
+.class_info>a>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 0.42666rem;
+}
+.mar-bot {
+    margin-bottom: 0.2rem;
+}
+.info-label {
+    width: 50%;
+	text-align: right;
+	position: relative;
+}
+.renminbi{
+	font-size: 0.4rem;
+	color: rgb(51,51,51);
+	position: absolute;
+	top: 50%;
+	margin: -0.2rem;
+	left: 0;
+}
+.class_info>a>div label input {
+    font-size: 0.42666rem;
+}
+
+.info-label input {
+    width: 100%;
+    text-align: right;
+    color: rgb(153,153,153);
+}
+.info-label select {
+    border: 1px solid transparent !important;
+    outline: none;
+}
+.iDate{
+	width:4.3rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+}
+.iDate input{
+	font-size: 0.32rem !important;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	text-align: left !important;
+}
+.iDate>button:after {
+    right: 0.13rem !important;
+    top: 50%;
+    width: 0.37333rem !important;
+    height: 0.37333rem !important;
+    margin-top: -0.185rem !important;
+}

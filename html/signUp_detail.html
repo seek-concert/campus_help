@@ -102,9 +102,20 @@
 				</div>
 			</div>
 			<!--查看图集-->
-			<div class="photo">
-				<img src="img/car_06.jpg" />
-				<a href="#"><span class="look_photo">查看图集 ></span></a>
+			<!--内容-->
+			<div class="slide_banner">
+				<div id="slide" style="width: 100%; height: 100%; position: relative;">
+					<div class="slide_con">
+						<ul class="hd">
+							<li><img src="img/banner1_02.jpg" /></li>
+							<li><img src="img/banner2_02.jpg" /></li>
+						</ul>
+					</div>
+					<ul class="bd">
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
 			</div>
 			<!--内容-->
 			<div class="address">
@@ -337,7 +348,13 @@
 	</body>
 </html>
 <script type="text/javascript" src="js/fontSize.js" ></script>
+<script type="text/javascript" src="js/banner.js" ></script>
 <script>
+	
+	//轮播
+	$(function(){
+		new Slide({slideCell:"#slide",titOnClassName:"on",autoPlay:true,speed:500});
+	});
 	var num=1;
 	$(".small_img img").click(function(){
 		$(".picture").css("display","block");
