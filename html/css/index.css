@@ -160,6 +160,7 @@
 	width: 100%;
 	height: 3.8933rem;
 	position: relative;
+	overflow: hidden;
 }
 .brand_img img{
 	width: 100%;
