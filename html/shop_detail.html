@@ -12,7 +12,7 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<link rel="stylesheet" href="css/default.css" />
 	<link rel="stylesheet" href="css/shop_detail.css" />
-	<link rel="stylesheet" href="//at.alicdn.com/t/font_697643_ncw7c7yd8c.css">
+	<link rel="stylesheet" href="fonts/iconfont.css">
 	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 	<script type="text/javascript" src="js/vue.js"></script>
 </head>
@@ -66,14 +66,14 @@
 		</div>
 
 		<!-- tabs -->
-		<div style="position: sticky; top: 0px; z-index: 3;">
+		<!-- <div style="position: sticky; top: 0px; z-index: 3;">
 			<div class="shop-tab">
 				<div class="shop-tab-item" v-for="(item, index) in shopTabs" :key="index"
 					:class="shoptabIndex == item.index ? 'shop-tab-active' : ''" @click="changeShoptab(item.index)">
 					<p class="shop-tab-p">{{item.name}}<span class="shop-tab-span"></span></p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- 点餐 -->
 		<div class="shop-order" v-show="shoptabIndex == 1">
 			<div class="shop-order-box">
@@ -196,7 +196,7 @@
 			</div>
 		</div>
 		<!-- 评价 -->
-		<div class="shop-comment" v-show="shoptabIndex == 2">
+		<!-- <div class="shop-comment" v-show="shoptabIndex == 2">
 			<section class="score-box">
 				<div class="left">
 					<div class="num">
@@ -269,9 +269,9 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<!-- 商家 -->
-		<div class="shop-info" v-show="shoptabIndex == 3">
+		<!-- <div class="shop-info" v-show="shoptabIndex == 3">
 			<section class="section">
 				<h3 class="section-title">配送信息</h3>
 				<div class="delivery">
@@ -312,7 +312,7 @@
 					<span class="icon-right"></span>
 				</section>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </body>
 
@@ -322,9 +322,9 @@
 <script>
 	const screenHeight = window.screen.height;
 	const shopTabs = [
-		{name: '点餐',index: 1},
-		{name: '评价',index: 2},
-		{name: '商家',index: 3}
+		// {name: '点餐',index: 1},
+		// {name: '评价',index: 2},
+		// {name: '商家',index: 3}
 	];
 
 	const shopList = [
