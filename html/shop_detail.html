@@ -322,9 +322,9 @@
 			<div class="specpanel-mask"></div>
 			<div class="specpanel-root">
 				<div class="specpanel-main">
-					<a href="javascript:;" class="specpanel-close"></a>
+					<a href="javascript:;" class="specpanel-close" @click="hideSpecpanelFun()" ></a>
 					<div class="specpanel-header">
-						<img alt="" class="specpanel-pic" :src="specpanelItem.img" @click="hideSpecpanelFun()" />
+						<img alt="" class="specpanel-pic" :src="specpanelItem.img"/>
 						<div class="specpanel-info">
 							<p class="specpanel-name">{{specpanelItem.title}}</p>
 							<p class="specpanel-total">已选：{{specpanelInfo}}</p>
