@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>预约课时</title>
+		<title>物流跟踪</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
@@ -22,10 +22,10 @@
 			<!--头部-->
 			<div class="evaluate_title">
 				<a href="#"><i class="iconfont iconfanhui"></i></a>
-				<span>预约课时</span>
+				<span>物流跟踪</span>
 			</div>
 
-			<!--教练信息-->
+			<!--基础信息-->
 			<div class="coach_info_box border_bot_192 mat-top-20">
 				<div class="coach_info flex">
 					<img src="img/head_09.png" />
@@ -45,11 +45,57 @@
                         
                         <div class="address_box flex">
                             <div class="coach_address">
-                                <span>在上海分拣中心进行装车扫描即将发送到重庆…</span>
+                                <span class="coach_addressSpan">在上海分拣中心进行装车扫描即将发送到重庆…</span>
                             </div>
                         </div>
 					</div>
 				</div>
+			</div>
+
+			<!-- 物流进度 -->
+			<div class="logistics-box-progress mat-top-20 bg_white">
+				<div class="logistic-img progress-bar flex">
+					<div class="progress-item is-success">
+						<p>未寄出</p>
+						<div class="step_box">
+							<div class="el-step__line"></div>
+						</div>
+					</div>
+					<div class="progress-item  is-success">
+						<p>路途中</p>
+						<div class="step_box">
+							<div class="el-step__line"></div>
+						</div>
+					</div>
+					<div class="progress-item is-active">
+						<p>已签收</p>
+						<div class="step_box">
+							<div class="el-step__line"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="logistics-box bg_white">
+				<ul>
+					<li class="on">
+						<div class="left_li flex">
+							<div class="color_153 f_22">2019.12.12</div>
+							<div class="color_102 f_30">12:12:12</div>
+						</div>
+						<div class="right_li flex">
+							<div class="f_26">快件已到达重庆市沙坪坝，快递员正在派送电话13545454848 请保持电话畅通</div>
+						</div>
+					</li>
+					<li>
+						<div class="left_li flex">
+							<div class="color_153 f_22">2019.12.12</div>
+							<div class="color_102 f_30">12:12:12</div>
+						</div>
+						<div class="right_li flex">
+							<div class="f_26">快件已到达重庆市沙坪坝，快递员正在派送电话13545454848 请保持电话畅通</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</body>
