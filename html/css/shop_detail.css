@@ -159,4 +159,35 @@
 .shop-info .section .detail li span:last-child { text-align: right; max-width: 5rem; }
 .shop-info .section .icon-right { display: inline-block; width: 0.18rem; height: 0.18rem; border-bottom: 0.02rem solid #ccc; border-right: 0.02rem solid #ccc; transform: rotate(-45deg); }
 
+.specpanel-mask { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1000; }
+
+.specpanel-root { position: fixed; bottom: 0; left: 0; width: 100%; height: 10rem; z-index: 1400; background: #fff; }
+
+.specpanel-main { position: relative; display: flex; flex-direction: column; padding: 0.48rem; height: 100%; box-sizing: border-box; }
+
+.specpanel-close { display: block; position: absolute; top: 0.2rem; right: 0.2rem; width: 0.366667rem; height: 0.366667rem; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAvCAYAAAClgknJAAAAAXNSR0IArs4c6QAAAspJREFUaAXNmU9q20AUhy01Bu9LV4VAu88mJ4jpHbxJqcBgnyAkNwgk5AQ2GFRaKD5CoDgnyCYHKBS6Ctkb7Ep5PzHPSBNppNE8/dFmNKPJzPfNPCtv7MFAu1ar1YflcvlJa+68Ciaw6SB+ugEddrvd7yiKHvokARYwgU2X8FiA4al+otr++r5/NpvN/nCfLkqGp7mP1fxPw+Hwy3Q6fUY92YHNZnO03+/vqc7weHbc9U7Qon4GA1gApK4TsK7X63eoJwLj8XhP93ee5/1XnbjoTAIrTyGzIZA0/EAx3k0mk4T1EEIgXiwW51SEcRwndmhTV6vhlBM2CYaCD+bz+U8GywigsWsJG3jwvhHoUsIWvlCgC4k68EaBNiXqwpcKtCHhAl9JoEkJV/jKAk1ISMBbCUhKSMFbC0hISMLXEnCRkIavLVBHogl4JwEbiabgnQWqSKBPTkrMWWUmMUNf2ys3F7IdxJAA/lNjfUyPmZdVpp/b3IsIYEKDRIZHEh4DiwlgsDIJaXjMmTnUo8HlwkGDDkMXBBrnjEOP4ov0YSSnj3WT6A4UvW1SVOInOzGBCvDsISohImCAjxS1HqpiEs4CRfD8gVUCjX1R4CRQBs8fWMPbyXkn9K3lOC0tq8JjICUS0C2HFI/v/L1TLYEieAWYmx5AgsLqm7SEdQiZ4AHIYcNLrJcIJ/p/8J3a9cWrFU5WAq7wLCMpUVlACl5aopKANLykRKlAU/BSEkaBpuElJAoF2oJ3lcgVaBueJWjer3T8DKle+RX7RsAE7/t+QL+Z/eAJmyhtJTICXcPzgthIHAT6Am8rkQj0Dd5GwgvD8P12u32kP8r8Gkj1qI2YZ9ii0hROo9Ho1A+C4IWSsF/aAL2ABxNeGlhIus2k4mBO2BmcEqwbyhIv0bEPK89cXKZ3guBvKeu94meHkiSu0fHQ0LMbsIGxZ1huOK8fLej3ale6/wAAAABJRU5ErkJggg==) no-repeat; background-size: cover; }
+
+.specpanel-header { padding-bottom: 0.5rem; display: flex; }
+
+.specpanel-pic { flex: none; width: 1.45rem; height: 1.45rem; }
+
+.specpanel-info { padding-left: 0.3rem; display: flex; flex-direction: column; }
+
+.specpanel-name { color: #333; font-size: 0.32rem; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 0.12rem; }
+
+.specpanel-total { flex: 1; color: #666; font-size: 0.17rem; }
+
+.specpanel-price { font-size: 0.36rem; }
+
+.specpanel-body { flex: 1; overflow-y: scroll; overflow-x: hidden; }
+
+.specpanel-doneBtn { width: 100%; height: 0.8rem; line-height: 0.8rem; text-align: center; color: #fff; font-size: 0.28rem; font-weight: 700; border-radius: 0.06rem; background-color: #2396ff; }
+
+.specpanel-colTitle { color: #666; font-size: 0.3rem; margin-bottom: 0.16rem; }
+
+.specpanel-colBody { display: flex; flex-wrap: wrap; margin: 0 -0.2rem; }
+
+.panel-item-item { display: inline-block; min-width: 1.473333rem; padding: 0 0.18rem; min-height: 0.6rem; border-radius: 0.053333rem; background-color: #f5f5f5; color: #333; font-size: 0.26rem; text-align: center; margin: 0 0.2rem 0.3rem; line-height: 0.6rem; }
+.panel-item-item.panel-item-active { color: #2396ff; font-weight: 700; background-color: rgba(35, 150, 255, 0.2); }
+
 /*# sourceMappingURL=shop_detail.css.map */
