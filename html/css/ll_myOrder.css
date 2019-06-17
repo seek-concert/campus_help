@@ -1,0 +1,108 @@
+.school_first{
+    justify-content: space-between;
+    margin: auto;
+    float: inherit;
+}
+.school_first span{
+    width: 20%;
+}
+.shop_content{
+    margin-top: 0.2666rem;
+    background: white;
+}
+.orderStatus{
+    font-size: 0.37333rem;
+    color: rgb(80,191,242);
+    line-height: 1.2rem;
+    padding:0 0.4rem;
+    border-bottom: 0.0133rem solid #eeeeee;
+}
+.orderStatus>span{
+    color: rgb(102,102,102);
+    margin-left: 0.1rem;
+}
+.list_content{
+    padding: 0;
+}
+.product_list{
+    padding:0 0 0 0.4rem;
+    width: auto;
+}
+.product_list li{
+    padding:0 0.4rem 0 0;
+    border-bottom: 0.0133rem solid #eeeeee;
+    width: auto;
+}
+.product_right{
+    border: none;
+    padding: 0 0 0.2933rem 0.4rem;
+}
+.pro_price_box{
+    justify-content: space-between;
+}
+.pro_price{
+    width: auto;
+}
+.pro_price.num{
+    color: rgb(153,153,153);
+}
+.pro_title{
+    font-size: 0.4rem;
+}
+.qugouwu{
+    font-size: 0.42666rem;
+    color: white;
+    text-align: center;
+    line-height: 1.25rem;
+    width: 4.6933rem;
+    background: rgb(80,191,242);
+    border-radius: 0.613rem;
+    margin: 0.5rem  auto;
+
+}
+.noData{
+    text-align: center;
+    margin-top: 2.5rem;
+}
+.noData .text{
+    color: rgb(153,153,153);
+    font-size: 0.3733rem;
+    margin: 0.3rem  auto;
+}
+.yuanDiv{
+    width: 3.1rem;
+    height: 3.1rem;
+    border-radius: 100%;
+    background: rgb(238,238,238);
+    margin: auto;
+    text-align: center;
+    line-height: 3.1rem;
+}
+.yuanDiv span{
+    font-size: 1.5rem;
+    color: white;
+}
+.tavNavContent{
+    width: 8rem;
+    height: 1.17333rem;
+    margin: 0.3rem auto;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.0266rem solid rgb(111,207,251);
+    border-radius: 1.17333rem;
+    overflow: hidden;
+}
+.tavNavContent div{
+    font-size: 0.4266rem;
+    color: white;
+    background: rgb(111,207,251);
+    flex-grow: 1;
+    text-align: center;
+    height: 1.17333rem;
+    line-height:  1.17333rem;
+    border-right: 0.0133rem solid radial-gradient(red 24%, white 100%);
+}
+.tavNavContent div.on{
+    background: white;
+    color: rgb(111,207,251);
+}

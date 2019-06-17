@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/shop_list.css" />
+	  	<link rel="stylesheet" href="css/ll_myOrder.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="special" style="padding-top:0;">
+            <!--头部-->
+            <div class="evaluate_title">
+                <a href="javascript:history.go(-1)"><i class="iconfont iconfanhui"></i></a>
+                <span>驾校报名</span>
+            </div>
+            <div class="tavNavList">
+                <div class="tavNavContent flex">
+                    <div class="on">驾校</div>
+                    <div>商城</div>
+                    <div>代拿</div>
+                </div>
+            </div>
+			<div class="list">
+				<ul class="school_first flex">
+					<li>全部</li>
+					<li>待付款</li>
+					<li>待发货</li>
+					<li>待收货</li>
+					<li>待评价</li>
+					<span></span>
+				</ul>
+			</div>
+			<div class="shop_content">
+				<div class="list_content" style="display: none;">
+					<div class="list_detail">
+						<div class="list_change">
+                        <div class="orderStatus">订单状态:<span>为发货</span> </div>
+                        <ul class="product_list">
+							<li>
+								<a href="./shop_detail.html"><img src="img/product_03.jpg" />
+								<div class="product_right">
+									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+									<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
+								</div></a>
+							</li>
+							<li>
+								<a href="#"><img src="img/product_03.jpg" />
+								<div class="product_right">
+									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+									<div class="pro_price">￥254.00</div>
+								</div></a>
+							</li>
+							<li>
+								<a href="#"><img src="img/product_03.jpg" />
+								<div class="product_right">
+									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+									<div class="pro_price">￥254.00</div>
+								</div></a>
+							</li>
+						</ul>
+						</div>
+                    </div>   
+                </div>
+                <div class="noData">
+                    <div>
+                        <div class="yuanDiv">
+                            <span class="iconfont iconfabu_jibenxinxi"></span>
+                        </div>
+                        <div class="text">快填满这里让自己更美丽！</div>
+                        <div class="qugouwu">马上去购物</div>
+                    </div>
+                </div>
+			</div>
+			<!--底部导航-->
+			<ul class="center_footer_nav">
+				<li>
+					<a href="index.html">
+						<i class="iconfont iconhuaban5"></i>
+					    <span>首页</span>
+					</a>
+				</li>
+				<li class="color_blue">
+					<a href="shop_list.html">
+						<i class="iconfont iconhuaban1"></i>
+					    <span>商城</span>
+					</a>
+				</li>
+				<li>
+					<a href="more_trips.html">
+						<i class="iconfont iconhuaban2"></i>
+					    <span>更多服务</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="iconfont iconhuaban3"></i>
+					    <span>论坛</span>
+					</a>
+				</li>
+				<li>
+					<a href="center.html">
+						<i class="iconfont iconhuaban4"></i>
+					     <span>个人中心</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	var shop=true;
+	var list_index=$(".list_content>div").length;
+	for(var i=0;i<list_index;i++){
+		$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","block").siblings().css("display","none");
+	}
+	$("#more").click(function(){
+		for(var i=0;i<list_index;i++){
+			if(shop){
+				$("#more").children("i").removeClass("icongengduo-");
+				$("#more").children("i").addClass("icongengduo1");
+				$(".special").css("background","#f1f1f1");
+				$(".list_content").addClass("water_list_content");
+				$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","none").siblings().css("display","block");
+			}else{
+				$("#more").children("i").removeClass("icongengduo1");
+				$("#more").children("i").addClass("icongengduo-");
+				$(".special").css("background","#FFFFFF");
+				$(".list_content").removeClass("water_list_content");
+				$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","block").siblings().css("display","none");
+			}
+		}
+		shop=!shop;
+	});
+	$(".list_content>div").eq(0).css("display","block").siblings().css("display","none");
+	$(".school_first li").click(function(){
+		var persent =20;
+		var index = $(this).index();
+		var left =persent*index;
+		$(this).siblings("span").css("left",left+"%");
+		$(".list_content>div").eq(index).css("display","block").siblings().css("display","none");
+	});
+	//字数超出显示...
+	var pro_len = $(".product_list li").length;
+	for(var i=0;i<pro_len;i++){
+		var con =$(".product_list li").eq(i).children().children(".pro_title").text();
+		if(con.length>40){
+			var str = con.substr(0,40)+'...';
+		    $(".product_list li").eq(i).children().children(".pro_title").text(str);
+		}
+	}
+	//菜单
+    var nav_status=true;
+    $("#nav").click(function(){
+    	if(nav_status){
+    		$("#menu").addClass("menu_animation");
+    		nav_status=!nav_status;
+    	}else{
+    		$("#menu").removeClass("menu_animation");
+    		nav_status=!nav_status;
+    	}
+    });
+    $("#menu").click(function(){
+	    $("#menu").removeClass("menu_animation");
+	    nav_status=!nav_status;
+	});
+	$(".menu_con").click(function(event){
+	    event.stopPropagation();
+	});
+    menu();
+    function menu(){
+    	var starx=0;
+    	var endx=0;
+    	var el=document.getElementById("menu");
+    	el.addEventListener("touchstart",function(e){
+    		starx = e.changedTouches[0].clientX;
+    	});
+    	el.addEventListener("touchend",function(e){
+    		endx = e.changedTouches[0].clientX;
+    		if(starx>endx+10){
+		    	$("#menu").removeClass("menu_animation");
+		    	nav_status=!nav_status;
+		    }
+    	});
+    }
+</script>
