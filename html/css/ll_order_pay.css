@@ -1,0 +1,59 @@
+.evaluate_title{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+.special{
+    padding-top: 1.333rem;
+}
+.payContent{
+
+}
+.bigtext{
+    text-align:center;
+    font-size:0.77rem;
+    font-family:'FZY1JW--GB1-0';
+    color: #65b5e6
+}
+.smalltext{
+    text-align:center;
+    font-size:0.34rem;
+    font-family:'PingFang-SC-Medium';
+    color: #65b5e6;
+    margin-bottom: .933333rem;
+}
+.submitBtnA{
+    line-height: 1.2rem;
+    text-align:center;
+    border-radius:75px;
+    background:#eeeeee;
+    color:#999999;
+    width:4.7rem; 
+    height:1.26rem;
+    margin:.266667rem auto;
+    font-size: .426667rem;
+    display: block;
+}
+.bgBlueA{
+    background: rgb(80,191,242);
+    color: white;
+}
+.imgBox{
+    width: 4.706667rem;
+    height: 4.266667rem;
+    margin: 2rem auto .5rem;
+    background-size: 100% 100%;
+}
+.isSuccess{
+    background: url(../img/background_01.jpg) no-repeat center;
+}
+.isFailed{
+    background: url(../img/banner1_02.jpg) no-repeat center;
+}
+.chongshi{
+    color: rgb(80,191,242);
+    font-size: .426667rem;
+    text-decoration: underline;
+}

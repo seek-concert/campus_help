@@ -2,17 +2,24 @@
     justify-content: space-between;
     margin: auto;
     float: inherit;
+    height: 1.2rem;
+    line-height: 1rem;
+}
+.school_first li{
+    line-height: 1.1rem;
+}
+.special{
+    background: rgb(241,241,241);
 }
 .school_first span{
     width: 20%;
 }
 .shop_content{
     margin-top: 0.2666rem;
-    background: white;
 }
 .orderStatus{
     font-size: 0.37333rem;
-    color: rgb(80,191,242);
+    color: rgb(102,102,102);
     line-height: 1.2rem;
     padding:0 0.4rem;
     border-bottom: 0.0133rem solid #eeeeee;
@@ -24,14 +31,25 @@
 .list_content{
     padding: 0;
 }
+.list{
+    height: 1.2rem;;
+}
 .product_list{
-    padding:0 0 0 0.4rem;
+    /* padding:0 0 0 0.4rem; */
     width: auto;
 }
+.product_list li div.listCon{
+    padding:0 0.4rem 0 0.4rem;
+    border-bottom: 0.0133rem solid #eeeeee;
+
+}
 .product_list li{
-    padding:0 0.4rem 0 0;
+    padding:0 0 0 0;
     border-bottom: 0.0133rem solid #eeeeee;
     width: auto;
+    flex-direction: column;
+    margin: .4rem 0;
+    background: white;
 }
 .product_right{
     border: none;
@@ -82,10 +100,15 @@
     font-size: 1.5rem;
     color: white;
 }
+.tavNavList{
+    background: white;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgb(230,230,230);
+}
 .tavNavContent{
     width: 8rem;
     height: 1.17333rem;
-    margin: 0.3rem auto;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
     border: 0.0266rem solid rgb(111,207,251);
@@ -104,5 +127,41 @@
 }
 .tavNavContent div.on{
     background: white;
+    color: rgb(111,207,251);
+}
+.bottonGroup{
+    text-align: right;
+    padding:0 0.4rem 0 0.4rem;
+}
+.bottonGroup a{
+    display: inline-block !important;
+    width: 2.146667rem !important;
+    height: .72rem;
+    border-radius: 0.72rem;
+    font-size: .293333rem;
+    color: rgb(51,51,51);
+    text-align: center;
+    line-height: .72rem;
+    border: 1px solid rgb(230,230,230);
+    margin: .4rem 0;
+}
+.priceBox{
+    padding:0 0.4rem 0 0.4rem;
+    justify-content: flex-end;
+    align-items: center;
+    line-height: 1.2rem;
+    border-bottom: 1px solid rgb(230,230,230);
+}
+.priceBox div{
+    font-size: .32rem;
+    color: rgb(51,51,51);
+    margin-left: .266667rem;
+}
+.priceBox span.priceSpan{
+    font-size: .48rem;
+    color: rgb(51,51,51);
+}
+.bottonGroup .on{
+    border: 1px solid rgb(111,207,251);
     color: rgb(111,207,251);
 }

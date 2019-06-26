@@ -21,7 +21,7 @@
                 <span>驾校报名</span>
             </div>
             <div class="tavNavList">
-                <div class="tavNavContent flex">
+                <div class="tavNavContent flex" id="tavNavContent">
                     <div class="on">驾校</div>
                     <div>商城</div>
                     <div>代拿</div>
@@ -38,40 +38,75 @@
 				</ul>
 			</div>
 			<div class="shop_content">
-				<div class="list_content" style="display: none;">
+				<div class="list_content" >
 					<div class="list_detail">
 						<div class="list_change">
-                        <div class="orderStatus">订单状态:<span>为发货</span> </div>
+                        
                         <ul class="product_list">
 							<li>
-								<a href="./shop_detail.html"><img src="img/product_03.jpg" />
-								<div class="product_right">
-									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
-									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
-									<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
-								</div></a>
+								<div class="orderStatus">订单编号:<span>180815000009</span> </div>
+								<div class="listCon">
+									<a href="./shop_detail.html"><img src="img/product_03.jpg" />
+										<div class="product_right">
+											<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+											<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+											<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
+										</div>
+									</a>
+									<a href="./shop_detail.html"><img src="img/product_03.jpg" />
+										<div class="product_right">
+											<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+											<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+											<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
+										</div>
+									</a>
+								</div>
+								<div class="flex priceBox">
+									<div>共2件商品</div>
+									<div><span>实付款：</span> <span class="priceSpan">￥234.00</span></div>
+								</div>
+								<div class="bottonGroup">
+									<a >查看发票</a>
+									<a >评价晒单</a>
+									<a class="on">再次购买</a>
+								</div>
+								
 							</li>
 							<li>
-								<a href="#"><img src="img/product_03.jpg" />
-								<div class="product_right">
-									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
-									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
-									<div class="pro_price">￥254.00</div>
-								</div></a>
+								<div class="orderStatus">订单编号:<span>180815000009</span> </div>
+									<div class="listCon">
+										<a href="./shop_detail.html"><img src="img/product_03.jpg" />
+											<div class="product_right">
+												<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+												<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+												<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
+											</div>
+										</a>
+										<a href="./shop_detail.html"><img src="img/product_03.jpg" />
+											<div class="product_right">
+												<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
+												<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
+												<div class="flex pro_price_box"><div class="pro_price">￥254.00</div><div  class="pro_price num">X 1</div></div>
+											</div>
+										</a>
+									</div>
+									<div class="flex priceBox">
+										<div>共2件商品</div>
+										<div><span>实付款：</span> <span class="priceSpan">￥234.00</span></div>
+									</div>
+									<div class="bottonGroup">
+										<a >查看发票</a>
+										<a >评价晒单</a>
+										<a class="on">再次购买</a>
+									</div>
+									
 							</li>
-							<li>
-								<a href="#"><img src="img/product_03.jpg" />
-								<div class="product_right">
-									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
-									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
-									<div class="pro_price">￥254.00</div>
-								</div></a>
-							</li>
+								
 						</ul>
 						</div>
                     </div>   
                 </div>
-                <div class="noData">
+                <div class="noData" style="display: none;">
                     <div>
                         <div class="yuanDiv">
                             <span class="iconfont iconfabu_jibenxinxi"></span>
@@ -124,24 +159,6 @@
 	for(var i=0;i<list_index;i++){
 		$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","block").siblings().css("display","none");
 	}
-	$("#more").click(function(){
-		for(var i=0;i<list_index;i++){
-			if(shop){
-				$("#more").children("i").removeClass("icongengduo-");
-				$("#more").children("i").addClass("icongengduo1");
-				$(".special").css("background","#f1f1f1");
-				$(".list_content").addClass("water_list_content");
-				$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","none").siblings().css("display","block");
-			}else{
-				$("#more").children("i").removeClass("icongengduo1");
-				$("#more").children("i").addClass("icongengduo-");
-				$(".special").css("background","#FFFFFF");
-				$(".list_content").removeClass("water_list_content");
-				$(".list_content>div").eq(i).children(".list_change").eq(0).css("display","block").siblings().css("display","none");
-			}
-		}
-		shop=!shop;
-	});
 	$(".list_content>div").eq(0).css("display","block").siblings().css("display","none");
 	$(".school_first li").click(function(){
 		var persent =20;
@@ -159,38 +176,22 @@
 		    $(".product_list li").eq(i).children().children(".pro_title").text(str);
 		}
 	}
-	//菜单
-    var nav_status=true;
-    $("#nav").click(function(){
-    	if(nav_status){
-    		$("#menu").addClass("menu_animation");
-    		nav_status=!nav_status;
-    	}else{
-    		$("#menu").removeClass("menu_animation");
-    		nav_status=!nav_status;
-    	}
-    });
-    $("#menu").click(function(){
-	    $("#menu").removeClass("menu_animation");
-	    nav_status=!nav_status;
-	});
-	$(".menu_con").click(function(event){
-	    event.stopPropagation();
-	});
-    menu();
-    function menu(){
-    	var starx=0;
-    	var endx=0;
-    	var el=document.getElementById("menu");
-    	el.addEventListener("touchstart",function(e){
-    		starx = e.changedTouches[0].clientX;
-    	});
-    	el.addEventListener("touchend",function(e){
-    		endx = e.changedTouches[0].clientX;
-    		if(starx>endx+10){
-		    	$("#menu").removeClass("menu_animation");
-		    	nav_status=!nav_status;
-		    }
-    	});
-    }
+
+	//tab切换
+	$("#tavNavContent div").click(function(){
+		
+		let tabIndex = $(this).index();
+		getOrderdList(tabIndex)
+	})
+
+	function getOrderdList(index){
+		$.ajax({
+			url:'js/orderListData.json',
+			type:'GET',
+			dataType:'json',
+			success:function(data){
+				$("#tavNavContent div").eq(index).addClass('on').siblings('div').removeClass('on');
+			},
+		})
+	}
 </script>

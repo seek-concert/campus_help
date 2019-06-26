@@ -13,7 +13,7 @@
 	background: #FFFFFF;
 }
 .school_first{
-	width: 8.9333rem;
+	width: 7.5rem;
 	height: 0.96rem;
 	position: relative;
 	float: left;
@@ -37,17 +37,18 @@
 	transition:all 0.3s;
 }
 .more{
-	width: 1.0666rem;
+	width: 1.5rem;
 	height: 100%;
 	text-align: center;
 	line-height: 0.3733rem;
 	float: right;
-	border-left:0.0133rem solid #eeeeee;
+	border-right:0.0133rem solid #eeeeee;
 	box-sizing: border-box;
 }
 .more i{
 	font-size: 0.4666rem!important;
 	color: #a5a5a5;
+	position: relative;
 }
 .list_content{
 	width: 100%;
@@ -207,4 +208,35 @@
 .water_commit span{
 	font-size: 0.2933rem;
 	color: #757575;
+}
+
+/* 右边筛选框样式 */
+.screen-box{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.1);
+	z-index: 1000;
+}
+.screen-con{
+	width: 8rem;
+	background: white;
+	float: right;
+}
+.screen-footer{
+	height: 1.5rem;
+	
+}
+.screen-footer div{
+	width: 50%;
+	line-height: 0.6rem;
+	border: 1px solid #dedede;
+	position: absolute;
+	
+}
+.screen-footer .sureBtn{
+	background: #fe9246;
+
 }

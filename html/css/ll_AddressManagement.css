@@ -1,0 +1,123 @@
+.special{
+    background: rgb(241,241,241);
+}
+.listContent{
+    background: white;
+}
+.listContent>.flex{
+    padding: 0 0.4rem;
+    height: 2.413333rem;
+    align-items: center;
+    border-bottom: 1px solid rgb(238,238,238);
+}
+.listRight{
+    width: .4rem;
+    align-items: center;
+}
+.listLeft{
+    flex-grow: 1;
+}
+.listTop{
+    font-size: .426667rem;
+    color: rgb(51,51,51);
+    font-weight: bold;
+    margin-bottom: .1rem;
+}
+.listTop .name{
+    width: 2rem;
+}
+.listTop .phone{
+    flex-grow: 1;
+}
+.listBottom{
+    color: rgb(153,153,153);
+    font-size: .426667rem;
+}
+.listBottom>span{
+    width: 1rem;
+    color: rgb(80,191,242);
+    margin-right: .1rem;
+}
+.flexABox{
+    width: 100%;
+}
+.updateListContent>.flex{
+    height: 1.466667rem;
+}
+.updateListContent .listTop input,.updateListContent .listTop select{
+    font-size: .426667rem;
+    color: rgb(51,51,51);
+    font-weight: normal;
+}
+.updateListContent .listBottom{
+    font-size: .373333rem;
+}
+.updateListContent .listTop select{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.label_raido_box input[type="radio"]{
+    position: absolute;
+    width: 0.50666rem;
+    height: 0.50666rem;
+    opacity: 0;
+
+}
+.radioDiv>label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.29333rem;
+    font-size: 0.4266rem;
+    color: rgb(102, 102, 102);
+     padding: 0 5px;
+    flex-grow: 1;
+
+}
+.label_raido_box input[type="radio"] + label::before{
+    content: "\a0";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 0.50666rem;
+    height: 0.50666rem;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid rgb(192,192,192);
+    text-indent: .15em;
+    line-height: 1;
+}
+.label_raido_box input[type="radio"]:checked + label::before{
+    background-color: rgb(80,191,242);
+    border: 1px solid rgb(80,191,242);
+    background-clip: content-box;
+    background-image: url(../img/gou.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.btnGroup{
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.btnGroup div{
+    margin: .2rem;
+    border-radius: 1.253333rem;
+    height: 1.253333rem;
+    line-height:  1.253333rem;
+    flex-grow: 1;
+    text-align: center;
+    font-size: .426667rem;
+}
+.btnGroup div.cancel{
+    color: rgb(153,153,153);
+    background: rgb(247,247,247);
+}
+.btnGroup div.save{
+    color: white;
+    background: rgb(80,191,242);
+}
