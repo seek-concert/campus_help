@@ -21,30 +21,100 @@
             </div>
 
             <!-- list -->
-            <div class="orderDetail_list_box">
-                <div class="mar_l_30 border_bot_226 flex ">
+            <div class="orderDetail_list_box content">
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
                     <i class="iconfont iconlaba"></i>
                     <span>真实姓名5345345：</span>
                     <span>2019-05-01</span>
-                </div>
-                <div class="mar_l_30 border_bot_226 flex ">
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
                     <i class="iconfont iconlaba"></i>
                     <span>联系电话5435345345</span>
                     <span>2019-05-01</span>
-                </div>
-                <div class="mar_l_30 border_bot_226 flex ">
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
                     <i class="iconfont iconlaba"></i>
                     <span>预约时间532453454333333333333333333333333333333</span>
                     <span>2019-05-01</span>
-                </div>
-                <div class="mar_l_30 border_bot_226 flex ">
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
                     <i class="iconfont iconlaba"></i>
                     <span>订单类fdsfsdfs型：</span>
                     <span>2019-05-01</span>
-                </div>
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
+                    <i class="iconfont iconlaba"></i>
+                    <span>订单类fdsfsdfs型：</span>
+                    <span>2019-05-01</span>
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
+                    <i class="iconfont iconlaba"></i>
+                    <span>订单类fdsfsdfs型：</span>
+                    <span>2019-05-01</span>
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
+                    <i class="iconfont iconlaba"></i>
+                    <span>订单类fdsfsdfs型：</span>
+                    <span>2019-05-01</span>
+                 </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
+                    <i class="iconfont iconlaba"></i>
+                    <span>订单类fdsfsdfs型：</span>
+                    <span>2019-05-01</span>
+                </div></a>
+                <a href=""><div class="mar_l_30 border_bot_226 flex ">
+                    <i class="iconfont iconlaba"></i>
+                    <span>订单类fdsfsdfs型：</span>
+                    <span>2019-05-01</span>
+                 </div></a>
+                <input type="hidden" id="page" value="1"/>
+            </div>
+            <div  class="bottom-line" style="text-align: center;font-size: 0.5rem">
             </div>
 		</div>
 	</body>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
 	<script type="text/javascript" src="js/fontSize.js" ></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                var scrollTop = $(this).scrollTop();               //滚动条距离顶部的高度
+                var scrollHeight = $(document).height();           //当前页面的总高度
+                var windowHeight = $(this).height();               //当前可视的页面高度
+                if(scrollTop + windowHeight >= scrollHeight)  { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
+                    var page = parseInt($("#page").val())+1;
+                    $('.bottom-line').css('display','block').text('正在刷新...');
+                    $.ajax({
+                        type:'POST',
+                        data:"page="+page,
+                        url:'index/ad_list',
+                        dataType:'json',
+                        success:function(ret){
+                            console.log(ret.code);
+                            if(ret.code == 1){
+                                var html = '';
+
+                                $.each(ret.data,function(i,row){
+                                    html+='<a href=""><div class="mar_l_30 border_bot_226 flex ">' +
+                                        '<i class="iconfont iconlaba"></i>' +
+                                        '<span>'+row.title+'</span>' +
+                                        '<span>'+row.dates+'</span>' +
+                                        '</div></a>';
+                                });
+                                $("#page").val(page);
+                                $(".content").append(html);
+                            }
+                            if(ret.code == 0){
+                                $('.bottom-line').css('display','block').text('暂无更多数据');
+                            }
+
+                        }
+                    })
+
+                }
+
+            })
+
+        })
+    </script>
 </html>
