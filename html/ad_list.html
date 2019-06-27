@@ -69,7 +69,7 @@
                  </div></a>
                 <input type="hidden" id="page" value="1"/>
             </div>
-            <div  class="bottom-line" style="text-align: center;font-size: 0.5rem">
+            <div class="bottom-lines">
             </div>
 		</div>
 	</body>
@@ -83,7 +83,7 @@
                 var windowHeight = $(this).height();               //当前可视的页面高度
                 if(scrollTop + windowHeight >= scrollHeight)  { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
                     var page = parseInt($("#page").val())+1;
-                    $('.bottom-line').css('display','block').text('正在刷新...');
+                    $('.bottom-lines').css('display','block').html('<img src="img/loading.gif" alt="loading"><span>加载中</span>');
                     $.ajax({
                         type:'POST',
                         data:"page="+page,
@@ -103,9 +103,10 @@
                                 });
                                 $("#page").val(page);
                                 $(".content").append(html);
+                                $('.bottom-lines').css('display','none');
                             }
                             if(ret.code == 0){
-                                $('.bottom-line').css('display','block').text('暂无更多数据');
+                                $('.bottom-line').css('display','block').html('<span>暂无更多数据</span>');
                             }
 
                         }

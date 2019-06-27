@@ -86,3 +86,20 @@
 }
 
 .orderDetail_list_box a i{font-size: 0.6666rem !important;}
+
+.bottom-lines{
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    margin:-0.5rem 0rem;
+}
+.bottom-lines img{
+    width: 0.4rem;
+    height: 0.4rem;
+}
+.bottom-lines span{
+    font-size: 0.4rem;
+}
