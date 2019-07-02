@@ -411,7 +411,7 @@ a:active{
 	color: rgb(254,146,70);
 }
 .color_lan{
-	color: rgb(111,207,251);
+	color: rgb(111,207,251) !important;
 }
 .fl{
 	float: left;
