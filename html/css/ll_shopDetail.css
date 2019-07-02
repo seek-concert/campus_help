@@ -1,0 +1,57 @@
+.special{
+    background: rgb(241,241,241);
+}
+.slide_banner{
+    width: 100%;
+    height:6.693333rem;
+}
+.slide_banner img{
+    width: 100%;
+}
+.hd li img{
+    width: 100%;
+    height: 100%;
+}
+.shopModel{
+    background: white;
+    margin-bottom: .4rem;
+}
+.slide_banner_describe{
+    font-size: .426667rem;
+    color: rgb(46, 46, 46);
+    text-indent: .133333rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+.padDivLR35{
+    padding: 0 .466667rem;
+}
+.slide_banner_price .nowPrice{
+    color: rgb(254,146,70);
+    font-size: .506667rem;
+
+}
+.slide_banner_price .delPrice{
+    color: rgb(187,187,187);
+    font-size: .32rem;
+    margin-left: .2rem;
+}
+.slide_banner_price .yueNumber{
+    font-size: .32rem;
+    display: inline-block;
+    color: rgb(153,153,153);
+    height: .68rem;
+    line-height: .68rem;
+    padding: 0 0.08rem;
+    border: .026667rem solid rgb(194,194,194);
+    border-radius: .2rem;
+}
+.choseAttr{
+    height: 1.306667rem;
+    line-height: 1.306667rem;
+    box-sizing: border-box;
+    border: .013333rem solid rgb(229,229,229);
+}

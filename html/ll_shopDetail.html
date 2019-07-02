@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商城列表</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/ll_shopDetail.css" />
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+        <script type="text/javascript" src="js/banner.js" ></script>
+	</head>
+	<body>
+		<div class="special">
+            <!--头部  -->
+			<div class="evaluate_title">
+				<a href="#"><i class="iconfont iconfanhui"></i></a>
+				<span>商品详情</span>
+            </div>
+            <div class="shopModel">
+                <div class="slide_banner">
+					<div id="slide">
+						<div class="slide_con">
+							<ul class="hd">
+								<li><img src="img/banner1_02.jpg" /></li>
+								<li><img src="img/banner2_02.jpg" /></li>
+							</ul>
+						</div>
+						<ul class="bd">
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+				<div class="slide_banner_describe padDivLR35">【南极人】春秋四季被 芯空调被 双人棉被单人学生宿舍秋冬被</div>
+				<div class="slide_banner_price padDivLR35 ov">
+					<span class="nowPrice fl">￥254.00</span><s class="delPrice fl">原价：￥888.00</s>
+					<span class="yueNumber fr">月销2154笔</span>
+				</div>
+			</div>
+
+			<div class="shopModel">
+				<div class="choseAttr flex">
+					<div>选择属性</div>
+					<div>请选择尺寸/颜色分类</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+	//轮播
+	$(function(){
+		new Slide({slideCell:"#slide",titOnClassName:"on",autoPlay:true,speed:500});
+	});
+</script>
