@@ -1,0 +1,28 @@
+.special{
+    background: white;
+}
+.label-box{
+    border-bottom: .013333rem solid rgb(240,240,240);
+}
+.commodityEvaluation .label-box{
+    padding: .4rem .466667rem !important;
+}
+.commodityEvaluation .label-box span{
+    background: rgb(237,247,252);
+    color: rgb(117,117,117);
+}
+.commodityEvaluation .label-box span.none{
+    background: rgb(241,241,241) !important;
+    color: rgb(117,117,117) !important;
+}
+.getMore{
+    font-size: .32rem;
+    color: rgb(117,117,117);
+    width: 3.146667rem;
+    height: .72rem;
+    border: .013333rem solid rgb(230,230,230);
+    border-radius: .72rem;
+    line-height: .72rem;
+    margin: .533333rem auto;
+    text-align: center;
+}

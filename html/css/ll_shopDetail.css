@@ -93,7 +93,7 @@
 }
 .commodityEvaluation .label-box span.on{
     color: rgb(255,255,255) !important;
-    background: rgb(80,191,242);
+    background: rgb(80,191,242) !important;
 }
 .evaluation-list .evaluationItem{
     padding: .266667rem  .466667rem !important;
