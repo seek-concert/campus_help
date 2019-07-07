@@ -75,6 +75,7 @@
 			</div>
 			<!-- 右边筛选 -->
 			<div class="screen-box" id="screen-box">
+				<div class="sx_left"></div>
 				<div class="screen-con">
 					<div class="screen-top">筛选</div>
 					<div class="screen-center">
@@ -453,14 +454,22 @@
 		    }
     	});
     }
+    /*筛选*/
 	$("#screenNavDiv").click(function(){
 		$("#screen-box").animate({'right':'0'});
 	});
-	$('#screen-box').click(function (event) {
-         //取消事件冒泡  
-         event.stopPropagation();  
-         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。 
+	$('.screen-footer').click(function (event) {
+		sx(event);
+     });
+	$('.sx_left').click(function (event) {
+		sx(event);
+	});
+	function sx(event) {
+		//取消事件冒泡
+		event.stopPropagation();
+		//按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。
 		$("#screen-box").animate({'right':'-100%'});
-         return false;
-     }); 
+		return false;
+	}
+
 </script>

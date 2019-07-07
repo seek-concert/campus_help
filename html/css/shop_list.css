@@ -217,8 +217,11 @@
 	bottom: 0;
 	right: -100%;
 	width: 100%;
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.2);
 	z-index: 1000;
+}
+.sx_left{
+	width: 2rem;height: 100%;
 }
 .screen-con{
 	width: 8rem;
