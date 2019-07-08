@@ -141,7 +141,7 @@
 								<div class="product_right">
 									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
 									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
-									<div class="pro_price">￥254.00</div>
+									<div class="pro_price">￥254.00<span class="ms">秒杀</span></div>
 								</div></a>
 							</li>
 							<li>
@@ -149,7 +149,7 @@
 								<div class="product_right">
 									<div class="pro_title">【南极人】春秋四季被 芯空调被 双人棉被单人 学生宿… </div>
 									<div class="pro_num">月销368笔 <i>3kg | 一米五</i></div>
-									<div class="pro_price">￥254.00</div>
+									<div class="pro_price">￥254.00<span class="ms">秒杀</span><span class="ht">海淘</span></div>
 								</div></a>
 							</li>
 							<li>
@@ -169,7 +169,24 @@
 								<div class="product_water_con">
 									<div class="water_title">【南极人】春秋四季被 芯空调 被 双人棉被单人学生宿… </div>
 									<div class="water_num">
-										<span>已售108件</span>
+										<div class="price"><i>¥</i>168.00<span class="ms">秒杀</span>
+											<span class="ht">海淘</span></div>
+
+									</div>
+									<div class="water_commit">
+										<div class="commit_img">
+											<img src="img/head_09.png" />
+											<img src="img/head_09.png" />
+										</div>
+										<span>等36人已评论</span>
+									</div>
+								</div></a>
+							</li>
+							<li>
+								<a href="#"><img class="product_water_img" src="img/shop_water_02.jpg" />
+								<div class="product_water_con">
+									<div class="water_title">【南极人】春秋四季被 芯空调 被 双人棉被单人学生宿… </div>
+									<div class="water_num">
 										<div class="price"><i>¥</i>168.00</div>
 									</div>
 									<div class="water_commit">
@@ -186,7 +203,6 @@
 								<div class="product_water_con">
 									<div class="water_title">【南极人】春秋四季被 芯空调 被 双人棉被单人学生宿… </div>
 									<div class="water_num">
-										<span>已售108件</span>
 										<div class="price"><i>¥</i>168.00</div>
 									</div>
 									<div class="water_commit">
@@ -203,24 +219,6 @@
 								<div class="product_water_con">
 									<div class="water_title">【南极人】春秋四季被 芯空调 被 双人棉被单人学生宿… </div>
 									<div class="water_num">
-										<span>已售108件</span>
-										<div class="price"><i>¥</i>168.00</div>
-									</div>
-									<div class="water_commit">
-										<div class="commit_img">
-											<img src="img/head_09.png" />
-											<img src="img/head_09.png" />
-										</div>
-										<span>等36人已评论</span>
-									</div>
-								</div></a>
-							</li>
-							<li>
-								<a href="#"><img class="product_water_img" src="img/shop_water_02.jpg" />
-								<div class="product_water_con">
-									<div class="water_title">【南极人】春秋四季被 芯空调 被 双人棉被单人学生宿… </div>
-									<div class="water_num">
-										<span>已售108件</span>
 										<div class="price"><i>¥</i>168.00</div>
 									</div>
 									<div class="water_commit">
@@ -339,6 +337,9 @@
 							</li>
 						</ul>
 						</div>
+					</div>
+					<input type="hidden" id="page" value="1"/>
+					<div class="bottom-lines">
 					</div>
 				</div>
 			</div>
@@ -471,5 +472,55 @@
 		$("#screen-box").animate({'right':'-100%'});
 		return false;
 	}
+	/*翻页*/
+	$(function(){
+		$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();               //滚动条距离顶部的高度
+			var scrollHeight = $(document).height();           //当前页面的总高度
+			var windowHeight = $(this).height();               //当前可视的页面高度
+			if(scrollTop + windowHeight >= scrollHeight)  { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
+				var page = parseInt($("#page").val())+1;
+				var list_type = $('#more i').attr('class');
+				console.log(list_type);
+				$('.bottom-lines').css('display','block').html('<img src="img/loading.gif" alt="loading"><span>加载中</span>');
+				try {
+					$.ajax({
+						type:'POST',
+						data:"page="+page,
+						url:'index/ad_list',
+						dataType:'json',
+						success:function(ret){
+							console.log(ret.code);
+							if(ret.code == 1){
+								var html = '';
+
+								$.each(ret.data,function(i,row){
+									html+='';
+								});
+								$("#page").val(page);
+								$(".content").append(html);
+								$('.bottom-lines').css('display','none');
+							}
+							if(ret.code == 0){
+								$('.bottom-line').css('display','block').html('<span>暂无更多数据</span>');
+							}
+
+						},
+						error:function (e) {
+							alert('网络异常，请稍后再试');
+						}
+					})
+
+				} catch(err) {
+					alert('网络异常，请稍后再试!');
+					$('.bottom-line').css('display','block').html('<span>网络异常，请稍后再试</span>');
+				}
+
+
+			}
+
+		})
+
+	})
 
 </script>
