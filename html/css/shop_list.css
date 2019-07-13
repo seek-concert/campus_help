@@ -117,6 +117,21 @@
 	font-size: 0.3733rem;
 	color: #fe9246;
 }
+.pro_price span{
+    margin-left: .3rem;
+    padding: 0 .1rem 0 .1rem;
+    border-radius: .1rem;
+    -webkit-border-radius: .1rem;
+    -moz-border-radius: .1rem;
+    font-size: .28rem;
+    color: #fff;
+}
+.ms{
+    background-color: #e23a3a;
+}
+.ht{
+    background-color: #31c19e;
+}
 /*瀑布流*/
 .water_list_content{
 	width: 100%;
@@ -138,6 +153,7 @@
 	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
+    -webkit-justify-content:space-around;
 	flex-wrap: wrap;
 }
 .product_water_list li{
@@ -174,11 +190,16 @@
 	margin: 0.1333rem 0;
 }
 .water_num span{
-	font-size: 0.2666rem;
-	color: #cccccc;
+    margin-left: .1rem;
+    padding: 0 .1rem 0 .1rem;
+    border-radius: .1rem;
+    -webkit-border-radius: .1rem;
+    -moz-border-radius: .1rem;
+    font-size: .28rem;
+    color: #fff;
 }
 .price{
-	font-size: 0.3733rem;
+	font-size: 0.4333rem;
 	color: #fe9246;
 }
 .price i{
@@ -217,8 +238,11 @@
 	bottom: 0;
 	right: -100%;
 	width: 100%;
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.2);
 	z-index: 1000;
+}
+.sx_left{
+	width: 2rem;height: 100%;
 }
 .screen-con{
 	width: 8rem;
@@ -328,4 +352,20 @@
 .btnDiv.on{
 	background: #ffe5d1;
 	color: #ef7317;
+}
+.bottom-lines{
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    margin:-0.5rem 0rem;
+}
+.bottom-lines img{
+    width: 0.4rem;
+    height: 0.4rem;
+}
+.bottom-lines span{
+    font-size: 0.4rem;
 }
