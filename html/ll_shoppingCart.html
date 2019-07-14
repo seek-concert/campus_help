@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="UTF-8">
+<title>购物车</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="stylesheet" href="css/default.css" />
+<link rel="stylesheet" href="css/ll_shoppingCart.css">
+</head>
+<body>
+<!-- 代码部分begin -->
+<div class="special">
+    <div class="evaluate_title">
+        <a href="#"><i class="iconfont iconfanhui"></i></a>
+        <span>购物车</span>
+    </div>
+    <!-- 存在购物车数据 -->
+    <div class="hasGoodsBox" style="display: none;">
+        <div class="allChose flex">
+            <div class="checkboxWrap flex">
+                <input type="checkbox" class="e-selfecheckbox1" id="allChose">
+                <label class="selfecheckbox_label1" for="allChose">全选</label>
+            </div>
+            <div class="wancheng">完成</div>
+        </div>
+        <div class="my-address-list" id="my-address-list">
+            <div id="cc-loading"><span></span>玩命加载中...</div>
+        </div>
+        <!-- <div class="my-address-list">
+            <div class="touch" id="touch0">
+                <div class="item">
+                    <div class="list flex">
+                        <div class="checkboxWrap flex">
+                            <input type="checkbox" class="e-selfecheckbox1" id="place2">
+                            <label class="selfecheckbox_label1" for="place2"></label>
+                        </div>
+                        <div class="goodsImg">
+                            <img src="./img/product_03.jpg" alt="">
+                        </div>
+                        <div class="goodsInfo flex">
+                            <div class="goodsInfoName">【南极人】春秋四季被 芯空调被 双人棉被单人学生宿舍秋冬被双人棉被单人学生宿舍秋冬被双人棉被单人学生宿舍秋冬被</div>
+                            <div class="yuexiao"><span>月销236笔</span> <span>3kg|一米五</span> </div>
+                            <div class="flex price">
+                                <div class="pri">￥ 234.00</div>
+                                <div class="numberContent">
+                                    <div>-</div>
+                                    <div><input type="number" value="1" min="1" style="width: 0.533rem"></div>
+                                    <div>+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon2" ><i></i></div>
+                    <a href="javascript:;" class="remove">删除</a>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="SettlementWrap flex">
+            <div class="checkboxWrap flex">
+                <input type="checkbox" class="e-selfecheckbox1" id="allChoseSettlement">
+                <label class="selfecheckbox_label1" for="allChoseSettlement">全选</label>
+            </div>
+            <div class="flex rightHeji">
+                <div class="heji flex">
+                    <div class="flex"><span class="f_28 color_102">合计：</span><span class="f_24 color_ju">￥</span><span class="f_32 color_ju">254.00</span></div>
+                    <div class="f_22 color_153">不含运费</div>
+                </div>
+                <div class="deleteBot">结算(2)</div>
+            </div>
+        </div>
+        <div class="deleteWrap flex" style="display: none;">
+            <div class="checkboxWrap flex">
+                <input type="checkbox" class="e-selfecheckbox1" id="allChoseDelete" >
+                <label class="selfecheckbox_label1" for="allChoseDelete">全选</label>
+            </div>
+            
+            <div class="deleteBot">删除(2)</div>
+
+        </div>
+    </div>
+    <div class="noListData">
+        <div class="nodataLogBox">
+                <div class="nodataLog"><i class="iconfont icongouwuche2"></i> </div>
+        </div>
+        <div class="f_28 color_153">你的购物车还是空的赶紧行动吧！</div>
+        <a class="goBuyBtn">马上去购物</a>
+        </div>
+
+
+
+    
+</div>
+<script src="./js/jquery-2.1.0.js"></script>
+<script src="./js/fontSize.js"></script>
+<!-- <script src="./js/jquery.mobile-1.3.2.min.js"></script> -->
+<script>
+$(function(){
+
+    document.getElementById('cc-loading').style.display = 'none';
+    for(var i=0;i<10;i++){
+        var cont = '<div class="touch" id="touch'+i+'"><div class="item flex" userAddressId="1"><div class="list flex">';
+            cont += '<div class="checkboxWrap flex"><input type="checkbox" class="e-selfecheckbox1" id="listCheck'+i+'"><label class="selfecheckbox_label1" for="listCheck'+i+'"></label></div>';
+            cont += '<div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>';
+            cont += '<div class="goodsInfo flex">';
+            cont += '<div class="goodsInfoName">【南极人】名称 '+i+'</div>';
+            cont += '<div class="yuexiao"><span>月销'+(i+1)+'笔</span> <span>3kg|一米五</span> </div>';
+            cont += '<div class="flex price"><div class="pri" >￥ <span id="pri_'+i+'">25.00</span> </div>';
+            cont += '<input type="hidden" id="inputHid_'+i+'" value="25.00">'
+            cont += '<div class="numberContent"><div class="jianDiv_" id="jianDiv_'+i+'">-</div><div><input type="number" value="1" min="1" id="inputVale_'+i+'" style="width: 0.533rem"></div> <div  id="jiaDiv_'+i+'" class="jiaDiv_">+</div></div></div></div>';
+            cont += '</div><a href="javascript:;" class="remove">删除</a></div></div>';
+        $('#my-address-list').append(cont);
+    }
+    $(".item").on('touchstart',function(e){
+        startX = e.originalEvent.changedTouches[0].pageX,
+        startY = e.originalEvent.changedTouches[0].pageY;
+    })
+    $(".item").on('touchend',function(e){
+        moveEndX = e.originalEvent.changedTouches[0].pageX,
+        moveEndY = e.originalEvent.changedTouches[0].pageY,
+        X = moveEndX - startX,
+        Y = moveEndY - startY;
+        if ( X < -20 ) {
+            console.log('左滑');
+            $(this).addClass('selected').parents(".touch").siblings().find(".item").removeClass('selected');     
+        }else{
+            $(this).parents(".touch").find(".item").removeClass('selected'); 
+        }
+    })
+    //加
+    $("#my-address-list").on('click','.jiaDiv_',function(){
+        var idStr = $(this).attr("id").split('_');
+        var numberVal = $("#inputVale_"+idStr[1]).val();
+        numberVal++;
+        $("#inputVale_"+idStr[1]).val(numberVal);
+        $("#pri_"+idStr[1]).text(Number($("#inputHid_"+idStr[1]).val()*numberVal))
+    });
+    //减
+    $("#my-address-list").on('click','.jianDiv_',function(){
+        console.log('----')
+        var idStr = $(this).attr("id").split('_');
+        var numberVal = $("#inputVale_"+idStr[1]).val();
+        if(numberVal<=1){
+            return
+        }else{
+            numberVal--;
+            $("#pri_"+idStr[1]).text(Number($("#inputHid_"+idStr[1]).val()*numberVal))
+        }
+        
+        $("#inputVale_"+idStr[1]).val(numberVal)
+    });
+    
+    $("#allChose").change(function(){
+        console.log($(this).checked)
+    })
+
+   
+    //这是配合 jquery.mobile-1.3.2.min.js一起使用的
+    // $(".item").on("swipeleft",function(){
+    //     $(this).addClass('selected').parents(".touch").siblings().find(".item").removeClass('selected');
+    //     $(this).find("a.remove").on("click",function(){
+    //         var touchId = $(this).parents(".touch").attr("id");
+    //         //执行删除效果
+    //         $("#"+touchId).css("border","0");
+    //         $("#"+touchId).stop().animate({
+    //             height:"0",
+    //             margin:"0"
+    //         },300,function(){
+    //             $(this).remove();
+    //         })
+    //     })
+    // }).on("swiperight",function(){
+    //     $(this).parents(".touch").find(".item").removeClass('selected');
+    // })
+
+})
+</script>
+<!-- 代码部分end -->
+</body>
+</html>
