@@ -45,14 +45,14 @@
 			<div class="shopModel ">
 				<div class="choseAttr flex padDivLR35">
 					<div class="leftDiv">选择属性</div>
-					<div class="rightDiv">请选择尺寸/颜色分类 <i class="iconfont iconxiangyou"></i></div>
+					<div class="rightDiv" id="chakanAttr">请选择尺寸/颜色分类 <i class="iconfont iconxiangyou"></i></div>
 				</div>
 			</div>
 			<!-- 商品信息 -->
 			<div class="shopModel ">
 				<div class="choseAttr flex padDivLR35">
 					<div class="leftDiv">商品信息</div>
-					<div class="rightDiv ">查看信息 <i class="iconfont iconxiangyou"></i></div>
+					<div class="rightDiv " id="chakanInfo">查看信息 <i class="iconfont iconxiangyou"></i></div>
 				</div>
 			</div>
 			<!-- 宝贝评价 -->
@@ -157,7 +157,7 @@
 				</div>
 			</div>
 			<!-- 选择属性弹窗 -->
-			<div class="dialog-details">
+			<div class="dialog-details" id="xiangqingAttr">
 				<div class="dialog-content">
 					<div class="content-head flex">
 						<div class="left">
@@ -203,7 +203,7 @@
 				</div>
 			</div>
 			<!-- 商品详情 -->
-			<div class="dialog-details xiangqing" >
+			<div class="dialog-details xiangqing" id="xiangqingBasic">
 				<div class="dialog-content ">
 					<div class="content-head padDivLR35">基本信息</div>
 				
@@ -234,7 +234,7 @@
 					
 				</div>
 				<div class='attr-bottom fixed-footer'>
-					<div class="sureBtn">确定</div>
+					<div class="sureBtn" id="sureBtnBasic">确定</div>
 				</div>
 			</div>
 			<!-- 底部固定 -->
@@ -271,4 +271,15 @@
 	$("#closeDialog").click(function(){
 		$(".dialog-details").fadeOut();
 	})
-</script>
+
+	$("#chakanInfo").click(function(){
+		$("#xiangqingBasic").css('display','block');
+	})
+	$("#sureBtnBasic").click(function(){
+		$("#xiangqingBasic").css('display','none');
+	})
+
+	$("#chakanAttr").click(function(){
+		$("#xiangqingAttr").css('display','block');
+	})
+</script> 

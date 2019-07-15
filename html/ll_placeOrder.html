@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
 <meta charset="UTF-8">
-<title>订单详情</title>
+<title>提交订单</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
@@ -15,13 +15,14 @@
 <div class="special">
     <div class="evaluate_title">
         <a href="#"><i class="iconfont iconfanhui"></i></a>
-        <span>订单详情</span>
+        <span>提交订单</span>
     </div>
 
     <!-- 选择地址并展示地址 -->
     <div class="showAddressBox">
         <div class="titleDiv flex">
             <div>收货地址</div>
+            <a>更换地址 <i class="iconfont iconxiangyou"></i> </a>
         </div>
         <div class="basicUserInfo flex">
             <div>收货人：<span>李小川</span></div>
@@ -29,17 +30,7 @@
             <div>地址：<span>吉林省长春市绿园区皓月大路标记大厦121栋66楼1215室</span></div>
         </div>
     </div>
-    <!-- 物流跟踪 -->
-    <div class="LogisticsBox">
-        <a class="flex top">
-            <div>物流跟踪</div>
-            <div><i class="iconfont iconxiangyou"></i></div>
-        </a>
-        <div class="flex bottom">
-            <div class="color_lan address">快件已到达沈阳快递员正在派送 电话13545454848请保持电话畅通</div>
-            <div class="time">2015-4-8 9:00</div>
-        </div>
-    </div>
+
     <!-- 订单商品列表 -->
     <div class="goodsList_order">
         <ul class="product_list">
@@ -71,25 +62,37 @@
             </li>
         </ul>
     </div>
-    <!-- 保险服务 -->
-    <div class="Insurance">
-        <div class="f_30 color_51" style="margin-bottom: .4rem;">保险服务</div>
-        <div class="flex list list1">
-            <div>运费：</div>
-            <div>￥0.00</div>
+    <div class="operationList">
+        <div class="topdiv">
+            <a class="flex">
+                <div>配送方式</div>
+                <div>快递包邮 <i class="iconfont iconxiangyou"></i></div>
+            </a>
+            <a class="flex">
+                <div>选择最近商铺</div>
+                <div>亚泰大街店 <i class="iconfont iconxiangyou"></i></div>
+            </a>
         </div>
-        <div class="flex list list2">
-            <div>运费：</div>
-            <div class="color_ju" style="color: rgb(254,146,70)">￥0.00</div>
+        <div class="textareadiv flex">
+            <textarea rows="3"  placeholder="备注  留下您要与卖家说的话"></textarea>
         </div>
-    </div>
-    <!-- 订单编号 -->
-    <div class="orderNumber">
-        <div>订单编号：212525545566666666</div>
-        <div>付款时间：2015-05-25  09:26:25</div>
     </div>
 
-    <a class="submitBtn flex">评价商品</a>
+    <div class="checkboxWrapBox">
+        <div class="flex">
+            <div class="f_30 color_102">匿名购买</div>
+            <div class="checkboxWrap flex">
+                <input type="checkbox" class="e-selfecheckbox1" id="allChose">
+                <label class="selfecheckbox_label1" for="allChose"></label>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="bottoomBtnBox flex">
+        <div>共<span>2</span>件，总金额  <span>1235.00</span></div>
+        <div class="deleteBot">提交订单</div>
+    </div>
 
 
     
