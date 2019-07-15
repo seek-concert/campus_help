@@ -1,0 +1,167 @@
+
+.special{
+    background: rgb(241,241,241);
+}
+.showAddressBox{
+    margin: 0.4rem;
+    background: white;
+    padding: 0.4rem 0.33rem 0.4666rem 0.4rem;
+    border-radius: 0.16rem;
+    border-bottom: 0.0266rem  solid;
+    border-image: url(../img/line1.png);
+
+}
+.showAddressBox .titleDiv{
+    justify-content: space-between;
+    align-items: center;
+}
+.showAddressBox .titleDiv>div{
+    font-size: 0.42666rem;
+    color: rgb(80,191,242);
+}
+.showAddressBox .titleDiv>a{
+    color: rgb(117,117,117);
+    font-size: 0.3466rem;
+}
+.basicUserInfo {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: .2rem;
+}
+.basicUserInfo>div{
+    font-size: 0.3733rem;
+    color: rgb(51,51,51);
+    line-height: 0.5rem;
+    margin-bottom: 0.1rem;
+}
+.basicUserInfo>div>span{
+    color: rgb(153,153,153);
+}
+
+.goodsList_order{
+    padding: 0.4rem;
+    background: white;
+    margin-top: .6rem;
+}
+
+.product_list {
+    width: 100%;
+    height: auto;
+}
+.product_list li {
+    width: 100%;
+    height: auto;
+    margin-top: 0.32rem;
+    display: flex;
+    justify-content: space-between;
+}
+.product_list li a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.product_list li img {
+    width: 1.8666rem;
+    height: 1.8666rem;
+    border: 0.0133rem solid #eeeeee;
+    box-sizing: border-box;
+}
+.product_right {
+    width: 7.7333rem;
+    height: auto;
+    padding: 0 0.5333rem 0.2933rem 0.4rem;
+    /* border-bottom: 0.0133rem solid #eeeeee; */
+    box-sizing: border-box;
+}
+.pro_title {
+    width: 100%;
+    height: auto;
+    font-size: 0.32rem;
+    color: #000000;
+}
+.pro_num {
+    width: 100%;
+    font-size: 0.32rem;
+    color: #999999;
+    margin: 0.1333rem 0 0.1866rem 0;
+}
+.pro_num i {
+    margin-left: 0.3333rem;
+}
+.pro_price {
+    width: 100%;
+    height: auto;
+    font-size: 0.3733rem;
+    justify-content: space-between;
+}
+.pro_price>div:nth-of-type(1){
+    color: #fe9246;
+}
+.pro_price>div:nth-of-type(2){
+    color: rgb(153,153,153);
+}
+.operationList .topdiv a{
+    justify-content: space-between;
+    align-items: center;
+    padding: .3rem .4rem;
+    background: white;
+    border-top: 1px solid rgb(238,238,238);
+}
+.operationList .topdiv a>div:nth-of-type(1){
+    font-size: 0.4rem;
+    color: rgb(102,102,102);
+}
+.operationList .topdiv a>div:nth-of-type(2){
+    font-size: 0.32rem;
+    color: rgb(153,153,153);
+}
+.textareadiv{
+    border-top: 1px solid rgb(238,238,238);
+    background: white;
+    padding: .3rem .4rem;
+}
+.textareadiv textarea{
+    width: 100%;
+    color: rgb(187,187,187);
+    font-size: 0.32rem;
+}
+.checkboxWrapBox{
+    padding:0 0 2rem 0;
+    margin-top: .5rem;
+}
+.checkboxWrapBox>div{
+    background: white;
+    padding: .3rem .4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottoomBtnBox{
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background: white;
+    border-top: 0.0266rem solid rgb(241,241,241);
+}
+.bottoomBtnBox>div:nth-of-type(1){
+    flex-grow: 1;
+    text-align: right;
+    color: rgb(102,102,102);
+    font-size: 0.3733rem;
+    padding-right: .2rem;
+}
+.bottoomBtnBox>div:nth-of-type(1) span{
+    color: rgb(254,146,70);
+    font-size: 0.4266rem;
+}
+.bottoomBtnBox .deleteBot{
+    width: 2.8rem;
+    background: rgb(80,191,242);
+    color: white;
+    font-size: .4rem;
+    height: 100%;
+    line-height: 1.333rem;
+    text-align: center;
+}

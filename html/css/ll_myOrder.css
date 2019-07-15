@@ -1,6 +1,7 @@
 .school_first{
     justify-content: space-between;
     margin: auto;
+    width: 100%;
     float: inherit;
     height: 1.2rem;
     line-height: 1rem;
@@ -126,7 +127,7 @@
     border-right: 0.0133rem solid radial-gradient(red 24%, white 100%);
 }
 .tavNavContent div.on{
-    background: white;
+    background: white !important;
     color: rgb(111,207,251);
 }
 .bottonGroup{
@@ -163,5 +164,5 @@
 }
 .bottonGroup .on{
     border: 1px solid rgb(111,207,251);
-    color: rgb(111,207,251);
+    color: white;
 }
