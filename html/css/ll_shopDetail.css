@@ -198,6 +198,9 @@
     align-items: center;
     align-content: center;
 }
+.fixed-footer .kefu.Collection,.fixed-footer .shoucang.Collection{
+	color: rgb(254,146,70);
+}
 .fixed-footer .joinin,.fixed-footer .buyIt{
     width: 250px;
     font-size: .373333rem;
