@@ -394,5 +394,30 @@
     justify-content: space-between;
     align-items: center;
     font-size: .32rem;
-    
+    padding-right: .5rem;
+}
+
+.numberContent{
+    overflow: hidden;
+    align-items: center;
+}
+.numberContent>div{
+    width: 0.533rem;
+    display: block;
+    height: 0.5733rem;
+    border: 0.0133rem solid rgb(204,204,204);
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(117,117,117);
+    float: left;
+    box-sizing: border-box;
+
+}
+.numberContent>div:nth-of-type(2){
+    border-left: none;
+    border-right: none;
+}
+.numberContent input{
+    text-align: center;
+    color: rgb(117,117,117);
 }

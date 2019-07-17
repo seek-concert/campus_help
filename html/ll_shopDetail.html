@@ -195,7 +195,7 @@
 						<div class="content-list">
 							<div class="flex numberBox">
 								<div>购买数量</div>
-								<div><div>+</div><div><input type="number" value="1"></div><div>-</div> </div>
+								<div class="numberContent flex"><div class="jianDiv_" id="jianDiv_">-</div><div><input type="number" value="1" min="1" id="inputVale_" style="width: 0.533rem"></div><div id="jiaDiv_" class="jiaDiv_">+</div> </div>
 							</div>
 						</div>
 					</div>
@@ -290,4 +290,24 @@
 	$("#chakanAttr").click(function(){
 		$("#xiangqingAttr").css('display','block');
 	})
+
+	//加
+    $("#jiaDiv_").on('click',function(){
+		console.log($("#inputVale_").val());
+        var numberVal = $("#inputVale_").val();
+        numberVal++;
+        $("#inputVale_").val(numberVal);
+    });
+    //减
+    $("#jianDiv_").on('click',function(){
+        console.log('----')
+        var numberVal = $("#inputVale_").val();
+        if(numberVal<=1){
+            return
+        }else{
+            numberVal--;
+        }
+        
+        $("#inputVale_").val(numberVal)
+    });
 </script> 
