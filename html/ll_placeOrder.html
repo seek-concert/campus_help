@@ -23,7 +23,7 @@
     <div class="showAddressBox">
         <div class="titleDiv flex">
             <div>收货地址</div>
-            <a>更换地址 <i class="iconfont iconxiangyou"></i> </a>
+            <a onclick="show_address()">更换地址 <i class="iconfont iconxiangyou"></i> </a>
         </div>
         <div class="basicUserInfo flex">
             <div>收货人：<span>李小川</span></div>
@@ -95,7 +95,7 @@
         <div class="deleteBot">提交订单</div>
     </div>
     <!-- 地址弹窗 -->
-    <div class="changeAddressModel">
+    <div class="changeAddressModel" style="display: none">
             <div class="listContent">
                     <div class="flex">
                         <a href="#" class="flex">
@@ -153,5 +153,23 @@
     
 <script src="./js/jquery-2.1.0.js"></script>
 <script src="./js/fontSize.js"></script>
+<script>
+    /* 显示地址 */
+    function show_address() {
+        $('.changeAddressModel').css('display','block');
+    }
+    /* 触发隐藏事件 */
+    $('.changeAddressModel').on('click', function(event) {
+        var evt = event.srcElement ? event.srcElement : event.target;
+        evt = $(evt);
+        if( evt.hasClass("listContent") || evt.find('.listContent').length!=0) {
+            /*元素之外*/
+            $('.changeAddressModel').css('display','none');
+            return false;
+        } else{
+            return true;
+        }
+    });
+</script>
 </body>
 </html>
