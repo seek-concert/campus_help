@@ -45,7 +45,7 @@
                         <div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>
                         <div class="goodsInfo flex" style="width:7rem">
                             <div class="goodsInfoName">名称 1</div>
-                            <div class="yuexiao"><span>月销'+(i+1)+'笔</span> <span>3kg|一米五</span></div>
+                            <div class="yuexiao"><span>月销123笔</span> <span>3kg|一米五</span></div>
                             <div class="flex price">
                                 <div class="pri">￥ <span id="pri_1">25.00</span></div>
                                 <input type="hidden" id="inputHid_1" value="25.00">
@@ -67,12 +67,12 @@
                     <div class="list flex">
                         <div class="checkboxWrap flex check_box" style="display:none">
                             <input type="checkbox" class="e-selfecheckbox1"  id="listCheck2">
-                            <label class="selfecheckbox_label1" for="listCheck1"></label>
+                            <label class="selfecheckbox_label1" for="listCheck2"></label>
                         </div>
                         <div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>
                         <div class="goodsInfo flex" style="width:7rem">
                             <div class="goodsInfoName">名称 2</div>
-                            <div class="yuexiao"><span>月销'+(i+1)+'笔</span> <span>3kg|一米五</span></div>
+                            <div class="yuexiao"><span>月销456笔</span> <span>3kg|一米五</span></div>
                             <div class="flex price">
                                 <div class="pri">￥ <span id="pri_2">25.00</span></div>
                                 <input type="hidden" id="inputHid_2" value="25.00">
@@ -92,13 +92,13 @@
         <div class="SettlementWrap flex">
             <div class="checkboxWrap flex">
                 <div class="flex"><span class="f_28 color_102">合计：</span><span class="f_24 color_ju">￥</span><span
-                        class="f_32 color_ju">254.00</span></div>
+                        class="f_32 color_ju all_price">0.00</span></div>
             </div>
             <div class="flex rightHeji">
                 <div class="heji flex">
                     <div class="f_22 color_153">不含运费</div>
                 </div>
-                <div class="deleteBot">结算(2)</div>
+                <div class="deleteBot jiesuan">结算</div>
             </div>
         </div>
         <div class="deleteWrap flex" style="display: none;">
@@ -106,7 +106,7 @@
                 <div class="flex"><span class="f_28 color_102">共选中</span><span class="f_32 color_ju">3</span><span
                         class="f_28 color_102">件</span></div>
             </div>
-            <div class="deleteBot">删除(2)</div>
+            <div class="deleteBot">删除</div>
         </div>
     </div>
     <div class="noListData" style="display: none;">
@@ -125,7 +125,6 @@
 <script>
     $(function () {
         document.getElementById('cc-loading').style.display = 'none';
-
         /* 左滑 右滑*/
         $(".item").on('touchstart', function (e) {
             startX = e.originalEvent.changedTouches[0].pageX,
@@ -146,7 +145,10 @@
 
 
         $("#allChose").change(function () {
-            console.log($(this).checked)
+           $(".e-selfecheckbox1").attr('style','checked:checked');
+            $(".e-selfecheckbox1").checked=true;
+            console.log($(".e-selfecheckbox1"))
+            console.log($(".e-selfecheckbox1").checked)
         });
 
         //这是配合 jquery.mobile-1.3.2.min.js一起使用的
@@ -189,6 +191,13 @@
         });
 
     });
+    var pri_length = $("[id^='pri_']").size();
+    var pri = parseFloat('0.00');
+    for(var i=1;i<=pri_length;i++){
+        pri = parseFloat($('#pri_'+pri_length).text())+pri;
+    }
+    $('.all_price').text(pri);
+    $('.jiesuan').text('结算('+pri_length+')');
     //加
     function jia(obj) {
         console.log('+');
