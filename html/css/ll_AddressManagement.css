@@ -5,6 +5,7 @@
     background: white;
 }
 .listContent>.flex{
+    clear: both;
     padding: 0 0.4rem;
     height: 2.413333rem;
     align-items: center;
@@ -120,4 +121,11 @@
 .btnGroup div.save{
     color: white;
     background: rgb(80,191,242);
+}
+.detail_add_address{
+    padding: 0.2rem;
+    font-size: .4rem;
+    line-height: 1rem;
+    border-bottom: 1px solid rgb(238,238,238);
+    width: 96%;
 }
