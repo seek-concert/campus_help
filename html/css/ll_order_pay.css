@@ -49,9 +49,9 @@
 .isSuccess{
     background: url(../img/background_01.jpg) no-repeat center;
 }
-.isFailed{
-    background: url(../img/banner1_02.jpg) no-repeat center;
-}
+/*.isFailed{*/
+    /*background: url(../img/pay_ok.png) no-repeat center;*/
+/*}*/
 .chongshi{
     color: rgb(80,191,242);
     font-size: .426667rem;
