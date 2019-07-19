@@ -23,12 +23,13 @@
     <div class="showAddressBox">
         <div class="titleDiv flex">
             <div>收货地址</div>
-            <a>更换地址 <i class="iconfont iconxiangyou"></i> </a>
+            <a onclick="show_address()">更换地址 <i class="iconfont iconxiangyou"></i> </a>
         </div>
         <div class="basicUserInfo flex">
-            <div>收货人：<span>李小川</span></div>
-            <div>手机号：<span>12324545454</span></div>
-            <div>地址：<span>吉林省长春市绿园区皓月大路标记大厦121栋66楼1215室</span></div>
+            <input type="hidden" class="address_id_val">
+            <div>收货人：<span class="name_val">李小川</span></div>
+            <div>手机号：<span class="phone_val">12324545454</span></div>
+            <div>地址：<span class="address_val">吉林省长春市绿园区皓月大路标记大厦121栋66楼1215室</span></div>
         </div>
     </div>
 
@@ -95,63 +96,94 @@
         <div class="deleteBot">提交订单</div>
     </div>
     <!-- 地址弹窗 -->
-    <div class="changeAddressModel">
-            <div class="listContent">
-                    <div class="flex">
-                        <a href="#" class="flex">
-                            <div class="listLeft">
-                                <div class="flex listTop">
-                                    <div class="name">李中秋</div>
-                                    <div class="phone">123456484545</div>
-                                </div>
-                                <div class="listBottom">
-                                    <span>[默认]</span>吉林省长春市朝阳区延安大街与湖西路交汇民生大厦5楼502室
-                                </div>
+    <div class="changeAddressModel" style="display: none">
+          <div class="listContent">
+                <div class="flex" onclick="check_address(this)">
+                    <a href="#" class="flex">
+                        <div class="listLeft">
+                            <div class="flex listTop">
+                                <input type="hidden" class="address_id" value="1">
+                                <div class="name">李中秋</div>
+                                <div class="phone">13098765432</div>
                             </div>
-                            <div class="listRight flex">
-                                <span class="iconfont iconxiangyou"></span>
+                            <div class="listBottom">
+                                <span>[默认]</span>吉林省长春市朝阳区延安大街与湖西路交汇民生大厦5楼502室
                             </div>
-                        </a>
-                    </div>
-                    <div class="flex">
-                            <a href="#" class="flex">
-                                <div class="listLeft">
-                                    <div class="flex listTop">
-                                        <div class="name">李中秋</div>
-                                        <div class="phone">123456484545</div>
-                                    </div>
-                                    <div class="listBottom">
-                                        <span>[默认]</span>吉林省长春市朝阳区延安大街与湖西路交汇民生大厦5楼502室
-                                    </div>
-                                </div>
-                                <div class="listRight flex">
-                                    <span class="iconfont iconxiangyou"></span>
-                                </div>
-                            </a>
                         </div>
-                        <div class="flex">
-                                <a href="#" class="flex">
-                                    <div class="listLeft">
-                                        <div class="flex listTop">
-                                            <div class="name">李中秋</div>
-                                            <div class="phone">123456484545</div>
-                                        </div>
-                                        <div class="listBottom">
-                                            <span>[默认]</span>吉林省长春市朝阳区延安大街与湖西路交汇民生大厦5楼502室
-                                        </div>
-                                    </div>
-                                    <div class="listRight flex">
-                                        <span class="iconfont iconxiangyou"></span>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="listRight flex">
+                            <span class="iconfont iconxiangyou"></span>
+                        </div>
+                    </a>
                 </div>
-        
+                <div class="flex" onclick="check_address(this)">
+                    <a href="#" class="flex">
+                        <div class="listLeft">
+                            <div class="flex listTop">
+                                <input type="hidden" class="address_id" value="2">
+                                <div class="name">李中秋1</div>
+                                <div class="phone">13012345678</div>
+                            </div>
+                            <div class="listBottom">
+                                吉林省长春市朝阳区延安大街与湖西路交汇民生大厦5楼
+                            </div>
+                        </div>
+                        <div class="listRight flex">
+                            <span class="iconfont iconxiangyou"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" onclick="check_address(this)">
+                    <a href="#" class="flex">
+                        <div class="listLeft">
+                            <div class="flex listTop">
+                                <input type="hidden" class="address_id" value="3">
+                                <div class="name">李中秋2</div>
+                                <div class="phone">123456484545</div>
+                            </div>
+                            <div class="listBottom">
+                                吉林省长春市朝阳区延安大街与湖西路交汇民生大厦
+                            </div>
+                        </div>
+                        <div class="listRight flex">
+                            <span class="iconfont iconxiangyou"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
     </div>
 </div>
 
     
 <script src="./js/jquery-2.1.0.js"></script>
 <script src="./js/fontSize.js"></script>
+<script>
+    /* 显示地址 */
+    function show_address() {
+        $('.changeAddressModel').css('display','block');
+    }
+    /* 触发隐藏事件 */
+    $('.changeAddressModel').on('click', function(event) {
+        var evt = event.srcElement?event.srcElement:event.target;
+        evt = $(evt);
+        if(evt.find('.listContent').length!=0) {
+            /*元素之外*/
+            $('.changeAddressModel').css('display','none');
+            return false;
+        }
+    });
+    /* 触发选中事件 */
+    function check_address(obj){
+        var address_id = $(obj).find('.address_id').val();
+        var name = $(obj).find('.name').text();
+        var phone = $(obj).find('.phone').text();
+        var listBottom = $(obj).find('.listBottom').text();
+        $('.address_id_val').val(address_id);
+        $('.name_val').text(name);
+        $('.phone_val').text(phone);
+        $('.address_val').text(listBottom.replace('[默认]',''));
+        $('.changeAddressModel').css('display','none');
+    }
+
+</script>
 </body>
 </html>
