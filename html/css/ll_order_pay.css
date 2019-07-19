@@ -47,10 +47,12 @@
     background-size: 100% 100%;
 }
 .isSuccess{
-    background: url(../img/background_01.jpg) no-repeat center;
+    background: url(../img/sccesspay.png) no-repeat center;
+    background-size: 100% 100%;
 }
 .isFailed{
-    background: url(../img/banner1_02.jpg) no-repeat center;
+    background: url(../img/errorpay.png) no-repeat center;
+    background-size: 100% 100%;
 }
 .chongshi{
     color: rgb(80,191,242);

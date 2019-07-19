@@ -103,7 +103,7 @@ $(function(){
     document.getElementById('cc-loading').style.display = 'none';
     for(var i=0;i<10;i++){
         var cont = '<div class="touch" id="touch'+i+'"><div class="item flex" userAddressId="1"><div class="list flex">';
-            cont += '<div class="checkboxWrap flex"><input type="checkbox" class="e-selfecheckbox1" id="listCheck'+i+'"><label class="selfecheckbox_label1" for="listCheck'+i+'"></label></div>';
+            cont += '<div class="checkboxWrap flex"><input type="checkbox"  class="e-selfecheckbox1 checkoutBoxList" id="listCheck'+i+'"><label class="selfecheckbox_label1" for="listCheck'+i+'"></label></div>';
             cont += '<div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>';
             cont += '<div class="goodsInfo flex">';
             cont += '<div class="goodsInfoName">【南极人】名称 '+i+'</div>';
@@ -152,11 +152,26 @@ $(function(){
         
         $("#inputVale_"+idStr[1]).val(numberVal)
     });
-    
-    $("#allChose").change(function(){
-        console.log($(this).checked)
-    })
+    // 顶部全选
+    $("#allChose").change(function(e){
+        console.log($(this).prop('checked'))
+        if($(this).prop('checked')){
+            console.log($(".checkoutBoxList").length)
+            for(var i=0;i<$(".checkoutBoxList").length;i++){
+                $("#my-address-list .checkoutBoxList").eq(i).prop('checked',true);
+            }
+        }else{
+            for(var i=0;i<$(".checkoutBoxList").length;i++){
+                $("#my-address-list .checkoutBoxList").eq(i).prop('checked',false);
+            }
+        }
+    });
 
+    $("#my-address-list").on('change','.checkoutBoxList',function(){
+        if(!$(this).prop('checked')){
+            $("#allChose").prop('checked',false)
+        }
+    })
    
     //这是配合 jquery.mobile-1.3.2.min.js一起使用的
     // $(".item").on("swipeleft",function(){
