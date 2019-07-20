@@ -153,10 +153,11 @@
     height: 0.4rem;
 }
 .logistics-box li  .right_li{
+    flex: 0 0 5.82rem;
     flex-grow: 1;
     height: 2.2rem;
     padding-left: 0.4rem;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     color: rgb(153,153,153);
 }
