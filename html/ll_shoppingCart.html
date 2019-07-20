@@ -103,7 +103,7 @@
         </div>
         <div class="deleteWrap flex" style="display: none;">
             <div class="checkboxWrap flex">
-                <div class="flex"><span class="f_28 color_102">共选中</span><span class="f_32 color_ju">3</span><span
+                <div class="flex"><span class="f_28 color_102">共选中</span><span class="f_32 color_ju checked_num">0</span><span
                         class="f_28 color_102">件</span></div>
             </div>
             <div class="deleteBot">删除</div>
@@ -183,34 +183,36 @@
         });
 
     });
+    /* 计算价格 */
     var pri_length = $("[id^='pri_']").size();
-    var pri = parseFloat('0.00');
-    for(var i=1;i<=pri_length;i++){
-        pri = parseFloat($('#pri_'+pri_length).text())+pri;
+    function js_price() {
+        var pri = parseFloat('0.00');
+        for(var i=1;i<=pri_length;i++){
+            pri = parseFloat($('#pri_'+pri_length).text())+pri;
+        }
+        $('.all_price').text(pri);
     }
-    $('.all_price').text(pri);
+    js_price();
     $('.jiesuan').text('结算('+pri_length+')');
     //加
     function jia(obj) {
-        console.log('+');
         var idStr = $(obj).attr("id").split('_');
         var numberVal = $("#inputVale_" + idStr[1]).val();
         numberVal++;
         $("#inputVale_" + idStr[1]).val(numberVal);
-        $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal))
+        $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal));
     }
     //减
     function jian(obj) {
-        console.log('-');
         var idStr = $(obj).attr("id").split('_');
         var numberVal = $("#inputVale_" + idStr[1]).val();
         if (numberVal <= 1) {
             return false;
         } else {
             numberVal--;
-            $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal))
+            $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal));
         }
-        $("#inputVale_" + idStr[1]).val(numberVal)
+        $("#inputVale_" + idStr[1]).val(numberVal);
     }
 
     //顶部全选
@@ -219,10 +221,13 @@
             for(var i=0;i<$(".checkoutBoxList").length;i++){
                 $("#my-address-list .checkoutBoxList").eq(i).prop('checked',true);
             }
+            var all_checkbox_len = $("#my-address-list").find('.checkoutBoxList').length;
+            $('.checked_num').text(all_checkbox_len);
         }else{
             for(var i=0;i<$(".checkoutBoxList").length;i++){
                 $("#my-address-list .checkoutBoxList").eq(i).prop('checked',false);
             }
+            $('.checked_num').text(0);
         }
     });
     //顶部全选冒泡
@@ -235,6 +240,7 @@
        if(all_checkbox_len==is_checked_len){
            $("#allChose").prop('checked',true);
        }
+       $('.checked_num').text(is_checked_len);
     })
 </script>
 <!-- 代码部分end -->
