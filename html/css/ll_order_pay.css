@@ -50,12 +50,12 @@
     background: url(../img/sccesspay.png) no-repeat center;
     background-size: 100% 100%;
 }
-<<<<<<< HEAD
+
 .isFailed{
     background: url(../img/errorpay.png) no-repeat center;
     background-size: 100% 100%;
 }
-=======
+
 /*.isFailed{*/
     /*background: url(../img/pay_ok.png) no-repeat center;*/
 /*}*/
