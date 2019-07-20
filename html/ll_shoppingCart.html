@@ -213,12 +213,9 @@
         $("#inputVale_" + idStr[1]).val(numberVal)
     }
 
-    // 顶部全选
+    //顶部全选
     $("#allChose").change(function(e){
-        console.log($(this).prop('checked'))
         if($(this).prop('checked')){
-            console.log($(".checkoutBoxList").length)
-            console.log($("#my-address-list .checkoutBoxList"))
             for(var i=0;i<$(".checkoutBoxList").length;i++){
                 $("#my-address-list .checkoutBoxList").eq(i).prop('checked',true);
             }
@@ -228,14 +225,16 @@
             }
         }
     });
-
+    //顶部全选冒泡
     $("#my-address-list").on('change','.checkoutBoxList',function(){
         if(!$(this).prop('checked')){
             $("#allChose").prop('checked',false);
         }
-        $("#my-address-list").find('.checkoutBoxList').length;
-        console.log($("#my-address-list").find('.checkoutBoxList').length);
-       // console.log($("#my-address-list").find('.checkoutBoxList').attr('checked').length);
+        var all_checkbox_len = $("#my-address-list").find('.checkoutBoxList').length;
+        var is_checked_len = $("#my-address-list").find('input:checked').length;
+       if(all_checkbox_len==is_checked_len){
+           $("#allChose").prop('checked',true);
+       }
     })
 </script>
 <!-- 代码部分end -->
