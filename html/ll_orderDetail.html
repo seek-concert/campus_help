@@ -9,6 +9,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp"/>
 <link rel="stylesheet" href="css/default.css" />
 <link rel="stylesheet" href="css/ll_placeOrder.css">
+<link rel="stylesheet" type="text/css" href="css/InvoiceManagement.css"/>
 </head>
 <body>
 <!-- 代码部分begin -->
@@ -87,14 +88,132 @@
     <div class="orderNumber">
         <div>订单编号：212525545566666666</div>
         <div>付款时间：2015-05-25  09:26:25</div>
+        <div onclick="show_address()">我要开票</div>
     </div>
 
     <a class="submitBtn flex">评价商品</a>
 
+    <!-- 地址弹窗 -->
+    <div class="changeAddressModel" style="display: none;">
+        <div class="listContent" style="height: 15rem;">
+            <div class="flex flexs m_2">
+                <div class="listLeft">
+                    <div class="listLeft" style="display:flex; display: -webkit-flex;justify-content:space-between;">
+                        <div class="listBottom col_h" style="font-weight:bold;">发票</div>
+                        <div class="listBottom" style="margin-right:.3rem;font-size: .38rem">发票须知</div>
+                    </div>
+                </div>
+                <div class="listRight flex flexs closeAll">
+                    <span class="iconfont iconguanbi1"></span>
+                </div>
+            </div>
+
+            <div class="flex flexs c_info">
+                <div class="listLeft" style="margin-right:.3rem;">
+                    <div class="listBottom" style="font-size: .34rem">乐校帮默认采用收据，如需发票请自行选择发票(发票均默认为普通发票),订单完成后24小时内开具，点击"我的订单"查看和下载。</div>
+                </div>
+                <div class="listRight flex flexs close_info">
+                    <span class="iconfont iconguanbi1"></span>
+                </div>
+            </div>
+
+            <div class="flexs" style="height: 2.5rem;">
+                <div class="listBottom col_h m_2" style="font-weight:500;">类型:</div>
+                <div class="listLeft flex m_2">
+                    <div class="listBottom">
+                        <div class="k_btn col_h btn_color_on shop_sj">开收据</div>
+                        <div class="k_btn col_h m_l_2 shop_fp">开发票</div>
+                    </div>
+                </div>
+                <div class="listBottom flex m_2" style="font-size: .34rem;">电子普通发票与纸质普通发票具备同等法律效力，可支持报销入账！</div>
+            </div>
+
+            <div class="flexs fp fps_tt" style="height: 1.8rem;display: none">
+                <div class="listBottom col_h m_2" style="font-weight:500;">发票抬头:</div>
+                <div class="listLeft m_2">
+                    <div class="listBottom" style="width: 100%; overflow: hidden;">
+                        <div class="k_btn col_h btn_color_on gr">个人</div>
+                        <div class="k_btn col_h m_l_2 gs">公司</div>
+                    </div>
+                    <div class="listBottom m_2 tt_type" style="display: none">
+                        <div class=" col_h" style="font-size: .34rem">单位名称 <input type="text" class="m_l_2" placeholder="请输入收票人手机号"></div>
+                        <div class=" col_h" style="font-size: .34rem;margin-top: .24rem">纳税人识别号&nbsp; <input type="text" class="m_l_2" placeholder="请输入收票人邮箱"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexs" style="height: 2rem;">
+                <div class="listBottom col_h m_2" style="font-weight:500;">收票人信息:</div>
+                <div class="listLeft m_2">
+                    <div class="listBottom">
+                        <div class=" col_h" style="font-size: .34rem">收票人手机* <input type="text" class="m_l_2" placeholder="请输入收票人手机号"></div>
+                        <div class=" col_h" style="font-size: .34rem;margin-top: .24rem">收票人邮箱&nbsp; <input type="text" class="m_l_2" placeholder="请输入收票人邮箱"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexs fp" style="height: 3.2rem;display: none">
+                <div class="listBottom col_h m_2" style="font-weight:500;">发票内容:</div>
+                <div class="listLeft flex m_2">
+                    <div class="listBottom">
+
+                        <div class="k_btn col_h btn_color_on">商品类别</div>
+                    </div>
+                </div>
+                <div class="listBottom flex m_2" style="font-size: .34rem;">发票内容将显示本单商品所属类别(通讯器材及配件)及价格信息，发票金额为实际支付金额，不含虚拟资产、优惠等扣减金额。</div>
+            </div>
+            <div class="flexs flex db_btn">确认</div>
+        </div>
+    </div>
 
     
 </div>
 <script src="./js/jquery-2.1.0.js"></script>
 <script src="./js/fontSize.js"></script>
+<script>
+    /* 显示地址 */
+    function show_address() {
+        $('.changeAddressModel').css('display','block');
+    }
+    /* 触发隐藏事件 */
+    $('.changeAddressModel').on('click', function(event) {
+        var evt = event.srcElement?event.srcElement:event.target;
+        evt = $(evt);
+        if(evt.find('.listContent').length!=0) {
+            /*元素之外*/
+            $('.changeAddressModel').css('display','none');
+            return false;
+        }
+    });
+    /* 关闭 */
+    $('.closeAll').on('click',function() {
+        $('.changeAddressModel').css('display','none');
+        return false;
+    });
+    $('.close_info').on('click',function() {
+        $('.c_info').css('display','none');
+        return false;
+    });
+    /* 按钮的选中 */
+    $('.k_btn').on('click',function() {
+        $(this).addClass('btn_color_on').siblings().removeClass('btn_color_on');
+        return false;
+    });
+
+    /* 发票与收据的显示 */
+    $('.shop_sj').on('click',function(){
+        $('.fp').hide();
+    });
+    $('.shop_fp').on('click',function(){
+        $('.fp').show();
+    });
+    /* 发票与收据的显示 */
+    $('.gr').on('click',function(){
+        $('.tt_type').hide();
+        $('.fps_tt').css('height','1.8rem');
+    });
+    $('.gs').on('click',function(){
+        $('.tt_type').show();
+        $('.fps_tt').css('height','2.8rem');
+    });
+</script>
 </body>
 </html>

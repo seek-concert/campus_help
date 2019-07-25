@@ -1,0 +1,186 @@
+.special{
+    background: rgb(241,241,241);
+}
+.changeAddressModel{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+.addAddressModel{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height:100%;
+    background: #ffffff;
+    z-index: 9999;
+}
+.listContent{
+    position: absolute;
+    bottom: 0;
+    height: 8rem;
+    overflow: scroll;
+    width: 100%;
+    background: white;
+}
+.listContent>.flexs{
+    clear: both;
+    padding: .2rem 0.4rem .2rem .4rem;
+    align-items: center;
+    border-bottom: 1px solid rgb(238,238,238);
+}
+.listRight{
+    width: .4rem;
+    align-items: center;
+}
+.listLeft{
+    flex-grow: 1;
+}
+.listTop{
+    font-size: .426667rem;
+    color: rgb(51,51,51);
+    font-weight: bold;
+    margin-bottom: .1rem;
+}
+.listTop .name{
+    width: 2rem;
+}
+.listTop .phone{
+    flex-grow: 1;
+}
+.listBottom{
+    color: rgb(153,153,153);
+    font-size: .426667rem;
+}
+.listBottom>span{
+    width: 1rem;
+    color: rgb(80,191,242);
+    margin-right: .1rem;
+}
+.flexABox{
+    width: 100%;
+}
+.updateListContent>.flex{
+    height: 1.466667rem;
+}
+.updateListContent .listTop input,.updateListContent .listTop select{
+    font-size: .426667rem;
+    color: rgb(51,51,51);
+    font-weight: normal;
+}
+.updateListContent .listBottom{
+    font-size: .373333rem;
+}
+.updateListContent .listTop select{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.label_raido_box input[type="radio"]{
+    position: absolute;
+    width: 0.50666rem;
+    height: 0.50666rem;
+    opacity: 0;
+
+}
+.radioDiv>label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.29333rem;
+    font-size: 0.4266rem;
+    color: rgb(102, 102, 102);
+     padding: 0 5px;
+    flex-grow: 1;
+
+}
+.label_raido_box input[type="radio"] + label::before{
+    content: "\a0";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 0.50666rem;
+    height: 0.50666rem;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid rgb(192,192,192);
+    text-indent: .15em;
+    line-height: 1;
+}
+.label_raido_box input[type="radio"]:checked + label::before{
+    background-color: rgb(80,191,242);
+    border: 1px solid rgb(80,191,242);
+    background-clip: content-box;
+    background-image: url(../img/gou.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.btnGroup{
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.btnGroup div{
+    margin: .2rem;
+    border-radius: 1.253333rem;
+    height: 1.253333rem;
+    line-height:  1.253333rem;
+    flex-grow: 1;
+    text-align: center;
+    font-size: .426667rem;
+}
+.btnGroup div.cancel{
+    color: rgb(153,153,153);
+    background: rgb(247,247,247);
+}
+.btnGroup div.save{
+    color: white;
+    background: rgb(80,191,242);
+}
+.detail_add_address{
+    padding: 0.2rem;
+    font-size: .4rem;
+    line-height: 1rem;
+    border-bottom: 1px solid rgb(238,238,238);
+    width: 96%;
+    position: absolute;
+    bottom: 8rem;
+    background: #fff;
+}
+.k_btn{
+    float: left;
+    border:.05rem #b9b4b4 solid;
+    padding: .045rem 0.15rem;
+    border-radius: 1rem;
+    font-size: .3688rem;
+}
+
+.btn_color_on{
+    border-color: red;
+    color: red !important;
+}
+
+.col_h{
+    color: rgb(58, 53, 53);
+}
+.m_2{
+    margin-top: .2rem;
+}
+.m_l_2{
+    margin-left: .2rem;
+}
+.db_btn{
+    background-color: red;
+    justify-content: center;
+    font-size: .3rem;
+    color: #ffffff;
+    border-radius: 1rem;
+    margin: 0 .4rem 0 .4rem;
+}

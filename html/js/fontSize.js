@@ -16,7 +16,7 @@
  if (!doc.addEventListener) return;
  win.addEventListener(resizeEvent, recalCulate, false);
     //加载自体图标
-    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_baapxpw9104.css"/>';
+    var icon_css ='<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1166350_gqn1mbgow7.css"/>';
     // var flexibleJs ='<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>';
     var head = $("head");
     head.append(icon_css);
