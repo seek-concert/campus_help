@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>乐校帮科技-诚招销售团队</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/invoice.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+</head>
+<body>
+<div class="special">
+    <div class="evaluate_title">
+        <a href="#"><i class="iconfont iconfanhui"></i></a>
+        <span>我的票据</span>
+    </div>
+    <div class="evaluate_content">
+        <div class="ad_content">
+            <p><span class="l_type">【普通电子发票】</span><a  class="xiazai"><i class="iconfont iconziyuanldpi"></i>&nbsp;点击下载</a></p>
+            <img class="imgShow" src="./img/fp.jpg" alt="" style="width: 9.3rem;height: 6rem">
+            <br><br><br>
+            <p><span class="l_type">【收据】</span><a class="xiazai"><i class="iconfont iconziyuanldpi"></i>&nbsp;点击下载</a></p>
+            <img class="imgShow" src="./img/fp.jpg" alt="" style="width: 9.3rem;height: 6rem">
+        </div>
+        <div class="mengban"></div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+    //点击图片放大
+    $('.imgShow').click(function(){
+        // var width = $('.imgShow').width();
+        $('.mengban').show();
+        $('.imgShow').addClass('changeImg')
+    });
+    //收回
+    $('.mengban').click(function(){
+        $('.imgShow').removeClass('changeImg');
+        $('.mengban').hide();
+    })
+
+</script>
