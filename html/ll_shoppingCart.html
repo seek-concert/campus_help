@@ -200,8 +200,27 @@
         var numberVal = $("#inputVale_" + idStr[1]).val();
         numberVal++;
         $("#inputVale_" + idStr[1]).val(numberVal);
-        $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal));
+        var now_pri = Number($("#pri_" + idStr[1]).text()*numberVal);
+        var all_pri_length = $("[id^='pri_']").size();
+
+        var pri = 0;
+        for(var i=1;i<=all_pri_length;i++){
+            if(i!=idStr[1]){
+                pri += accAdd(pri,$("#pri_"+i).text()*$("#inputVale_"+i).val());
+            }
+        }
+        $('.all_price').text(pri+now_pri);
     }
+    function accAdd(arg1, arg2) {
+        arg1 = arg1.toString(), arg2 = arg2.toString();
+        var arg1Arr = arg1.split("."), arg2Arr = arg2.split("."), d1 = arg1Arr.length == 2 ? arg1Arr[1] : "", d2 = arg2Arr.length == 2 ? arg2Arr[1] : "";
+        var maxLen = Math.max(d1.length, d2.length);
+        var m = Math.pow(10, maxLen);
+        var result = Number(((arg1 * m + arg2 * m) / m).toFixed(maxLen));
+        var d = arguments[2];
+        return typeof d === "number" ? Number((result).toFixed(d)) : result;
+    }
+
     //减
     function jian(obj) {
         var idStr = $(obj).attr("id").split('_');
@@ -210,11 +229,11 @@
             return false;
         } else {
             numberVal--;
-            $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal));
+            // $("#pri_" + idStr[1]).text(Number($("#inputHid_" + idStr[1]).val() * numberVal));
         }
         $("#inputVale_" + idStr[1]).val(numberVal);
+        $('.all_price').text($('.all_price').text()-$("#pri_" + idStr[1]).text());
     }
-
     //顶部全选
     $("#allChose").change(function(e){
         if($(this).prop('checked')){
