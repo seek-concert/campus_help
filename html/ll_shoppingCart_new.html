@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 <head>
-<meta charset="UTF-8">
-<title>购物车</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp"/>
-<link rel="stylesheet" href="css/default.css" />
-<link rel="stylesheet" href="css/ll_shoppingCart.css">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/ll_shoppingCart.css">
 </head>
 <body>
 <!-- 代码部分begin -->
@@ -20,178 +21,216 @@
     <!-- 存在购物车数据 -->
     <div class="hasGoodsBox">
         <div class="allChose flex">
-            <div class="checkboxWrap flex">
-                <input type="checkbox" class="e-selfecheckbox1" id="allChose">
-                <label class="selfecheckbox_label1" for="allChose">全选</label>
+            <div class="checkboxWrap flex" style="line-height: .55rem">
+                <input type="checkbox" class="e-selfecheckbox1 check_box check_box_all" id="allChose">
+                <label class="selfecheckbox_label1 check_box" for="allChose">全选</label>
             </div>
-            <div class="wancheng">完成</div>
+            <div class="wancheng del_shop">删除</div>
         </div>
         <div class="my-address-list" id="my-address-list">
             <div id="cc-loading"><span></span>玩命加载中...</div>
-        </div>
-        <!-- <div class="my-address-list">
-            <div class="touch" id="touch0">
-                <div class="item">
-                    <div class="list flex">
-                        <div class="checkboxWrap flex">
-                            <input type="checkbox" class="e-selfecheckbox1" id="place2">
-                            <label class="selfecheckbox_label1" for="place2"></label>
-                        </div>
-                        <div class="goodsImg">
-                            <img src="./img/product_03.jpg" alt="">
-                        </div>
-                        <div class="goodsInfo flex">
-                            <div class="goodsInfoName">【南极人】春秋四季被 芯空调被 双人棉被单人学生宿舍秋冬被双人棉被单人学生宿舍秋冬被双人棉被单人学生宿舍秋冬被</div>
-                            <div class="yuexiao"><span>月销236笔</span> <span>3kg|一米五</span> </div>
-                            <div class="flex price">
-                                <div class="pri">￥ 234.00</div>
-                                <div class="numberContent">
-                                    <div>-</div>
-                                    <div><input type="number" value="1" min="1" style="width: 0.533rem"></div>
-                                    <div>+</div>
+            <div class="my-address-list">
+                <div class="touch" id="touch1">
+                    <div class="item flex" userAddressId="1">
+                        <div class="list flex">
+                            <div class="checkboxWrap flex check_box">
+                                <input type="checkbox" class="e-selfecheckbox1 checkoutBoxList"  id="listCheck1">
+                                <label class="selfecheckbox_label1" for="listCheck1"></label>
+                            </div>
+                            <div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>
+                            <div class="goodsInfo flex" style="width:7rem">
+                                <div class="goodsInfoName">名称 1</div>
+                                <div class="yuexiao"><span>月销123笔</span> <span>3kg|一米五</span></div>
+                                <div class="flex price">
+                                    <div class="pri">￥ <span id="pri_1" class="pri_dj">25.00</span></div>
+                                    <input type="hidden" id="inputHid_1" value="25.00">
+                                    <div class="numberContent">
+                                        <div class="jianDiv_" id="jianDiv_1" onclick="jian(this)">-</div>
+                                        <div><input type="number" value="1" min="1" id="inputVale_1"  class="pri_num"
+                                                    style="width: 0.533rem"></div>
+                                        <div id="jiaDiv_1" class="jiaDiv_" onclick="jia(this)">+</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="icon2" ><i></i></div>
-                    <a href="javascript:;" class="remove">删除</a>
+                        <a href="javascript:;" class="remove">删除</a></div>
                 </div>
             </div>
-        </div> -->
-        
+
+            <div class="my-address-list">
+                <div class="touch" id="touch2">
+                    <div class="item flex" userAddressId="2">
+                        <div class="list flex">
+                            <div class="checkboxWrap flex check_box">
+                                <input type="checkbox" class="e-selfecheckbox1 checkoutBoxList"  id="listCheck2">
+                                <label class="selfecheckbox_label1" for="listCheck2"></label>
+                            </div>
+                            <div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>
+                            <div class="goodsInfo flex" style="width:7rem">
+                                <div class="goodsInfoName">名称 2</div>
+                                <div class="yuexiao"><span>月销456笔</span> <span>3kg|一米五</span></div>
+                                <div class="flex price">
+                                    <div class="pri">￥ <span id="pri_2" class="pri_dj">25.00</span></div>
+                                    <input type="hidden" id="inputHid_2" value="25.00">
+                                    <div class="numberContent">
+                                        <div class="jianDiv_" id="jianDiv_2" onclick="jian(this)">-</div>
+                                        <div><input type="number" value="1" min="1" id="inputVale_2"  class="pri_num"
+                                                    style="width: 0.533rem"></div>
+                                        <div id="jiaDiv_2" class="jiaDiv_" onclick="jia(this)">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="remove">删除</a></div>
+                </div>
+            </div>
+
+            <div class="my-address-list">
+                <div class="touch" id="touch3">
+                    <div class="item flex" userAddressId="3">
+                        <div class="list flex">
+                            <div class="checkboxWrap flex check_box">
+                                <input type="checkbox" class="e-selfecheckbox1 checkoutBoxList"  id="listCheck3">
+                                <label class="selfecheckbox_label1" for="listCheck3"></label>
+                            </div>
+                            <div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>
+                            <div class="goodsInfo flex" style="width:7rem">
+                                <div class="goodsInfoName">名称 3</div>
+                                <div class="yuexiao"><span>月销456笔</span> <span>3kg|一米五</span></div>
+                                <div class="flex price">
+                                    <div class="pri">￥ <span id="pri_3" class="pri_dj">25.00</span></div>
+                                    <input type="hidden" id="inputHid_3" value="25.00">
+                                    <div class="numberContent">
+                                        <div class="jianDiv_" id="jianDiv_3" onclick="jian(this)">-</div>
+                                        <div><input type="number" value="1" min="1" id="inputVale_3"  class="pri_num"
+                                                    style="width: 0.533rem"></div>
+                                        <div id="jiaDiv_3" class="jiaDiv_" onclick="jia(this)">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="remove">删除</a></div>
+                </div>
+            </div>
+        </div>
+
         <div class="SettlementWrap flex">
             <div class="checkboxWrap flex">
-                <input type="checkbox" class="e-selfecheckbox1" id="allChoseSettlement">
-                <label class="selfecheckbox_label1" for="allChoseSettlement">全选</label>
+                <div class="flex"><span class="f_28 color_102">合计：</span><span class="f_24 color_ju">￥</span><span
+                        class="f_32 color_ju all_price">0.00</span></div>
             </div>
             <div class="flex rightHeji">
                 <div class="heji flex">
-                    <div class="flex"><span class="f_28 color_102">合计：</span><span class="f_24 color_ju">￥</span><span class="f_32 color_ju">254.00</span></div>
                     <div class="f_22 color_153">不含运费</div>
                 </div>
-                <div class="deleteBot">结算(2)</div>
+                <div class="deleteBot jiesuan">结算</div>
             </div>
         </div>
         <div class="deleteWrap flex" style="display: none;">
             <div class="checkboxWrap flex">
-                <input type="checkbox" class="e-selfecheckbox1" id="allChoseDelete" >
-                <label class="selfecheckbox_label1" for="allChoseDelete">全选</label>
+                <div class="flex"><span class="f_28 color_102">共选中</span><span class="f_32 color_ju checked_num">0</span><span
+                        class="f_28 color_102">件</span></div>
             </div>
-            
-            <div class="deleteBot">删除(2)</div>
-
+            <div class="deleteBot">删除</div>
         </div>
     </div>
-    <div class="noListData"  style="display: none;">
+    <div class="noListData" style="display: none;">
         <div class="nodataLogBox">
-                <div class="nodataLog"><i class="iconfont icongouwuche2"></i> </div>
+            <div class="nodataLog"><i class="iconfont icongouwuche2"></i></div>
         </div>
         <div class="f_28 color_153">你的购物车还是空的赶紧行动吧！</div>
         <a class="goBuyBtn">马上去购物</a>
-        </div>
+    </div>
 
 
-
-    
 </div>
 <script src="./js/jquery-2.1.0.js"></script>
 <script src="./js/fontSize.js"></script>
-<!-- <script src="./js/jquery.mobile-1.3.2.min.js"></script> -->
+<script src="./js/jquery.mobile-1.3.2.min.js"></script>
 <script>
-$(function(){
+    $(function () {
+        document.getElementById('cc-loading').style.display = 'none';
+        //切换编辑状态
+        $('.del_shop').on('click', function () {
+            $('#my-address-list .my-address-list').each(function(i,data) {
+                if($(this).find('.checkoutBoxList').prop('checked')){
+                    $(this).remove();
+                }
+            });
+            get_pri();
+        });
+    });
 
-    document.getElementById('cc-loading').style.display = 'none';
-    for(var i=0;i<10;i++){
-        var cont = '<div class="touch" id="touch'+i+'"><div class="item flex" userAddressId="1"><div class="list flex">';
-            cont += '<div class="checkboxWrap flex"><input type="checkbox"  class="e-selfecheckbox1 checkoutBoxList" id="listCheck'+i+'"><label class="selfecheckbox_label1" for="listCheck'+i+'"></label></div>';
-            cont += '<div class="goodsImg"><img src="./img/product_03.jpg" alt=""></div>';
-            cont += '<div class="goodsInfo flex">';
-            cont += '<div class="goodsInfoName">【南极人】名称 '+i+'</div>';
-            cont += '<div class="yuexiao"><span>月销'+(i+1)+'笔</span> <span>3kg|一米五</span> </div>';
-            cont += '<div class="flex price"><div class="pri" >￥ <span id="pri_'+i+'">25.00</span> </div>';
-            cont += '<input type="hidden" id="inputHid_'+i+'" value="25.00">'
-            cont += '<div class="numberContent"><div class="jianDiv_" id="jianDiv_'+i+'">-</div><div><input type="number" value="1" min="1" id="inputVale_'+i+'" style="width: 0.533rem"></div> <div  id="jiaDiv_'+i+'" class="jiaDiv_">+</div></div></div></div>';
-            cont += '</div><a href="javascript:;" class="remove">删除</a></div></div>';
-        $('#my-address-list').append(cont);
-    }
-    $(".item").on('touchstart',function(e){
-        startX = e.originalEvent.changedTouches[0].pageX,
-        startY = e.originalEvent.changedTouches[0].pageY;
-    })
-    $(".item").on('touchend',function(e){
-        moveEndX = e.originalEvent.changedTouches[0].pageX,
-        moveEndY = e.originalEvent.changedTouches[0].pageY,
-        X = moveEndX - startX,
-        Y = moveEndY - startY;
-        if ( X < -20 ) {
-            console.log('左滑');
-            $(this).addClass('selected').parents(".touch").siblings().find(".item").removeClass('selected');     
-        }else{
-            $(this).parents(".touch").find(".item").removeClass('selected'); 
-        }
-    })
     //加
-    $("#my-address-list").on('click','.jiaDiv_',function(){
-        var idStr = $(this).attr("id").split('_');
-        var numberVal = $("#inputVale_"+idStr[1]).val();
+    function jia(obj) {
+        var idStr = $(obj).attr("id").split('_');
+        var numberVal = $("#inputVale_" + idStr[1]).val();
         numberVal++;
-        $("#inputVale_"+idStr[1]).val(numberVal);
-        $("#pri_"+idStr[1]).text(Number($("#inputHid_"+idStr[1]).val()*numberVal))
-    });
+        $("#inputVale_" + idStr[1]).val(numberVal);
+        get_pri();
+    }
     //减
-    $("#my-address-list").on('click','.jianDiv_',function(){
-        console.log('----')
-        var idStr = $(this).attr("id").split('_');
-        var numberVal = $("#inputVale_"+idStr[1]).val();
-        if(numberVal<=1){
-            return
-        }else{
+    function jian(obj) {
+        var idStr = $(obj).attr("id").split('_');
+        var numberVal = $("#inputVale_" + idStr[1]).val();
+        if (numberVal <= 1) {
+            return false;
+        } else {
             numberVal--;
-            $("#pri_"+idStr[1]).text(Number($("#inputHid_"+idStr[1]).val()*numberVal))
         }
-        
-        $("#inputVale_"+idStr[1]).val(numberVal)
-    });
-    // 顶部全选
+        $("#inputVale_" + idStr[1]).val(numberVal);
+        get_pri();
+    }
+    //顶部全选
     $("#allChose").change(function(e){
-        console.log($(this).prop('checked'))
         if($(this).prop('checked')){
-            console.log($(".checkoutBoxList").length)
             for(var i=0;i<$(".checkoutBoxList").length;i++){
                 $("#my-address-list .checkoutBoxList").eq(i).prop('checked',true);
             }
+            var all_checkbox_len = $("#my-address-list").find('.checkoutBoxList').length;
+            $('.checked_num').text(all_checkbox_len);
         }else{
             for(var i=0;i<$(".checkoutBoxList").length;i++){
                 $("#my-address-list .checkoutBoxList").eq(i).prop('checked',false);
             }
+            $('.checked_num').text(0);
         }
+        get_pri();
     });
-
+    //顶部全选冒泡
     $("#my-address-list").on('change','.checkoutBoxList',function(){
         if(!$(this).prop('checked')){
             $("#allChose").prop('checked',false);
         }
-    })
-   
-    //这是配合 jquery.mobile-1.3.2.min.js一起使用的
-    // $(".item").on("swipeleft",function(){
-    //     $(this).addClass('selected').parents(".touch").siblings().find(".item").removeClass('selected');
-    //     $(this).find("a.remove").on("click",function(){
-    //         var touchId = $(this).parents(".touch").attr("id");
-    //         //执行删除效果
-    //         $("#"+touchId).css("border","0");
-    //         $("#"+touchId).stop().animate({
-    //             height:"0",
-    //             margin:"0"
-    //         },300,function(){
-    //             $(this).remove();
-    //         })
-    //     })
-    // }).on("swiperight",function(){
-    //     $(this).parents(".touch").find(".item").removeClass('selected');
-    // })
+        var all_checkbox_len = $("#my-address-list").find('.checkoutBoxList').length;
+        var is_checked_len = $("#my-address-list").find('input:checked').length;
+        if(all_checkbox_len==is_checked_len){
+            $("#allChose").prop('checked',true);
+        }
+        $('.checked_num').text(is_checked_len);
+        get_pri();
+    });
 
-})
+    //获取价格与结算数量
+    function get_pri() {
+        var arr =[];
+        $('#my-address-list .my-address-list').each(function(j,data) {
+
+            if($(this).find('.checkoutBoxList').prop('checked')){
+              arr[j]=$(this).find('.pri_dj').text()*$(this).find('.pri_num').val();
+            }
+        });
+        var arr_len = arr.length;
+        var pri = 0;
+        for(var i = 0; i < arr_len; i++) {
+            pri += arr[i];
+        }
+
+        $('.all_price').text(pri);
+        $('.jiesuan').text('结算('+arr_len+')');
+
+    }
+    get_pri();
 </script>
 <!-- 代码部分end -->
 </body>
