@@ -381,7 +381,7 @@
 			list: [{
 					id: 1,
 					title: '荞麦冷面外卖',
-					price: 23,
+					price: 30,
 					delPrice: 30,
 					discount: '7.7折',
 					sales: '77',
@@ -2060,13 +2060,23 @@
 					vm.$set(item, 'active', false)
 				})
 				vm.$set(obj.specpanelList[index].items[_index], 'active', true)
-				vm.$set(vm.specpanelItem,obj)
+				vm.specpanelItem = obj
 				// 显示选择规格
 				vm.changeSpecpanelInfo(obj)
 				// 显示选择的价格
 				if(obj.specpanelList[index].items[_index].price){
 					vm.specpanelPrice = obj.specpanelList[index].items[_index].price
+					vm.shopList[vm.specpanelIndex].list[vm.specpanel_Index].price  = obj.specpanelList[index].items[_index].price;
+					vm.carts.cartList.map(goodsItem => {
+						if(goodsItem.id == obj.id){
+							goodsItem.price = obj.price
+							vm.carts.totals = 0;
+							vm.carts.delTotals = 0;
+							vm.calculatePrice('add')
+						}
+					})
 				}
+				
 			},
 			// 购物车添加
 			addCart(shopItem, index, _index) {
@@ -2076,18 +2086,20 @@
 				vm.shopList[index].list[_index].pIndex = index
 				vm.shopList[index].list[_index].num++
 				vm.carts.num++
-				if (vm.shopList[index].list[_index].flag) {
+				if (vm.shopList[index].list[_index].flag) {				
 					vm.carts.cartList.map(function (value, i) {
 						if (value.id == shopItem.id) {
 							vm.carts.cartList[i] = vm.shopList[index].list[_index]
+							vm.calculatePrice('add',i)
 						}
 					})
 				} else {
-					vm.carts.cartList.push(vm.shopList[index].list[_index])
 					vm.showSpecpanelFun(shopItem)
+					// 添加到购物车
+					vm.carts.cartList.push(vm.shopList[index].list[_index])
+					vm.shopList[index].list[_index].flag = true
+					vm.calculatePrice('add')
 				}
-				vm.shopList[index].list[_index].flag = true
-				vm.calculatePrice('add')
 			},
 			// 购物车减少
 			delCart(shopItem, index, _index) {
@@ -2097,7 +2109,7 @@
 					vm.carts.cartList.map(function (value, i) {
 						if (value.id == shopItem.id) {
 							vm.carts.cartList[i].num = vm.shopList[index].list[_index].num
-							vm.calculatePrice('del')
+							vm.calculatePrice('del',i)
 						}
 					})
 				} else {
@@ -2106,18 +2118,31 @@
 					vm.shopList[index].list[_index].flag = false
 					vm.carts.cartList.map(function (value, i) {
 						if (value.id == shopItem.id) {
-							vm.calculatePrice('del')
+							vm.calculatePrice('del',i)
 							vm.carts.cartList.splice(i, 1)
 						}
 					})
 				}
+
+				if(vm.carts.cartList.length == 0){
+					vm.carts.totals = 0
+					vm.carts.delTotals = 0
+				}
 			},
 			// 计算价格
-			calculatePrice(type) {
-				vm.carts.cartList.map(function (value) {
-					type == 'add' ? vm.carts.totals += value.price : vm.carts.totals -= value.price
-					type == 'add' ? vm.carts.delTotals += value.delPrice : vm.carts.delTotals -= value.delPrice
-				})
+			calculatePrice(type,...rest) {
+				if(rest.length > 0){
+					let _index = rest[0];
+					type == 'add' ? vm.carts.totals += vm.carts.cartList[_index].price : vm.carts.totals -= vm.carts.cartList[_index].price
+					type == 'add' ? vm.carts.delTotals += vm.carts.cartList[_index].delPrice : vm.carts.delTotals -= vm.carts.cartList[_index].delPrice
+				}else{
+					vm.carts.totals = 0
+					vm.carts.delTotals = 0
+					vm.carts.cartList.map(function (value) {
+						vm.carts.totals += value.price * value.num
+						vm.carts.delTotals += value.delPrice * value.num
+					})
+				}
 				// 显示可以支付
 				if (vm.carts.totals > 20) {
 					vm.carts.isPay = true
@@ -2133,7 +2158,7 @@
 						if (item.id == shopItem.id) {
 							item.num--
 							vm.carts.cartList[index].num = item.num
-							vm.calculatePrice('del')
+							vm.calculatePrice('del', index)
 						}
 					})
 				} else {
@@ -2143,11 +2168,17 @@
 							item.num--
 							vm.carts.cartList[index].num = item.num
 							item.flag = false
-							vm.calculatePrice('del')
+							vm.calculatePrice('del', index)
 							vm.carts.cartList.splice(index, 1)
 						}
 					})
 				}
+				if(vm.carts.cartList.length == 0){
+					vm.carts.totals = 0
+					vm.carts.delTotals = 0
+					vm.clearCarts()
+				}
+
 			},
 			// 购物车列表添加
 			cartListAdd(shopItem, index) {
@@ -2156,7 +2187,7 @@
 					if (item.id == shopItem.id) {
 						item.num++
 						vm.carts.cartList[index].num = item.num
-						vm.calculatePrice('add')
+						vm.calculatePrice('add',index)
 					}
 				})
 			},
