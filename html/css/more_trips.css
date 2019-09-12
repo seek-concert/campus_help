@@ -1,7 +1,7 @@
 .special{
 	padding-top: 1.3333rem;
 	padding-bottom: 1.6rem;
-	background: #fff;
+	background:rgb(241,241,241);
 }
 .code{
 	font-size: 0.5333rem!important;
@@ -328,3 +328,134 @@
 	width: 2rem;
 }
 
+/* 我的失物 */
+.myLost{
+	background: rgb(241,241,241);
+	padding-top: .533333rem;
+}
+.flexDirection-col{
+	flex-direction: column;
+}
+.myLostList{
+	margin-bottom: .4rem;
+	border-radius: .133333rem;
+	border: 1px solid rgb(222,222,222);
+}
+.myLostList .lostHead{
+	background: white;
+	border-bottom: .013333rem solid rgb(224,224,224);
+	padding: 0 .333333rem;
+	height: 1.6rem;
+	justify-content: space-between;
+	align-items: center
+
+}
+.myLostList .lostHead img{
+	width: 1.08rem;
+	height: 1.08rem;
+	border-radius: 100%;
+	margin-right: .266667rem;
+}
+.myLostList .lostHead .lostHead-center{
+	width: 4.8rem;
+	height: 1.08rem;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.myLostList .lostHead  .peopleName{
+	font-size: .4rem;
+	color: rgb(51,51,51);
+	margin-right: .266667rem;
+}
+
+.myLostList .lostHead .lostName{
+	display: inline-block;
+	height: .426667rem;
+	line-height: .426667rem;
+	font-size: .32rem;
+	color: white;
+	background: rgb(111,207,251);
+	padding: 0 .266667rem;
+	border-radius: .08rem;
+}
+.myLostList .lostHead-right{
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.myLostList .lostHead-right .lostStatus{
+	display: inline-block;
+	line-height: .426667rem;
+	color: white;
+	background: rgb(254,146,70);
+	font-size: .266667rem;
+	padding: 0 .266667rem;
+	border-radius: .053333rem;
+}
+.myLostList .lostHead-right .lostEye{
+	font-size: .266667rem;
+	color: rgb(102,102,102);
+	line-height: .533333rem;
+}
+.myLostList .lostHead-right .lostEye i{
+	font-size: .533333rem;
+	color: rgb(102,102,102);
+	float: left;
+}
+
+.myLostList .lostBody .lostBody-address{
+	height: .96rem;
+	line-height: .96rem;
+	font-size: .346667rem;
+	color: rgb(69,69,69);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 .4rem;
+	background: rgb(250,250,250);
+	border-bottom: .013333rem solid rgb(224,224,224);
+}
+.myLostList .lostBody .lostBody-address i{
+	font-size: .426667rem;
+	float: left;
+	margin-right: .133333rem;
+}
+.myLostList .lostBody  .lostBody-content{
+	padding: .266667rem .4rem;
+	font-size: .32rem;
+	line-height: .533333rem;
+	color: rgb(102,102,102);
+	background: rgb(250,250,250);
+	position: relative;
+	overflow: hidden;
+}
+.myLostList .lostBody  .lostBody-content img{
+	width: 2.72rem;
+	height: 2.72rem;
+	border-radius: .133333rem;
+	float: left;
+	margin-right: .053333rem;
+	margin-bottom: .053333rem
+}
+.barBar{
+	width: 2.4rem;
+	height: .6rem;
+	line-height: .6rem;
+	text-align: center;
+	font-size: .48rem;
+	transform:rotate(-30deg);
+	-ms-transform:rotate(-30deg); 	/* IE 9 */
+	-moz-transform:rotate(-30deg); 	/* Firefox */
+	-webkit-transform:rotate(-30deg); /* Safari 和 Chrome */
+	-o-transform:rotate(-30deg); 
+	right: 3px;
+	bottom: 21px;
+	position: absolute;
+}
+.lanseBar{
+	color: rgb(125,207,244);
+	border: 1px dashed rgb(125,207,244);
+}
+.huangseBar{
+	color: rgb(255,162,96);
+	border: 1px dashed rgb(255,162,96);
+}

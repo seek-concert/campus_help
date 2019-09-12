@@ -1,0 +1,253 @@
+/* 我的失物 */
+html, body{
+    background: rgb(241,241,241) !important;
+}
+.special{
+    background: rgb(241,241,241);
+    position: relative;
+}
+.myLost{
+    margin: .24rem .24rem 0 .24rem;
+    padding-bottom: 1.333333rem;
+    /* border-radius: .106667rem;
+    border: .013333rem solid rgb(222,222,222); */
+}
+.flexDirection-col{
+	flex-direction: column;
+}
+.myLostList{
+	margin-bottom: .4rem;
+	border-radius: .106667rem;
+    border: 1px solid rgb(222,222,222);
+    background: white;
+}
+.myLostList .lostHead{
+	background: white;
+	border-bottom: .013333rem solid rgb(224,224,224);
+	padding: 0 .333333rem;
+	height: 1.6rem;
+	justify-content: space-between;
+	align-items: center
+
+}
+.myLostList .lostHead img{
+	width: 1.08rem;
+	height: 1.08rem;
+	border-radius: 100%;
+	margin-right: .266667rem;
+}
+.myLostList .lostHead .lostHead-center{
+	width: 5rem;
+	height: 1.08rem;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.myLostList .lostHead .lostHead-center>div.firstDiv{
+    height: .426667rem;
+    line-height: 0;
+}
+.contactHim{
+    font-size: .293333rem;
+    color: white;
+    background: rgb(111,207,251);
+    border-radius: .053333rem;
+    text-align: center;
+    line-height: .48rem;
+    width: 1.333333rem;
+}
+.myLostList .lostHead  .peopleName{
+	font-size: .4rem;
+	color: rgb(51,51,51);
+	margin-right: .266667rem;
+}
+
+.myLostList .lostHead .lostName{
+	display: inline-block;
+	height: .426667rem;
+	line-height: .426667rem;
+	font-size: .32rem;
+	color: white;
+	background: rgb(111,207,251);
+	padding: 0 .266667rem;
+	border-radius: .08rem;
+}
+.myLostList .lostHead-right{
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.myLostList .lostHead-right>div.firstDiv{
+    line-height: 0;
+}
+.myLostList .lostHead-right .lostStatus{
+	display: inline-block;
+	line-height: .426667rem;
+	color: white;
+	font-size: .266667rem;
+	padding: 0 .266667rem;
+    border-radius: .053333rem;
+    background: rgb(254,146,70);
+}
+.myLostList .lostHead-right .promiseMoney{
+	font-size: .346667rem;
+    color: rgb(153,153,153);
+    align-items: baseline;
+}
+.myLostList .lostHead-right .promiseMoney span{
+    color: rgb(254,146,70);
+}
+.myLostList .lostHead-right .lostEye{
+	font-size: .266667rem;
+	color: rgb(102,102,102);
+	line-height: .533333rem;
+}
+.myLostList .lostHead-right .lostEye i{
+	font-size: .533333rem;
+	color: rgb(102,102,102);
+	float: left;
+}
+.myLostList .lostBody .lostBody-address{
+    padding: .373333rem .4rem .333333rem .4rem;
+	line-height: .48rem;
+    font-size: .346667rem;
+	color: rgb(69,69,69);
+	border-bottom: .013333rem solid rgb(224,224,224);
+}
+.myLostList .lostBody .lostBody-address i{
+	font-size: .426667rem;
+	float: left;
+	margin-right: .133333rem;
+}
+.myLostList .lostBody .lostBody-address>div{
+    width: 8.266667rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.myLostList .lostBody  .lostBody-content{
+    padding: .373333rem .4rem .333333rem .4rem;
+	font-size: .32rem;
+	line-height: .533333rem;;
+	color: rgb(102,102,102);
+	position: relative;
+    overflow: hidden;
+    /* border-bottom: .013333rem solid rgb(224,224,224); */
+}
+/* .myLostList .lostBody  .lostBody-content .content{
+    padding-left: .266667rem;
+} */
+.myLostList .lostBody  .lostBody-content img{
+    width: 2.72rem;
+    height: 2.72rem;
+    margin-right: .133333rem;
+	border-radius: .053333rem;
+	margin-bottom: .053333rem
+}
+.barBar{
+	height: .533333rem;
+	line-height: .533333rem;
+    font-size: .373333rem;
+    padding-bottom: .266667rem;
+    color: rgb(51,51,51);
+}
+.barBar>span{
+    display: inline-block;
+    width: .066667rem;
+    height: .533333rem;
+    background: rgb(80,191,242);
+    border-radius: .066667rem;
+    margin-right: .133333rem;
+}
+.lanseBar{
+	color: rgb(125,207,244);
+	border: 1px dashed rgb(125,207,244);
+}
+.huangseBar{
+	color: rgb(255,162,96);
+	border: 1px dashed rgb(255,162,96);
+}
+.f_40{
+    font-size: .533333rem;
+}
+
+
+
+
+.topBox{
+    background: white;
+    padding: .4rem 0 0 0;
+    position: relative;
+}
+.topBox-bar{
+    width: 7.973333rem;
+    box-sizing: border-box;
+    border: .026667rem solid rgb(111,207,251);
+    border-radius: 1.173333rem;
+    height: 1.173333rem;
+    font-size: .426667rem;
+    overflow: hidden;
+    margin: auto;
+}
+.topBox-bar>div{
+    width: 50%;
+    text-align: center;
+    line-height: 1.173333rem;
+    background: rgb(111,207,251);
+    color: white;
+}
+.topBox-bar>div.active{
+    background: white;
+    color:  rgb(111,207,251);
+}
+.school_first {
+    width: 100%;
+    height: 0.96rem;
+    border-bottom: 0.0133rem solid #eeeeee;
+    border-top: 0.0133rem solid #eeeeee;
+    position: relative;
+    background: #FFFFFF;
+    margin-top: .4rem;
+}
+.school_first li {
+    width: 25%;
+    height: auto;
+    line-height: 0.8rem;
+    float: left;
+    font-size: 0.3466rem;
+    color: #2e2e2e;
+    text-align: center;
+}
+.school_first span {
+    width: 25%;
+    height: 0.08rem;
+    background: #6fcffb;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s;
+}
+.selectClassBox{
+    position: absolute;
+    top: 4.32rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.1);
+    z-index: 9999;
+    display: none;
+}
+.selectClassBox_box{
+    max-height: 5.6rem;
+    overflow-y: auto;
+
+}
+.selectClassBox_box>div{
+    color:  rgb(51,51,51);
+    height: 1.04rem;
+    line-height: 1.04rem;
+    font-size: .346667rem;
+    text-indent: .4rem;
+    background: white;
+}
+.selectClassBox_box>div.active{
+    background: rgb(241,241,241);
+}

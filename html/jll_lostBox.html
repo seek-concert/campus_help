@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>失物箱</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	  	<meta name="format-detection" content="telephone=no">
+	  	<meta name="renderer" content="webkit">
+	  	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  	<link rel="stylesheet" href="css/default.css" />
+	  	<link rel="stylesheet" href="css/jll_lostBox.css" />
+	  	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="special" style="padding-top:0;">
+            <!--头部-->
+            <div class="evaluate_title">
+                <a href="javascript:history.go(-1)"><i class="iconfont iconfanhui"></i></a>
+                <span>失物箱</span>
+            </div>
+            <div class="topBox">
+                <div class="topBox-bar flex">
+                    <div class="active">招领失物</div>
+                    <div>丢寻失物</div>
+                </div>
+                <ul class="school_first">
+                    <li id="selectClass">全部</li>
+                    <li>最新</li>
+                    <li>附近</li>
+                    <li>距离优先</li>
+                    <span></span>
+                </ul>
+                
+            </div>
+            <div class="selectClassBox">
+                    <div class="selectClassBox_box">
+                        <div>全部</div>
+                        <div class="active">全部1</div>
+                        <div>全部2</div>
+                        <div>全部2</div>
+                        <div>全部2</div>
+                        <div>全部2</div>
+                        <div>全部2</div>
+                        <div>全部2</div>
+                    </div>
+                </div>
+            <div class="myLost">
+                <div class="myLostList">
+                    <div class="lostHead flex">
+                        <img src='img/product_03.jpg' alt="">
+                        <div class="flex lostHead-center">
+                            <div class="firstDiv"><span class="peopleName">周女士</span><span class="lostName">钱包</span></div>
+                            <div class="color_153 f_22">12-12 今天 12:30</div>
+                            <!-- <div class="contactHim">联系TA</div> -->
+                        </div>
+                        <div class="flex flexDirection-col lostHead-right">
+                            <div class="firstDiv"><span class="lostStatus">丢失</span></div>
+                            <!-- <div class="promiseMoney flex"><i>许诺奖金:</i><span class="f_32">￥</span><span class="f_40">80.00</span></div> -->
+                            <div class="lostEye"><i class="iconfont iconyanjing"></i> 浏览314次</div>
+                        </div>
+                    </div>
+                    <div class="lostBody">
+                        <div class="lostBody-address flex">
+                            <i class="iconfont icondibiao"></i><div>重庆市沙坪坝区井口镇老街#8号重庆市沙坪坝区井口镇老街#8号重庆市沙坪坝区井口镇老街#8号（井口小学前行20</div>
+                        </div>
+                        <div class="lostBody-content">
+                            <!-- <div class="barBar"><span></span> 失物描述</div> -->
+                                <div class="content">
+                                <img src="./img/02.png" alt=""><img src="./img/02.png" alt=""><img src="./img/02.png" alt="">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="myLostList">
+                        <div class="lostHead flex">
+                            <img src='img/product_03.jpg' alt="">
+                            <div class="flex lostHead-center">
+                                <div class="firstDiv"><span class="peopleName">周女士</span><span class="lostName">钱包</span></div>
+                                <div class="color_153 f_22">12-12 今天 12:30</div>
+                                <!-- <div class="contactHim">联系TA</div> -->
+                            </div>
+                            <div class="flex flexDirection-col lostHead-right">
+                                <div class="firstDiv"><span class="lostStatus">丢失</span></div>
+                                <!-- <div class="promiseMoney flex"><i>许诺奖金:</i><span class="f_32">￥</span><span class="f_40">80.00</span></div> -->
+                                <div class="lostEye"><i class="iconfont iconyanjing"></i> 浏览314次</div>
+                            </div>
+                        </div>
+                        <div class="lostBody">
+                            <div class="lostBody-address flex">
+                                <i class="iconfont icondibiao"></i><div>重庆市沙坪坝区井口镇老街#8号重庆市沙坪坝区井口镇老街#8号重庆市沙坪坝区井口镇老街#8号（井口小学前行20</div>
+                            </div>
+                            <div class="lostBody-content">
+                                <!-- <div class="barBar"><span></span> 失物描述</div> -->
+                                    <div class="content">
+                                    <img src="./img/02.png" alt=""><img src="./img/02.png" alt=""><img src="./img/02.png" alt="">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/fontSize.js" ></script>
+<script>
+    $(".school_first li").click(function(){
+		var persent =25;
+		var index = $(this).index();
+		var left =persent*index;
+		$(this).siblings("span").css("left",left+"%");
+		$(".school_content>div").eq(index).css("display","block").siblings().css("display","none");
+	});
+    $(".topBox-bar>div").click(function(){
+        $(this).addClass('active').siblings('div').removeClass('active');   
+    })
+    $('#selectClass').click(function(){
+        $('.selectClassBox').css('display','block');
+    })
+    $(".selectClassBox_box>div").click(function(){
+        $(this).addClass('active').siblings('div').removeClass('active');
+        $('#selectClass').text($(this).text());
+        $('.selectClassBox').css('display','none');
+    });
+</script>

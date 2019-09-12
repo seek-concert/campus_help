@@ -1,0 +1,58 @@
+.listInputBox .listInputBox-title{
+    padding: .333333rem;
+    font-size: .346667rem;
+    color: rgb(102,102,102);
+}
+.listInputBox .listInputBox-content .list{
+    background: white;
+    padding: 0 .4rem;
+    height: 1.2rem;
+    justify-content: space-between;
+    border-bottom: .013333rem solid rgb(215,214,213);
+    align-items: center;
+}
+.listInputBox .listInputBox-content .list>div:nth-of-type(1){
+    font-size: .426667rem;
+    color:rgb(102,102,102);
+}
+.listInputBox .listInputBox-content .list>div:nth-of-type(2){
+    text-align: right;
+}
+.listInputBox .listInputBox-content .list>div:nth-of-type(2) select{
+    width: auto;
+    border: none;
+    outline: none;
+    color: rgb(51,51,51);
+    font-size: .426667rem;
+    text-align: right;
+    text-align-last: right;
+    padding: 0 2%;
+}
+.listInputBox .listInputBox-content .list>div:nth-of-type(2) select option{
+    text-align: center;
+}
+.listInputBox .listInputBox-content .list>div:nth-of-type(2) input{
+    text-align: right;
+}
+.header-center{
+    width: 3.653333rem;
+    height: .773333rem;
+    text-align: center;
+    align-items: center;
+    border-radius: .053333rem;
+    border: .013333rem solid transparent;
+}
+.header-center>div{
+    width: 50%;
+    background: rgb(80,191,242);
+    color: white;
+    font-size: .346667rem;
+    line-height: .773333rem;
+}
+.header-center>div.active{
+    background: white;
+    color: rgb(80,191,242);
+}
+.submit{
+    width: 1rem;
+}
