@@ -100,13 +100,15 @@ html, body{
 .myLostList .lostHead-right .lostEye{
 	font-size: .266667rem;
 	color: rgb(153,153,153);
-	/* line-height: .533333rem; */
+	line-height: .533333rem;
 }
 .myLostList .lostHead-right .lostEye i{
 	font-size: .346667rem;
 	color: rgb(153,153,153);
     float: left;
     margin-right: .053333rem;
+    position: relative;
+    top: .04rem;
 }
 .myLostList .lostBody .lostBody-address{
     padding: .373333rem .4rem .333333rem .4rem;
