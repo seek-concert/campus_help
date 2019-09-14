@@ -358,7 +358,7 @@
 }
 .myLostList .lostHead .lostHead-center{
 	width: 4.8rem;
-	height: 1.08rem;
+	height: 1.2rem;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -381,6 +381,7 @@
 .myLostList .lostHead-right{
 	justify-content: space-between;
 	align-items: flex-end;
+	height: 1.2rem;
 }
 .myLostList .lostHead-right .lostStatus{
 	display: inline-block;
@@ -393,13 +394,14 @@
 }
 .myLostList .lostHead-right .lostEye{
 	font-size: .266667rem;
-	color: rgb(102,102,102);
+	color: rgb(153,153,153);
 	line-height: .533333rem;
 }
 .myLostList .lostHead-right .lostEye i{
-	font-size: .533333rem;
-	color: rgb(102,102,102);
+	font-size: .346667rem;
+	color: rgb(153,153,153);
 	float: left;
+	margin-right: .08rem
 }
 
 .myLostList .lostBody .lostBody-address{

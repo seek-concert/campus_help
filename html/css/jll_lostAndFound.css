@@ -27,7 +27,7 @@
 }
 .myLostList .lostHead .lostHead-center{
 	width: 3.8rem;
-	height: 1.6rem;
+	height: 2rem;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -62,7 +62,8 @@
 }
 .myLostList .lostHead-right{
 	justify-content: space-between;
-	align-items: flex-end;
+    align-items: flex-end;
+    height: 2rem;
 }
 .myLostList .lostHead-right>div.firstDiv{
     line-height: 0;
@@ -86,13 +87,14 @@
 }
 .myLostList .lostHead-right .lostEye{
 	font-size: .266667rem;
-	color: rgb(102,102,102);
+	color: rgb(153,153,153);
 	line-height: .533333rem;
 }
 .myLostList .lostHead-right .lostEye i{
-	font-size: .533333rem;
-	color: rgb(102,102,102);
-	float: left;
+	font-size: .346667rem;
+	color: rgb(153,153,153);
+    float: left;
+    margin-right: .08rem;
 }
 .myLostList .lostBody{
     margin-left: .333333rem;
@@ -113,7 +115,7 @@
     padding: .373333rem .4rem .333333rem 0;
 	font-size: .32rem;
 	line-height: .533333rem;;
-	color: rgb(102,102,102);
+	color: rgb(139,139,139);
 	position: relative;
     overflow: hidden;
     border-bottom: .013333rem solid rgb(224,224,224);
@@ -124,7 +126,8 @@
 .myLostList .lostBody  .lostBody-content img{
 	width: 100%;
 	border-radius: .053333rem;
-	margin-bottom: .053333rem
+	margin-bottom: .133333rem;
+	margin-top: .133333rem;
 }
 .barBar{
 	height: .533333rem;

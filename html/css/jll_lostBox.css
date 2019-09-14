@@ -73,14 +73,16 @@ html, body{
 }
 .myLostList .lostHead-right{
 	justify-content: space-between;
-	align-items: flex-end;
+    align-items: flex-end;
+    height: 1.08rem;
 }
 .myLostList .lostHead-right>div.firstDiv{
     line-height: 0;
+	height: .373333rem;
 }
 .myLostList .lostHead-right .lostStatus{
 	display: inline-block;
-	line-height: .426667rem;
+	line-height: .373333rem;
 	color: white;
 	font-size: .266667rem;
 	padding: 0 .266667rem;
@@ -97,13 +99,14 @@ html, body{
 }
 .myLostList .lostHead-right .lostEye{
 	font-size: .266667rem;
-	color: rgb(102,102,102);
-	line-height: .533333rem;
+	color: rgb(153,153,153);
+	/* line-height: .533333rem; */
 }
 .myLostList .lostHead-right .lostEye i{
-	font-size: .533333rem;
-	color: rgb(102,102,102);
-	float: left;
+	font-size: .346667rem;
+	color: rgb(153,153,153);
+    float: left;
+    margin-right: .053333rem;
 }
 .myLostList .lostBody .lostBody-address{
     padding: .373333rem .4rem .333333rem .4rem;

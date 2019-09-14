@@ -110,13 +110,18 @@
 		var left =persent*index;
 		$(this).siblings("span").css("left",left+"%");
 		$(".school_content>div").eq(index).css("display","block").siblings().css("display","none");
+        if($(this).attr('id') != 'selectClass'){
+            $('.selectClassBox').css('display','none');
+        }else{
+            $('.selectClassBox').css('display','block');
+        }
 	});
     $(".topBox-bar>div").click(function(){
         $(this).addClass('active').siblings('div').removeClass('active');   
     })
-    $('#selectClass').click(function(){
-        $('.selectClassBox').css('display','block');
-    })
+    // $('#selectClass').click(function(){
+       
+    // })
     $(".selectClassBox_box>div").click(function(){
         $(this).addClass('active').siblings('div').removeClass('active');
         $('#selectClass').text($(this).text());
