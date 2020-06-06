@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的收入明细列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/layui/css/layui.css" />
+    <link rel="stylesheet" href="/css/money_list.css" />
+    <style>.list_content{padding-left: 0}
+    .i_money{  line-height: 0.4rem;color: white;overflow: auto;width: 0.57rem;height: .4rem;background-color: red;position: absolute;top: .1rem;right: .07em;font-size: 0.2rem;border-radius: .1rem;}
+    .bottom-lines {width: 100%;height: auto;display: flex;justify-content: center;align-items: center;text-align: center;padding-top: .2rem;font-size: 0.32rem;}
+    .bottom-lines img {width: 0.4rem;height: 0.4rem;}
+    .change_nav{    border-bottom: .03rem solid #a49f9f;}
+    </style>
+    <script type="text/javascript" src="/layui/layui.js" ></script>
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js" ></script>
+</head>
+<body>
+<div class="special">
+    <div class="evaluate_title">
+        <a href="{:url('mine.mine/index')}"><i class="iconfont iconfanhui"></i></a>
+        <span>我的收入明细列表</span>
+    </div>
+    <ul class="change_nav">
+        <li class="more_active">零食</li>
+        <li style="position: relative">回收 <span class="i_money">99+</span></li>
+        <li style="position: relative">代收 <span class="i_money">3</span></li>
+        <li style="position: relative">商城 <span class="i_money">3</span></li>
+        <li style="border-right: none;position: relative">驾校 <span class="i_money">3</span></li>
+    </ul>
+    <div class="change_con">
+        <div class="change_detail">
+            
+            <div style="height: 0.9333rem;background: rgb(248,250,255);"></div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="change_detail">
+
+            <div style="height: 0.9333rem;background: rgb(248,250,255);"></div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="change_detail">
+
+            <div style="height: 0.9333rem;background: rgb(248,250,255);"></div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="change_detail">
+
+            <div style="height: 0.9333rem;background: rgb(248,250,255);"></div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="change_detail">
+
+            <div style="height: 0.9333rem;background: rgb(248,250,255);"></div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="myExpressBox border_bot_230 border_top_230 bg_white ">
+                <div class="list_content mar_l_r_30 flex" onclick="location.href='{:url(\'more.ed/ed_detail\',[\'id\'=>$v[\'id\']])}'">
+                    <i class="iconfont iconlingqian" style="color: #fe954a;font-size: 1rem;"></i>
+                    <div class="list_content_right" style="padding-left: .1rem; width:7.77333rem;">
+                        <div class="flex_itemAlign_center justify-content-between"><span class="f_30 color_51" style="overflow: hidden;text-overflow: ellipsis;">您有新的款项入账</span><span class="color_huang" style="font-size: .5rem">+1.00</span></div>
+                        <div class="w_100 f_24 color_153 flex_itemAlign_center"><p>时间: 2020-06-02 11:17</p></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom-lines">
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/fontSize.js?v={:date('YmdHis')}" ></script>
+<script>
+    $(".change_con>div").eq(0).css("display","block").siblings().css("display","none");
+    $(".change_nav li").click(function(){
+        var index = $(this).index();
+        $(this).addClass("more_active").siblings().removeClass("more_active");
+        $(".change_con>div").eq(index).css("display","block").siblings().css("display","none");
+    });
+    layui.use('layer', function(){
+        layer = layui.layer;
+    });
+
+    $(function(){
+        $(window).scroll(function(){
+            var scrollTop = $(this).scrollTop();               //滚动条距离顶部的高度
+            var scrollHeight = $(document).height();           //当前页面的总高度
+            var windowHeight = $(this).height();               //当前可视的页面高度
+            if(scrollTop + windowHeight >= scrollHeight)  { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
+                var page = parseInt($("#page").val())+1;
+                $('.bottom-lines').css('display','block').html('<span><img src="/img/loading.gif" alt="loading">加载中</span>');
+                $("#page").val(page);
+                $.ajax({
+                    type:'POST',
+                    data:"page="+page,
+                    url:'{:url(\'system/ad_list\')}',
+                    dataType:'json',
+                    success:function(ret){
+                        if(ret.code == '1'){
+                            var html = '';
+                            $.each(ret.data.ad_lists,function(i,row){
+                                html+='<a href="{:url(\'system/ad_detail\')}?id='+row.id+'"><div class="mar_l_30 border_bot_226 flex ">' +
+                                    '<i class="iconfont iconlaba"></i>' +
+                                    '<span>'+row.title+'</span>' +
+                                    '<span>'+row.input_time.substring(0,10)+'</span>' +
+                                    '</div></a>';
+                            });
+                            $(".content").append(html);
+                            $('.bottom-lines').css('display','none');
+                        }
+                        if(ret.code == '-1'){
+                            $('.bottom-lines').css('display','block').html('<span>暂无更多数据</span>');
+                        }
+
+                    }
+                })
+
+            }
+
+        })
+
+    })
+
+</script>
